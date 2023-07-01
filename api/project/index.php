@@ -3,7 +3,7 @@
     header('Content-Type: application/json');
     header("Access-Control-Allow-Origin: *");
 
-    $accessToken = "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";
+    $accessToken = getenv("GITHUB_ACCESS_TOKEN");
     $endpoint = "https://api.github.com/graphql";
     $query = '
     query{
