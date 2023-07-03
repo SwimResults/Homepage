@@ -1,14 +1,23 @@
 <html lang="de">
     <head>
-	<?php require("head.php"); ?>
+    <?php
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+    ?>
+	<?php require("php/head.php"); ?>
 	<title>SwimResults | Wettkampf-App für Schwimmer, Trainer und co.</title>
 	<!-- <meta name="description" content="SwimResults ist eine Online-Plattform für Schwimmwettkämpfe, welche Daten von teilnehmenden Veranstaltungen aufbereitet und strukturiert zur Verfügung stellt. Mit SwimResults können Sportler, Training, Familie und Freunde Meldungen, Ergebnisse, sowie Livetimings und Auswertungen für verschiedene Sportler, Vereine und Veranstaltungen einsehen."> -->
 	<meta name="description" content="Ergebnisse, Meldungen, Livetiming, Platzierungen und Auswertungen für Schwimmwettkämpfe – Das Tool für Schwimmer, Trainer und Bekannte">
-	link:
 </head>
 <body>
- 
-	<div class="background"></div>
+    <?php include("php/layout/header.php"); ?>
+	<div class="background">
+        <span class="background-text">
+            Ergebnisse, Meldungen,<br>
+            Livetiming und Auswertungen
+        </span>
+    </div>
 	<div class="page-content">
 		<div class="container">
 			<span class="title">SwimResults</span>

@@ -7,24 +7,29 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: Arial, SwimResultsBold, Arial;
-    color: white;
+    font-family: Arial, SwimResultsBold, Arial, serif;
+    color: black;
 }
 
 .background {
-    /*background-image: url("images/bg.jpg");*/
+    background-image: url("../images/bg_dark.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
     width: 100%;
     height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
+}
+
+.background-text {
+    color: white;
+    font-weight: bold;
+    padding: 34px;
+    bottom: 0;
+    position: absolute;
+    font-size: 500%;
 }
 
 .page-content {
-    position: relative;
     margin: 50px 20%;
 }
 
@@ -32,9 +37,9 @@ body {
     /*backdrop-filter: blur(10px) brightness(0.6);*/
     border-radius: 24px;
     padding: 20px;
-    margin: 24px 0px;
+    margin: 24px 0;
     color: #223;
-    border: solid 0px gray;
+    border: solid 0 gray;
 }
 
 a {
@@ -65,7 +70,7 @@ a:hover {
     display: inline-block;
     box-shadow: 1px 2px 5px #c6c6c6;
     border-radius: 12px;
-    margin: 0px 4px;
+    margin: 0 4px;
 }
 .link-button-icon {
     width: 50px;
@@ -84,7 +89,7 @@ a:hover {
 }
 
 .code {
-    font-family: 'Consolas', Monospace;
+    font-family: 'Consolas', Monospace, serif;
 }
 
 .markdown img {
@@ -109,12 +114,12 @@ footer .links {
 footer .links a {
     color: white;
     display: inline-block;
-    margin: 0px 20px;
+    margin: 0 20px;
 }
 
 @font-face {
     font-family: SwimResultsBold;
-    src: url(font/segoe-ui-black.ttf);
+    src: url(src/font/segoe-ui-black.ttf);
 }
 
 @media only screen and (max-width: 1120px) {

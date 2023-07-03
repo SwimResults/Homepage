@@ -1,0 +1,63 @@
+header {
+    padding: 18px 32px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+body.scrolled header {
+    background-color: white;
+    box-shadow: 0 0 10px -3px #555;
+}
+
+.header-title {
+    vertical-align: middle;
+    display: inline-block;
+    color: white;
+}
+
+body.scrolled .header-title {
+    color: black;
+}
+
+.header-logo {
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    filter: brightness(1000);
+}
+
+body.scrolled .header-logo {
+    filter: none;
+}
+
+.header-title-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 16px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    vertical-align: middle;
+    display: inline-block;
+    width: calc(100% - 300px);
+    text-align: right;
+}
+
+.nav-tile {
+    display: inline-block;
+    margin: 0 16px;
+}
+
+nav a {
+    color: white;
+}
+
+body.scrolled nav a {
+    color: var(--main-first);
+}

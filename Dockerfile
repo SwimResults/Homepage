@@ -5,4 +5,5 @@ FROM php:8.0-apache as php-apache
 #RUN apt-get install libyaml-dev -y
 #RUN pecl install yaml && echo "extension=yaml.so" > /usr/local/etc/php/conf.d/ext-yaml.ini && docker-php-ext-enable yaml
 
-COPY . /var/www/html/
+COPY src/ /var/www/html/
+COPY src/images/favicon /var/www/html/
