@@ -1,27 +1,10 @@
-<html lang="en">
+<html lang="de">
     <head>
-
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>SwimResults</title>
-	<link rel="stylesheet" href="main.css?ver=2.8.0">
- 
- 
-   <!-- Favicon -->
-   
-   
-
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="/web/20230621090542/https://swimresults.de/site.webmanifest">
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#204988">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-
-
+	<?php require("head.php"); ?>
+	<title>SwimResults | Wettkampf-App für Schwimmer, Trainer und co.</title>
+	<!-- <meta name="description" content="SwimResults ist eine Online-Plattform für Schwimmwettkämpfe, welche Daten von teilnehmenden Veranstaltungen aufbereitet und strukturiert zur Verfügung stellt. Mit SwimResults können Sportler, Training, Familie und Freunde Meldungen, Ergebnisse, sowie Livetimings und Auswertungen für verschiedene Sportler, Vereine und Veranstaltungen einsehen."> -->
+	<meta name="description" content="Ergebnisse, Meldungen, Livetiming, Platzierungen und Auswertungen für Schwimmwettkämpfe – Das Tool für Schwimmer, Trainer und Bekannte">
+	link:
 </head>
 <body>
  
@@ -43,6 +26,7 @@
 <blockquote>
 <p><code>swimresults.de</code> befindet sich momentan im Aufbau.</p>
 </blockquote>
+<p>SwimResults ist eine Online-Plattform für Schwimmwettkämpfe, welche Daten von teilnehmenden Veranstaltungen aufbereitet und strukturiert zur Verfügung stellt. Mit SwimResults können Sportler, Training, Familie und Freunde Meldungen, Ergebnisse, sowie Livetimings und Auswertungen für verschiedene Sportler, Vereine und Veranstaltungen einsehen.</p>
 <p>SwimResults ist eine Weiterentwicklung der Web-App des <a href="https://erzgebirgsschwimmcup.de/">Internationalen Erzgebirgsschwimmcups</a>, welche unter dem Namen <a href="https://my.erzgebirgsschwimmcup.de/about.php">myIESC</a> bekannt ist.</p>
 <h1>Kontakt</h1>
 <p>Konrad</p>
