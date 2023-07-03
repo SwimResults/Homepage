@@ -51,7 +51,8 @@ nav {
 
 .nav-tile {
     display: inline-block;
-    margin: 0 16px;
+    margin: 16px;
+    text-align: left;
 }
 
 nav a {
@@ -60,4 +61,16 @@ nav a {
 
 body.scrolled nav a {
     color: var(--main-first);
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        width: calc(100% - 64px);
+        text-align: center;
+        display: block;
+    }
+    .nav-tile {
+        display: block;
+        text-align: center;
+    }
 }
