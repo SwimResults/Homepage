@@ -1,0 +1,14 @@
+{
+    "LAYOUT": {
+        "NAV": {
+            "CALENDAR_LINK_TEXT": "Veranstaltungen"
+        }
+    },
+    "STARTPAGE": {
+        "BANNER": {
+            "MAIN": {
+                "INFO_TEXT": "Ergebnisse, Meldungen, <br>Livetiming und Auswertungen"
+            }
+        }
+    }
+}
