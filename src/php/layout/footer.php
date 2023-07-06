@@ -1,21 +1,15 @@
-<?php require_once("php/config/nav.config.php");
-
-$footerNavTiles = array(
-"impressum",
-"contact"
-)
-?>
 <footer>
-		<span>
-			© 2023 - logilutions.de
-		</span>
+    <span>
+        © 2023 - Konrad Weiß | swimresults.de
+    </span>
     <div class="links">
         <?php
-            foreach ($footerNavTiles as $tile) {
-                $page = $pages[$tile];
-                echo('<a href="'.$page->name.'">');
-                echo(T::t($page->navTitle));
-                echo('</a>');
+            foreach ($pages as $kp => $p) {
+                if (array_key_exists("footer", $p) && $p["footer"]) {
+                    echo('<a href="' . $kp . '">');
+                    echo(T::t($p["title"]));
+                    echo('</a>');
+                }
             }
         ?>
     </div>

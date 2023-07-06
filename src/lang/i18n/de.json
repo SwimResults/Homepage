@@ -1,8 +1,9 @@
 {
     "NAV": {
-        "CALENDAR": "Veranstaltungen",
+        "MEETINGS": "Veranstaltungen",
         "IMPRESSUM": "Impressum",
-        "CONTACT": "Kontakt"
+        "CONTACT": "Kontakt",
+        "MAIN": "Start"
     },
     "STARTPAGE": {
         "BANNER": {
@@ -11,5 +12,12 @@
             }
         }
     },
-    "EXAMPLE": "Das ist ein Beispiel!"
+    "EXAMPLE": "Das ist ein Beispiel!",
+    "CONTENT": {
+        "CONTACT": {
+            "INTRO_TEXT": "Unter folgenden Kanälen kann Kontakt mit den Entwicklern von SwimResults aufgenommen werden:",
+            "MAIL": "E-Mail",
+            "DEV_PLATFORM": "Entwicklungsplattform"
+        }
+    }
 }

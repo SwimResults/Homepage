@@ -24,6 +24,10 @@
             return $key;
         }
 
+        public function __toString() {
+            return "";
+        }
+
     }
 
     T::init();

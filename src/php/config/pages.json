@@ -1,0 +1,29 @@
+{
+  "main": {
+    "type": "page",
+    "title": "NAV.MAIN",
+    "permission": 0,
+    "nav": true,
+    "banner": true
+  },
+  "meetings": {
+    "type": "page",
+    "title": "NAV.MEETINGS",
+    "permission": 0,
+    "nav": true
+  },
+  "contact": {
+    "type": "page",
+    "title": "NAV.CONTACT",
+    "permission": 0,
+    "nav": false,
+    "footer": true
+  },
+  "impressum": {
+    "type": "page",
+    "title": "NAV.IMPRESSUM",
+    "permission": 0,
+    "nav": false,
+    "footer": true
+  }
+}

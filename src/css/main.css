@@ -20,6 +20,11 @@ body {
     height: 100vh;
 }
 
+.banner-small {
+    height: 100px;
+    background-position-y: bottom;
+}
+
 .background-text {
     color: white;
     font-weight: bold;
@@ -105,6 +110,7 @@ footer {
     position: relative;
     display: block;
     padding: 50px 30px;
+    color: white;
 }
 
 footer .links {
