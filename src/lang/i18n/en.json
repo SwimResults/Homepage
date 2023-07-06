@@ -1,0 +1,30 @@
+{
+    "NAV": {
+        "MEETINGS": "Meetings",
+        "CONTACT": "Contact",
+        "MAIN": "Start",
+        "FEATURES": "Features",
+        "BLOG": "Blog",
+        "OPEN_APP_BUTTON": "Open SwimResults",
+        "IMPRESSUM": "Imprint"
+    },
+    "STARTPAGE": {
+        "BANNER": {
+            "MAIN": {
+                "INFO_TEXT": "Results, Start Lists, <br>Livetiming and Analysis"
+            }
+        }
+    },
+    "EXAMPLE": "This is an example!",
+    "CONTENT": {
+        "CONTACT": {
+            "INTRO_TEXT": "To get in touch with the SwimResults developers use one of the following channels:",
+            "MAIL": "Email",
+            "DEV_PLATFORM": "Development Plattform"
+        },
+        "NO_CONTENT": {
+            "HEADING": "Nothing here to be found!",
+            "INFO_TEXT": "This page has currently no content, please return here later."
+        }
+    }
+}
