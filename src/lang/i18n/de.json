@@ -1,8 +1,8 @@
 {
-    "LAYOUT": {
-        "NAV": {
-            "CALENDAR_LINK_TEXT": "Veranstaltungen"
-        }
+    "NAV": {
+        "CALENDAR": "Veranstaltungen",
+        "IMPRESSUM": "Impressum",
+        "CONTACT": "Kontakt"
     },
     "STARTPAGE": {
         "BANNER": {
@@ -10,5 +10,6 @@
                 "INFO_TEXT": "Ergebnisse, Meldungen, <br>Livetiming und Auswertungen"
             }
         }
-    }
+    },
+    "EXAMPLE": "Das ist ein Beispiel!"
 }

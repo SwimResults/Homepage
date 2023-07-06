@@ -1,8 +1,10 @@
 
 <header>
     <div class="header-title">
-        <img class="header-logo" src="images/logo.svg" alt="SwimResults Logo">
-        <span class="header-title-text">SwimResults</span>
+        <a href="/">
+            <img class="header-logo" src="images/logo.svg" alt="SwimResults Logo">
+            <span class="header-title-text">SwimResults</span>
+        </a>
     </div>
     <?php include('php/layout/nav.php'); ?>
 </header>

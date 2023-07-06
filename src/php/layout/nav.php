@@ -23,10 +23,7 @@ require_once("php/config/nav.config.php");
 
 $navTiles = array(
     "main",
-    "kalender",
-    "sportler",
-    "veranstalter",
-    "auswerter"
+    "meetings"
 )
 ?>
 <nav>
@@ -35,7 +32,7 @@ $navTiles = array(
             $page = $pages[$tile];
             echo('<div class="nav-tile">');
                 echo('<a class="nav-link" href="'.$page->name.'">');
-                echo($page->navTitle);
+                echo(T::t($page->navTitle));
                 echo('</a>');
             echo('</div>');
         }

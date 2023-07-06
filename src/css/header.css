@@ -10,7 +10,7 @@ header {
 
 body.scrolled header {
     background-color: white;
-    box-shadow: 0 0 10px -3px #555;
+    box-shadow: 0 0 10px -3px #dbdbdb;
 }
 
 .header-title {
@@ -21,6 +21,14 @@ body.scrolled header {
 
 body.scrolled .header-title {
     color: black;
+}
+
+.header-title a {
+    color: unset;
+}
+
+.header-title a:hover {
+    text-decoration: none;
 }
 
 .header-logo {
