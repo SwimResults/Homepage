@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if (isset($_REQUEST["lang"])) {
+        $_SESSION["lang"] = $_REQUEST["lang"];
+    }
+
+?>
 <html lang="de">
     <head>
     <?php
