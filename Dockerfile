@@ -14,3 +14,5 @@ RUN apt-get install -y locales locales-all
 COPY src/ /var/www/html/
 COPY src/images/favicon /var/www/html/
 COPY apache2.conf /etc/apache2/apache2.conf
+
+RUN a2enmod rewrite
