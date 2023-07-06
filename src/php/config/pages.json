@@ -12,6 +12,19 @@
     "permission": 0,
     "nav": true
   },
+  "features": {
+    "type": "page",
+    "title": "NAV.FEATURES",
+    "permission": 0,
+    "nav": true
+  },
+  "blog": {
+    "type": "page",
+    "title": "NAV.BLOG",
+    "permission": 0,
+    "nav": true
+  },
+
   "contact": {
     "type": "page",
     "title": "NAV.CONTACT",

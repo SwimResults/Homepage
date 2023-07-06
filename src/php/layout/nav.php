@@ -9,6 +9,10 @@
                 echo('</div>');
             }
         }
+
+        $app_url = getenv("SR_APP_URL");
+        if (!$app_url) $app_url = "https://app.swimresults.de";
+        echo('<a class="btn nav-tile" href="'.$app_url.'">'.T::t("NAV.OPEN_APP_BUTTON").'</a>');
     ?>
 </nav>
 

@@ -105,6 +105,25 @@ hr {
     border: solid 0.5px #ccc;
 }
 
+.btn {
+    background-color: var(--main-first);
+    padding: 6px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+}
+
+.no-content {
+    display: block;
+    width: 100%;
+    padding: 150px 0;
+    text-align: center;
+}
+
+.no-content b {
+    font-size: 22px;
+}
+
 footer {
     background-color: black;
     position: relative;

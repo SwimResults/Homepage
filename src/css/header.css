@@ -66,6 +66,10 @@ nav {
     text-align: left;
 }
 
+.nav-tile.btn {
+    margin: 0 16px;
+}
+
 nav a {
     color: white;
 }
@@ -74,6 +78,13 @@ body.scrolled nav a,
 header.menu-shown nav a {
     color: var(--main-first);
 }
+
+body.scrolled nav a.btn,
+header.menu-shown nav a.btn {
+    color: white;
+}
+
+
 
 .menu-btn {
     background-color: transparent;

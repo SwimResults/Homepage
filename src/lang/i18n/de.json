@@ -3,7 +3,10 @@
         "MEETINGS": "Veranstaltungen",
         "IMPRESSUM": "Impressum",
         "CONTACT": "Kontakt",
-        "MAIN": "Start"
+        "MAIN": "Start",
+        "FEATURES": "Funktionen",
+        "BLOG": "Blog",
+        "OPEN_APP_BUTTON": "SwimResults öffnen"
     },
     "STARTPAGE": {
         "BANNER": {
@@ -18,6 +21,10 @@
             "INTRO_TEXT": "Unter folgenden Kanälen kann Kontakt mit den Entwicklern von SwimResults aufgenommen werden:",
             "MAIL": "E-Mail",
             "DEV_PLATFORM": "Entwicklungsplattform"
+        },
+        "NO_CONTENT": {
+            "HEADING": "Hier ist rein gar nichts zu finden!",
+            "INFO_TEXT": "Auf dieser Seite gibt es noch keinen Inhalt, komm später wieder."
         }
     }
 }
