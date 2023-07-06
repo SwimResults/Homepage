@@ -1,4 +1,4 @@
-<nav>
+<nav id="nav">
     <?php
         foreach ($pages as $kp => $p) {
             if ($p["nav"]) {
