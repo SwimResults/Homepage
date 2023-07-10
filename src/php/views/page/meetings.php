@@ -44,7 +44,7 @@
                     echo('<h2 class="meeting-title">'.$title.'</h2>');
                     echo('<div class="meeting-links">');
                         if (!isset($meeting["state"]) || $meeting["state"] != "UNPUBLISHED")
-                            echo('<a class="meeting-link btn" href="https://app.swimresults.de/m/'.$meeting["meet_id"].'">In SwimResults öffnen</a>');
+                            echo('<a class="meeting-link btn" href="'.Env::getAppUrl().'/m/'.$meeting["meet_id"].'">In SwimResults öffnen</a>');
                     echo('</div>');
                 echo('</div>');
             echo('</div>');
