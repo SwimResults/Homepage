@@ -23,36 +23,9 @@
             <p>Der Release von SwimResults ist für Ende 2023 geplant.</p>
         </blockquote>
         <p>Technische Informationen zum Projekt können in der <a href="https://github.com/SwimResults/SwimResults#readme">SwimResults/SwimResults/README.md</a> gefunden werden.</p>
-        <p><img src="images/bg_logo.jpg" alt="SwimResults"></p>
+<!--        <p><img src="images/bg_logo.jpg" alt="SwimResults"></p>-->
         <hr>
-        <center>© Copyright 2022-2023 - SwimResults &amp; Konrad Weiß</center><!--
-			<span>
-
-				<h2>Allgemein</h2>
-
-				<span class="quote"><span class="code">swimresults.de</span> befindet sich momentan im Aufbau.</span>
-
-				<p>SwimResults ist eine Weiterentwicklung der Web-App des <a href="http://erzgebirgsschwimmcup.de">Internationalen Erzgebirgsschwimmcup</a>, welche unter dem Namen <a href="http://my.erzgebirgsschwimmcup.de/about.php">myIESC</a> bekannt ist.</p>
-
-				<h2>Kontakt</h2>
-				Konrad<br>
-				E-Mail: konrad@schwimmteamerzgebirge.de
-
-
-
-				<h2>Status</h2>
-				<p>
-					Den aktuellen Stand der Entwicklung findet man unter <a href="https://status.swimresults.de">status.swimresults.de</a>.
-				</p>
-
-				<p>
-					<span class="quote">Der Release von SwimResults ist für Ende 2023 geplant.</span>
-				</p>
-
-				<hr>
-				<center>&copy; 2023 - Konrad Weiß</center>
-
-			</span> -->
+        <center>© Copyright 2022-2023 - SwimResults &amp; Konrad Weiß</center>
     </div>
 </div>
 <div class="container">
