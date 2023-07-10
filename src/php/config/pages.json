@@ -1,7 +1,8 @@
 {
   "main": {
     "type": "page",
-    "title": "NAV.MAIN",
+    "title": "CONTENT.MAIN.TITLE",
+    "nav_title":  "NAV.MAIN",
     "permission": 0,
     "nav": true,
     "banner": true

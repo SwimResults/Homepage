@@ -47,7 +47,7 @@
     <?php if (array_key_exists("banner", $page) && $page["banner"]): ?>
         <div class="background">
             <span class="background-text">
-                <?php echo(T::t('STARTPAGE.BANNER.MAIN.INFO_TEXT')); ?>
+                <?php echo(T::t('CONTENT.BANNER.MAIN.INFO_TEXT')); ?>
             </span>
         </div>
     <?php else: ?>
@@ -55,7 +55,7 @@
     <?php endif; ?>
 	<div class="page-content">
         <?php
-            if ($page["title"]) echo('<h1>'.T::t($page["title"]).'</h1>');
+            if ($page["title"]) echo('<h1 class="title">'.T::t($page["title"]).'</h1>');
 
             $error = FALSE;
             if ($page["permission"]) {

@@ -4,7 +4,9 @@
             if ($p["nav"]) {
                 echo('<div class="nav-tile">');
                     echo('<a class="nav-link" href="'.$kp.'">');
-                    echo(T::t($p["title"]));
+                    echo(T::t(
+                            ($p["nav_title"] ?? $p["title"])
+                    ));
                     echo('</a>');
                 echo('</div>');
             }

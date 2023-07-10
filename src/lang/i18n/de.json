@@ -8,13 +8,6 @@
         "BLOG": "Blog",
         "OPEN_APP_BUTTON": "SwimResults öffnen"
     },
-    "STARTPAGE": {
-        "BANNER": {
-            "MAIN": {
-                "INFO_TEXT": "Ergebnisse, Meldungen, <br>Livetiming und Auswertungen"
-            }
-        }
-    },
     "EXAMPLE": "Das ist ein Beispiel!",
     "CONTENT": {
         "CONTACT": {
@@ -25,6 +18,32 @@
         "NO_CONTENT": {
             "HEADING": "Hier ist rein gar nichts zu finden!",
             "INFO_TEXT": "Auf dieser Seite gibt es noch keinen Inhalt, komm später wieder."
+        },
+        "MAIN": {
+            "TITLE": "SwimResults"
+        },
+        "BANNER": {
+            "MAIN": {
+                "INFO_TEXT": "Ergebnisse, Meldungen, <br>Livetiming und Auswertungen"
+            }
+        }
+    },
+    "COMMON": {
+        "DATE": {
+            "MONTH": {
+                "JAN": "Jan",
+                "FEB": "Feb",
+                "MAR": "Mär",
+                "APR": "Apr",
+                "MAY": "Mai",
+                "JUN": "Jun",
+                "JUL": "Jul",
+                "AUG": "Aug",
+                "SEP": "Sep",
+                "OCT": "Okt",
+                "NOV": "Nov",
+                "DEC": "Dez"
+            }
         }
     }
 }

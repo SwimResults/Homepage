@@ -2,6 +2,7 @@
     --main-first: #0171c0;
     --gradient-first: #00B0B0;
     --gradient-second: #0239CF;
+    --background-gray: #f4f4f4;
 }
 
 body {
@@ -40,11 +41,17 @@ body {
 
 .container {
     /*backdrop-filter: blur(10px) brightness(0.6);*/
-    border-radius: 24px;
+    border-radius: 12px;
     padding: 20px;
     margin: 24px 0;
     color: #223;
     border: solid 0 gray;
+    background-color: var(--background-gray);
+}
+
+.container h2:first-child,
+.container h3:first-child {
+    margin-top: 0;
 }
 
 a {
@@ -55,7 +62,7 @@ a:hover {
     text-decoration: underline;
 }
 .title {
-    font-size: 100px;
+    font-size: 70px;
     font-weight: bold;
     display: block;
     background: #00B0B0;
@@ -106,11 +113,12 @@ hr {
 }
 
 .btn {
-    background-color: var(--main-first);
+    background: linear-gradient(to bottom right, var(--gradient-first) 0%, var(--gradient-second) 100%);
     padding: 6px 10px;
     border-radius: 50px;
     cursor: pointer;
     border: none;
+    color: white;
 }
 
 .no-content {

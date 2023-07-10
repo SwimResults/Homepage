@@ -1,7 +1,4 @@
 <div class="container">
-    <span class="title">SwimResults</span>
-</div>
-<div class="container">
     <h3><a href="https://github.com/SwimResults"><code>README.md</code></a>:</h3>
     <div class="markdown">
         <!-- <span class="subtitle">swimresults.de befindet sich momentan im Aufbau. SwimResults ist eine Weiterentwicklung der Web-App des <a href="http://erzgebirgsschwimmcup.de">Internationalen Erzgebirgsschwimmcup</a>, welche unter dem Namen <a href="http://my.erzgebirgsschwimmcup.de">myIESC</a> bekannt ist.</span> -->
