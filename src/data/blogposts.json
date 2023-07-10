@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Test Blog Post",
+    "author": "konrad2002",
+    "content_html": "Das ist ein Testbeitrag. Er kann <b>HTML</b>.",
+    "created_at": "10.07.2023 10:59",
+    "published_at": "10.07.2023 11:00",
+    "updated_at": "10.07.2023 11:00"
+  },
+  {
+    "id": 2,
+    "title": "Test Blog Post #2",
+    "author": "konrad2002",
+    "content_html": "Das ist ein Testbeitrag. Er kann <b>HTML</b>. Wahnsinn oder? Hier gehts zur => <a href=\"https://app.swimresults.de\">App</a>.",
+    "created_at": "10.07.2023 11:09",
+    "published_at": "10.07.2023 11:11",
+    "updated_at": "10.07.2023 11:09"
+  }
+]
