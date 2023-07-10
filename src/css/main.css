@@ -2,39 +2,57 @@
     --main-first: #0171c0;
     --gradient-first: #00B0B0;
     --gradient-second: #0239CF;
+    --background-gray: #f4f4f4;
 }
 
 body {
     padding: 0;
     margin: 0;
-    font-family: Arial, SwimResultsBold, Arial;
-    color: white;
+    font-family: Arial, SwimResultsBold, Arial, serif;
+    color: black;
 }
 
 .background {
-    /*background-image: url("images/bg.jpg");*/
+    background-image: url("../images/bg_dark.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;
     width: 100%;
     height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
+}
+
+.banner-small {
+    height: 100px;
+    background-position-y: bottom;
+}
+
+.background-text {
+    color: white;
+    font-weight: bold;
+    padding: 34px;
+    bottom: 0;
+    position: absolute;
+    font-size: 70px;
 }
 
 .page-content {
-    position: relative;
     margin: 50px 20%;
 }
 
 .container {
     /*backdrop-filter: blur(10px) brightness(0.6);*/
-    border-radius: 24px;
+    border-radius: 12px;
     padding: 20px;
-    margin: 24px 0px;
+    margin: 24px 0;
     color: #223;
-    border: solid 0px gray;
+    border: solid 0 gray;
+    background-color: var(--background-gray);
+}
+
+.container h1:first-child,
+.container h2:first-child,
+.container h3:first-child {
+    margin-top: 0;
 }
 
 a {
@@ -45,7 +63,7 @@ a:hover {
     text-decoration: underline;
 }
 .title {
-    font-size: 100px;
+    font-size: 70px;
     font-weight: bold;
     display: block;
     background: #00B0B0;
@@ -65,7 +83,7 @@ a:hover {
     display: inline-block;
     box-shadow: 1px 2px 5px #c6c6c6;
     border-radius: 12px;
-    margin: 0px 4px;
+    margin: 0 4px;
 }
 .link-button-icon {
     width: 50px;
@@ -84,7 +102,7 @@ a:hover {
 }
 
 .code {
-    font-family: 'Consolas', Monospace;
+    font-family: 'Consolas', Monospace, serif;
 }
 
 .markdown img {
@@ -95,11 +113,32 @@ hr {
     border: solid 0.5px #ccc;
 }
 
+.btn {
+    background: linear-gradient(to bottom right, var(--gradient-first) 0%, var(--gradient-second) 100%);
+    padding: 6px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.no-content {
+    display: block;
+    width: 100%;
+    padding: 150px 0;
+    text-align: center;
+}
+
+.no-content b {
+    font-size: 22px;
+}
+
 footer {
     background-color: black;
     position: relative;
     display: block;
     padding: 50px 30px;
+    color: white;
 }
 
 footer .links {
@@ -109,17 +148,20 @@ footer .links {
 footer .links a {
     color: white;
     display: inline-block;
-    margin: 0px 20px;
+    margin: 0 20px;
 }
 
 @font-face {
     font-family: SwimResultsBold;
-    src: url(font/segoe-ui-black.ttf);
+    src: url(src/font/segoe-ui-black.ttf);
 }
 
 @media only screen and (max-width: 1120px) {
     .title {
         font-size: 60px;
+    }
+    .background-text {
+        font-size: 51px;
     }
 } 
 
@@ -131,7 +173,15 @@ footer .links a {
     .page-content {
         margin: 50px 20px;
     }
-} 
+    .background-text {
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .banner-small {
+        height: 75px;
+    }
+}
 @media only screen and (max-width: 460px) {
     .title {
         font-size: 40px;

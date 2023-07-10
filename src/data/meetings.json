@@ -1,0 +1,29 @@
+[
+  {
+    "date_start": "2023-12-09T07:00:00Z",
+    "date_end": "2023-12-10T17:00:00Z",
+    "series": {
+      "name_full": "Internationaler Erzgebirgsschwimmcup"
+    },
+    "iteration": 26,
+    "meet_id": "IESC23",
+    "state": "UNPUBLISHED"
+  },
+  {
+    "date_start": "2023-06-24T07:00:00Z",
+    "date_end": "2023-06-24T17:00:00Z",
+    "series": {
+      "name_full": "Finale Erzgebirgsspiele Schwimmen"
+    },
+    "meet_id": "ESS23"
+  },
+  {
+    "date_start": "2022-12-01T07:00:00Z",
+    "date_end": "2022-12-02T17:00:00Z",
+    "series": {
+      "name_full": "Internationaler Erzgebirgsschwimmcup"
+    },
+    "iteration": 25,
+    "meet_id": "IESC22"
+  }
+]

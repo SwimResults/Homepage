@@ -1,0 +1,139 @@
+header {
+    padding: 18px 32px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+body.scrolled header,
+header.menu-shown {
+    background-color: white;
+    box-shadow: 0 0 10px -3px #dbdbdb;
+}
+
+.header-title {
+    vertical-align: middle;
+    display: inline-block;
+    color: white;
+}
+
+body.scrolled .header-title,
+header.menu-shown .header-title {
+    color: black;
+}
+
+.header-title a {
+    color: unset;
+}
+
+.header-title a:hover {
+    text-decoration: none;
+}
+
+.header-logo {
+    width: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    filter: brightness(1000);
+}
+
+body.scrolled .header-logo,
+header.menu-shown .header-logo {
+    filter: none;
+}
+
+.header-title-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 16px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    vertical-align: middle;
+    display: inline-block;
+    width: calc(100% - 300px);
+    text-align: right;
+}
+
+.nav-tile {
+    display: inline-block;
+    margin: 16px;
+    text-align: left;
+}
+
+.nav-tile.btn {
+    margin: 0 16px;
+}
+
+nav a {
+    color: white;
+}
+
+body.scrolled nav a,
+header.menu-shown nav a {
+    color: var(--main-first);
+}
+
+body.scrolled nav a.btn,
+header.menu-shown nav a.btn {
+    color: white;
+}
+
+
+
+.menu-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    position: fixed;
+    right: 24px;
+    top: 12px;
+    display: none;
+}
+
+.menu-btn img {
+    filter: invert(100%);
+}
+
+body.scrolled .menu-btn img,
+.menu-shown .menu-btn img {
+    filter: none;
+}
+
+.menu-shown {
+    height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .menu-btn {
+        display: inline-block;
+    }
+    .menu-shown nav {
+        display: block;
+    }
+    .menu-shown .icon-hide,
+    .icon-show {
+        display: block;
+    }
+    .icon-hide,
+    .menu-shown .icon-show {
+        display: none;
+    }
+    nav {
+        width: calc(100% - 64px);
+        text-align: center;
+        display: none;
+    }
+    .nav-tile {
+        display: block;
+        text-align: center;
+        padding: 14px 0;
+    }
+}
