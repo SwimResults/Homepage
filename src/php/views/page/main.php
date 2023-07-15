@@ -37,14 +37,14 @@
     </div>
 </div>
 <div class="section">
-    <div class="section-split">
+    <div class="section-split section-split-switch">
         <div class="section-left">
             <h1><?php T::e("CONTENT.MAIN.INFOS.BLOG_TITLE"); ?></h1>
             <p><?php T::e("CONTENT.MAIN.INFOS.BLOG_INFO_TEXT"); ?></p>
             <a class="section-link-big" href="blog"><?php T::e("CONTENT.MAIN.INFOS.BLOG_LINK_TEXT"); ?></a>
         </div>
         <div class="section-right">
-            <img src="images/drawings/blog.png" alt="SwimResults Features">
+            <img src="images/drawings/blog.png" alt="SwimResults Blog">
         </div>
     </div>
 </div>
@@ -54,7 +54,7 @@
 <div class="section">
     <div class="section-split">
         <div class="section-left">
-
+            <img src="images/drawings/organizer.png" alt="SwimResults Organizer">
         </div>
         <div class="section-right">
             <h1><?php T::e("CONTENT.MAIN.INFOS.ORGANIZER_TITLE"); ?></h1>
@@ -82,14 +82,14 @@
     <br><br>
 </div>
 <div class="section">
-    <div class="section-split">
+    <div class="section-split section-split-switch">
         <div class="section-left">
             <h1><?php T::e("CONTENT.MAIN.INFOS.SERVICE_TITLE"); ?></h1>
             <p><?php T::e("CONTENT.MAIN.INFOS.SERVICE_INFO_TEXT"); ?></p>
             <a class="section-link-big" href="blog/veranstalter"><?php T::e("CONTENT.MAIN.INFOS.SERVICE_LINK_TEXT"); ?></a>
         </div>
         <div class="section-right">
-
+            <img src="images/drawings/service.png" alt="SwimResults Ergebnisdienst">
         </div>
     </div>
 </div>

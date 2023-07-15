@@ -180,6 +180,12 @@ footer .links a {
     margin: 0 20px;
 }
 
+@supports (-webkit-touch-callout: none) {
+    .background {
+        background-attachment: unset;
+    }
+}
+
 @media only screen and (max-width: 1120px) {
     .title {
         font-size: 60px;
@@ -203,9 +209,9 @@ footer .links a {
     .background-text {
         font-size: 34px;
     }
-    .background {
-        background-attachment: unset;
-    }
+    /*.background {*/
+    /*    background-attachment: unset;*/
+    /*}*/
 }
 @media only screen and (max-width: 600px) {
     .banner-small {
