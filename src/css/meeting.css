@@ -9,6 +9,10 @@
     vertical-align: middle;
 }
 
+.meeting-title {
+    font-weight: 500;
+}
+
 .meeting-left {
     margin-right: 12px;
 }

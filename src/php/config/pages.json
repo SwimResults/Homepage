@@ -1,11 +1,11 @@
 {
   "main": {
     "type": "page",
-    "title": "CONTENT.MAIN.TITLE",
     "nav_title":  "NAV.MAIN",
     "permission": 0,
     "nav": true,
-    "banner": true
+    "banner": true,
+    "style": "wide"
   },
   "meetings": {
     "type": "page",

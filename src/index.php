@@ -40,7 +40,7 @@
     ?>
 	<title>SwimResults | Wettkampf-App für Schwimmer, Trainer und co.</title>
 	<!-- <meta name="description" content="SwimResults ist eine Online-Plattform für Schwimmwettkämpfe, welche Daten von teilnehmenden Veranstaltungen aufbereitet und strukturiert zur Verfügung stellt. Mit SwimResults können Sportler, Training, Familie und Freunde Meldungen, Ergebnisse, sowie Livetimings und Auswertungen für verschiedene Sportler, Vereine und Veranstaltungen einsehen."> -->
-	<meta name="description" content="Ergebnisse, Meldungen, Livetiming, Platzierungen und Auswertungen für Schwimmwettkämpfe – Das Tool für Schwimmer, Trainer und Bekannte">
+	<meta name="description" content="Ergebnisse, Meldungen, Livetiming, Platzierungen und Auswertungen für Schwimmwettkämpfe – Das Tool für Schwimmer, Trainer und Freunde">
 </head>
 <body>
     <?php include("php/layout/header.php"); ?>
@@ -53,9 +53,9 @@
     <?php else: ?>
         <div class="background banner-small"></div>
     <?php endif; ?>
-	<div class="page-content">
+	<div class="page-content <?php if (isset($page["style"])) echo('page-'.$page["style"]); ?>">
         <?php
-            if ($page["title"]) echo('<h1 class="title">'.T::t($page["title"]).'</h1>');
+            if (isset($page["title"])) echo('<h1 class="title">'.T::t($page["title"]).'</h1>');
 
             $error = FALSE;
             if ($page["permission"]) {

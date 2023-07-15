@@ -1,0 +1,219 @@
+:root {
+    --main-first: #0171c0;
+    --gradient-first: #00B0B0;
+    --gradient-second: #0239CF;
+    --background-gray: #f4f4f4;
+}
+
+@font-face {
+    font-family: "SwimResultsBold";
+    src: url("../font/segoe-ui-black.ttf");
+}
+
+@font-face {
+    font-family: "SwimResults";
+    src: url("../font/SwimResults.ttf");
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: SwimResults, Arial, serif;
+    color: black;
+}
+
+.background {
+    background-image: url("../images/bg_dark.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.banner-small {
+    height: 100px;
+    background-position-y: center;
+    background-attachment: initial;
+}
+
+.background-text {
+    color: white;
+    font-weight: 800;
+    padding: 34px;
+    bottom: 0;
+    position: absolute;
+    font-size: 70px;
+}
+
+.page-content {
+    margin: 50px 20%;
+}
+
+.page-wide {
+    margin: 0;
+}
+
+.container {
+    /*backdrop-filter: blur(10px) brightness(0.6);*/
+    border-radius: 12px;
+    padding: 20px;
+    margin: 24px 0;
+    color: #223;
+    border: solid 0 gray;
+    background-color: var(--background-gray);
+}
+
+.container h1:first-child,
+.container h2:first-child,
+.container h3:first-child {
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-first);
+}
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+h1,h2,h3 {
+    font-weight: 900;
+}
+
+.title {
+    font-size: 70px;
+    font-weight: 900;
+    display: block;
+    background: #00B0B0;
+    background: linear-gradient(to bottom right, var(--gradient-first) 0%, var(--gradient-second) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.subtitle {
+    font-weight: normal;
+    display: block;
+}
+
+.link-button {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    box-shadow: 1px 2px 5px #c6c6c6;
+    border-radius: 12px;
+    margin: 0 4px;
+}
+.link-button-icon {
+    width: 50px;
+    border-radius: 12px;
+    height: 50px;
+}
+
+.quote, blockquote {
+    border-left: solid 5px var(--main-first);
+    padding: 2px 8px 2px 8px;
+    background-color: #0171c012;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: inline-block;
+    margin: 0;
+}
+
+.code {
+    font-family: 'Consolas', Monospace, serif;
+}
+
+.markdown img {
+    max-width: 100%;
+}
+
+hr {
+    border: solid 0.5px #ccc;
+}
+
+.btn {
+    background: linear-gradient(to bottom right, var(--gradient-first) 0%, var(--gradient-second) 100%);
+    padding: 6px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.no-content {
+    display: block;
+    width: 100%;
+    padding: 150px 0;
+    text-align: center;
+}
+
+.no-content b {
+    font-size: 22px;
+}
+
+
+footer {
+    background-color: black;
+    position: relative;
+    display: block;
+    padding: 50px 30px;
+    color: white;
+}
+
+footer .links {
+    float: right;
+}
+
+footer .links a {
+    color: white;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+@media only screen and (max-width: 1120px) {
+    .title {
+        font-size: 60px;
+    }
+    .background-text {
+        font-size: 51px;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .title {
+        font-size: 60px;
+    }
+    .page-content {
+        margin: 50px 20px;
+    }
+    .page-wide {
+        margin: 0;
+    }
+    .background-text {
+        font-size: 34px;
+    }
+    .background {
+        background-attachment: unset;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .banner-small {
+        height: 75px;
+    }
+}
+@media only screen and (max-width: 460px) {
+    .title {
+        font-size: 30px;
+    }
+}
