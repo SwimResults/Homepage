@@ -1,0 +1,24 @@
+.post-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: left;
+}
+
+.post-list-tile {
+    max-width: 500px;
+    width: 100%;
+}
+
+.post-image {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.post-list .post-author {
+    margin-bottom: 0;
+}
+
+.post-list .post-title {
+    margin-top: 0;
+}

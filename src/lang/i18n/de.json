@@ -50,6 +50,10 @@
             "MAIN": {
                 "INFO_TEXT": "Ergebnisse, Meldungen, <br>Livetiming und Auswertungen"
             }
+        },
+        "BLOG": {
+            "ARTICLE_NOT_FOUND_TITLE": "Ups!",
+            "ARTICLE_NOT_FOUND_TEXT": "Der gesuchte Beitrag konnte nicht gefunden werden!"
         }
     },
     "COMMON": {

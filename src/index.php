@@ -7,6 +7,13 @@
 ?>
 <html lang="de">
     <head>
+        <?php
+            if ($_SERVER["SERVER_NAME"] == "localhost")
+                echo('<base href="/swimresults/src/">');
+            else
+                echo('<base href="/">');
+        ?>
+
     <?php
         ini_set('display_errors', 1);
         ini_set('display_startup_errors', 1);
@@ -28,7 +35,8 @@
 
         if (isset($_GET["path"])) {
             $full_path = $_GET["path"];
-            $path = substr($full_path, 0, strpos($full_path, "/"));
+            $path = $full_path;
+            if (str_contains($full_path, "/")) $path = substr($full_path, 0, strpos($full_path, "/"));
         }
         else $path = "main";
 

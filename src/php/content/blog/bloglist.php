@@ -4,8 +4,12 @@
 
     $posts = BlogHelper::getBlogPosts();
 
+    echo('<div class="post-list">');
     foreach ($posts as $post) {
-        $pub = strtotime($post["published_at"]);
-        if ($pub > time()) continue;
+        if ($post["published_at"]) {
+            $pub = strtotime($post["published_at"]);
+            if ($pub > time()) continue;
+        }
         printArticleForBlogList($post);
     }
+    echo('</div>');
