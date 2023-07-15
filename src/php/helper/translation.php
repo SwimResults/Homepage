@@ -41,6 +41,10 @@
             return $key;
         }
 
+        public static function e($key): void {
+            echo(self::t($key));
+        }
+
         public function __toString() {
             return "";
         }

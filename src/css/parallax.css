@@ -1,0 +1,42 @@
+
+.parallax {
+    background-image: url("../images/bg.jpg");
+
+    min-height: 500px;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax-1 {
+    background-image: url("../images/tl_belek-04.jpg");
+}
+
+.parallax-2 {
+    background-image: url("../images/tl_belek-01.jpg");
+}
+
+.parallax-3 {
+    background-image: url("../images/24-IESC-2019_096.jpg");
+}
+
+.parallax-4 {
+    background-image: url("../images/bg1.JPG");
+}
+
+
+@media only screen and (max-width: 800px) {
+    .parallax {
+        background-attachment: unset;
+    }
+    .parallax-1 {
+        background-position-x: -56px;
+    }
+    .parallax-4 {
+        background-position-x: -14px;
+    }
+}
