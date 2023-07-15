@@ -8,13 +8,6 @@
         "BLOG": "Blog",
         "OPEN_APP_BUTTON": "SwimResults öffnen"
     },
-    "STARTPAGE": {
-        "BANNER": {
-            "MAIN": {
-                "INFO_TEXT": "Ergebnisse, Meldungen, <br>Livetiming und Auswertungen"
-            }
-        }
-    },
     "EXAMPLE": "Das ist ein Beispiel!",
     "CONTENT": {
         "CONTACT": {
@@ -25,6 +18,56 @@
         "NO_CONTENT": {
             "HEADING": "Hier ist rein gar nichts zu finden!",
             "INFO_TEXT": "Auf dieser Seite gibt es noch keinen Inhalt, komm später wieder."
+        },
+        "MAIN": {
+            "TITLE": "SwimResults",
+            "INTRO_INFO_TEXT": "SwimResults ist eine Online-Plattform für Schwimmwettkämpfe, welche Daten von teilnehmenden Veranstaltungen aufbereitet und strukturiert zur Verfügung stellt. Mit SwimResults können Sportler, Trainer, Familie und Freunde Meldungen, Ergebnisse, sowie Livetimings und Auswertungen für verschiedene Sportler, Vereine und Veranstaltungen einsehen.",
+            "VALUES": {
+                "MEETINGS_DESCRIPTION": "Veranstaltungen",
+                "ATHLETES_DESCRIPTION": "Sportler",
+                "STARTS_DESCRIPTION": "Starts"
+            },
+            "INFOS": {
+                "MEETINGS_TITLE": "Nächste Veranstaltung",
+                "MEETINGS_LINK_TEXT": "weitere Wettkämpfe",
+                "FEATURES_TITLE": "Das kann SwimResults!",
+                "FEATURES_INFO_TEXT": "Livetiming, Platzierungen, Bahnbelegungen, Zeitpläne und Wettkampffolgen oder Dateisammlungen: SwimResults bietet zahlreiche Funktionen und Inhalte.",
+                "FEATURES_LINK_TEXT": "Funktionsumfang",
+                "BLOG_TITLE": "Up to Date bleiben",
+                "BLOG_INFO_TEXT": "In regelmäßigen Blog-Posts informieren die Entwickler oder Nutzer von SwimResults über neue Funktionen, Tipps zur Nutzung oder Beantworten häufig gestellte Fragen.",
+                "BLOG_LINK_TEXT": "Zum Blog",
+                "ORGANIZER_TITLE": "SwimResults für deine Veranstaltung",
+                "ORGANIZER_INFO_TEXT": "Du bist Veranstalter eines Schwimmwettkampfes und möchtest SwimResults bei deiner Veranstaltung anbieten?",
+                "ORGANIZER_LINK_TEXT": "Infos für Veranstalter",
+                "SERVICE_TITLE": "Enge Zusammenarbeit mit Auswertern",
+                "SERVICE_INFO_TEXT": "Als Betreiber eines Ergebnisdienstes hast du die Möglichkeit Veranstaltern von Schwimmwettkämpfen Unterstützung von SwimResults anzubieten.",
+                "SERVICE_LINK_TEXT": "Infos für Ergebnisdienste"
+            },
+            "UNDER_DEVELOPMENT_INFO_TEXT_1": "SwimResults befindet sich momentan in der Entwicklung! Der Release ist für Ende 2023 geplant. Der aktuelle Stand der Entwicklung kann unter ",
+            "UNDER_DEVELOPMENT_INFO_TEXT_2": " eingesehen werden."
+        },
+        "BANNER": {
+            "MAIN": {
+                "INFO_TEXT": "Ergebnisse, Meldungen, <br>Livetiming und Auswertungen"
+            }
+        }
+    },
+    "COMMON": {
+        "DATE": {
+            "MONTH": {
+                "JAN": "Jan",
+                "FEB": "Feb",
+                "MAR": "Mär",
+                "APR": "Apr",
+                "MAY": "Mai",
+                "JUN": "Jun",
+                "JUL": "Jul",
+                "AUG": "Aug",
+                "SEP": "Sep",
+                "OCT": "Okt",
+                "NOV": "Nov",
+                "DEC": "Dez"
+            }
         }
     }
 }

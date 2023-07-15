@@ -1,4 +1,21 @@
-<div class="no-content">
-    <b><?php echo(T::t("CONTENT.NO_CONTENT.HEADING")); ?></b><br>
-    <span><?php echo(T::t("CONTENT.NO_CONTENT.INFO_TEXT")); ?></span>
+<?php
+
+    require_once("php/helper/meetings.php");
+
+    $meetings = MeetingsHelper::getMeetings();
+?>
+
+<div class="meeting-list">
+    <?php
+
+        $year = 0;
+        foreach ($meetings as $meeting) {
+            $start_time = strtotime($meeting["date_start"]);
+            $y = date("Y", $start_time);
+            if ($y != $year) echo('<h2 class="meeting-year">' . $y . '</h2>');
+            $year = $y;
+            printMeeting($meeting);
+        }
+
+    ?>
 </div>

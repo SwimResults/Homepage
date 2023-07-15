@@ -1,0 +1,76 @@
+.meeting-year {
+    text-align: center;
+    display: block;
+}
+
+.meeting-left,
+.meeting-right {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.meeting-title {
+    font-weight: 500;
+    margin: 0;
+}
+
+.meeting-left {
+    margin-right: 12px;
+}
+
+.meeting-date {
+    margin: 8px;
+    background-color: white;
+    box-shadow: 0 0 10px 0 #ddd;
+    border-radius: 16px;
+    padding: 0;
+    width: 70px;
+    height: 70px;
+}
+
+.meeting-date-month,
+.meeting-date-day {
+    width: 70px;
+    display: block;
+    text-align: center;
+}
+
+.meeting-date-month {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 24px;
+    padding-top: 6px;
+    background-color: #ff4747;
+    color: white;
+}
+
+.meeting-date-day {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    height: 34px;
+    padding-top: 6px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.meeting-links {
+    margin-top: 10px;
+}
+
+.meeting-link {
+    margin: 0 8px;
+}
+
+@media only screen and (max-width: 800px) {
+    .meeting-left {
+        margin-left: calc(50% - 43px);
+        display: block;
+        margin-top: -35px;
+    }
+    .meeting-title {
+        width: 100%;
+        text-align: center;
+    }
+}
