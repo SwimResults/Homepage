@@ -11,6 +11,7 @@
 
 .meeting-title {
     font-weight: 500;
+    margin: 0;
 }
 
 .meeting-left {
@@ -52,6 +53,10 @@
     color: black;
     font-size: 20px;
     font-weight: bold;
+}
+
+.meeting-links {
+    margin-top: 10px;
 }
 
 .meeting-link {
