@@ -25,6 +25,32 @@
         "NO_CONTENT": {
             "HEADING": "Nothing here to be found!",
             "INFO_TEXT": "This page has currently no content, please return here later."
+        },
+        "MAIN": {
+            "TITLE": "SwimResults",
+            "VALUES": {
+                "MEETINGS_DESCRIPTION": "Meetings",
+                "ATHLETES_DESCRIPTION": "Athletes",
+                "STARTS_DESCRIPTION": "Starts"
+            },
+            "INFOS": {
+                "MEETINGS_TITLE": "Upcoming Meetings",
+                "MEETINGS_LINK_TEXT": "Other Competitions",
+                "FEATURES_TITLE": "Numerous Great Features!",
+                "FEATURES_INFO_TEXT": "Live timings, placements, start lists, interactive schedules and file collections: SwimResults provides lots of features and contents.",
+                "FEATURES_LINK_TEXT": "More about Features",
+                "BLOG_TITLE": "Stay up to Date",
+                "BLOG_INFO_TEXT": "Our developer and user blog informs you about upcoming features, gives tips on how to use SwimResults and provides answers to frequently asked questions.",
+                "BLOG_LINK_TEXT": "Show Blog"
+            },
+            "UNDER_DEVELOPMENT_INFO_TEXT_1": "SwimResults is currently under development. The planned date of release is set for december of 2023. Under ",
+            "UNDER_DEVELOPMENT_INFO_TEXT_2": " you can keep track on the current development progress.",
+            "INTRO_INFO_TEXT": "SwimResults is an online platform for swimming competitions that provides data for participating meetings and displays them in structured manner. SwimResults enables athletes, coaches, friend and family to view start lists, results, live timings and analysis for different athletes, teams and competitions."
+        },
+        "BANNER": {
+            "MAIN": {
+                "INFO_TEXT": "Results, Start Lists, <br>Livetiming and Analysis"
+            }
         }
     },
     "COMMON": {
