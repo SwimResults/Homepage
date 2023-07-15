@@ -26,8 +26,10 @@
 
         $pages = json_decode(file_get_contents("php/config/pages.json"), TRUE);
 
-        if (isset($_GET["path"]))
-            $path = $_GET["path"];
+        if (isset($_GET["path"])) {
+            $full_path = $_GET["path"];
+            $path = substr($full_path, 0, strpos($full_path, "/"));
+        }
         else $path = "main";
 
         if ($path[-1] == "/") $path = substr($path, 0, -1);
