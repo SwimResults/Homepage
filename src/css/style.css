@@ -177,6 +177,7 @@ table tr td:first-child {
 
 table tr td {
     border-left: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
 }
 
 table tr:nth-child(even) td {
@@ -203,6 +204,11 @@ table th:last-child {
 table tr:last-child {
     border-bottom-left-radius: var(--table-border-radius);
     border-bottom-right-radius: var(--table-border-radius);
+}
+
+
+table tr {
+    border-bottom: 1px solid #ddd;
 }
 
 

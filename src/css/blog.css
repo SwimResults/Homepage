@@ -35,6 +35,10 @@
     margin: 22px 0;
 }
 
+.post-content table {
+    margin: 24px 0;
+}
+
 .post-content p {
     margin: 0;
 }
@@ -70,4 +74,8 @@
     display: inline-block;
     vertical-align: middle;
     font-weight: 700;
+}
+
+.post-author-info {
+    font-size: 14px;
 }
