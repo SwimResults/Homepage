@@ -60,6 +60,10 @@ body {
     margin: 50px;
 }
 
+.page-full .title {
+    text-align: center;
+}
+
 .img-page-center {
     width: 50%;
     margin: 50px 25%;

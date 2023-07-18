@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="css/meeting.css">
 <link rel="stylesheet" href="css/parallax.css">
 <link rel="stylesheet" href="css/blog.css">
+<link rel="stylesheet" href="css/features.css">
 
 <script src="js/scroll.js"></script>
 

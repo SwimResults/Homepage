@@ -4,7 +4,7 @@
         "IMPRESSUM": "Impressum",
         "CONTACT": "Kontakt",
         "MAIN": "Start",
-        "FEATURES": "Funktionen",
+        "FEATURES": "Features",
         "BLOG": "Blog",
         "OPEN_APP_BUTTON": "SwimResults öffnen"
     },
@@ -56,6 +56,24 @@
             "ARTICLE_NOT_FOUND_TEXT": "Der gesuchte Beitrag konnte nicht gefunden werden!",
             "UPDATED_AT": "aktualisiert",
             "MORE_ARTICLES": "Weitere Beiträge"
+        },
+        "FEATURES": {
+            "FEATURES": {
+                "STARTS_TITLE": "Wann bin ich dran?",
+                "STARTS_INFO_TEXT": "Startlisten, Bahnbelegungen und Startlisten für jeden Sportler mit allen wichtigen Informationen auf einen Blick: quasi ein interaktives Meldeergebnis",
+                "RESULTS_TITLE": "Der lange Gang zum Protokollaushang",
+                "RESULTS_INFO_TEXT": "Sobald du angeschlagen hast, steht deine vorläufige Zeit im System, unmittelbar nachdem das Protokoll freigegeben wurde, sind die Platzierungen und finalen Zeiten einsehbar. Nie wieder Protokolle abfotografieren!",
+                "SEARCH_TITLE": "Wer sucht der findet!",
+                "SEARCH_INFO_TEXT": "Mit der Suchfunktion lassen sich Sportler und Vereine blitzschnell finden und ihre Starts respektive Mitglieder ansehen.",
+                "LIVETIMING_TITLE": "Huch! Lauf verpasst im Livetiming",
+                "LIVETIMING_INFO_TEXT": "Zuhausegebliebene kennen das Problem: Kurz nicht hingeschaut und Livetiming verpasst. Das Livetiming in SwimResults hat Funktionen zum \"Zurückspulen\" und Pausieren.",
+                "FILES_TITLE": "Praktischer Dateien Finder (PDF)",
+                "FILES_INFO_TEXT": "Meldeliste, Protokoll, DSV-Datei oder Bestellformular: Alle Dateien aktuell und sortiert an einem Ort.",
+                "DASHBOARD_TITLE": "Den Überblick behalten",
+                "DASHBOARD_INFO_TEXT": "",
+                "FAVS_TITLE": "It's-A Me, Mario",
+                "FAVS_INFO_TEXT": "Wähle aus, welcher Sportler du bist und wer deine Favoriten sind, um zugeschnittene Übersichten und Benachrichtigungen zu erhalten."
+            }
         }
     },
     "COMMON": {
