@@ -24,7 +24,7 @@
 }
 
 .post-title.title {
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 0;
 }
 
@@ -63,6 +63,7 @@
 .post-info {
     display: inline-block;
     vertical-align: middle;
+    width: calc(100% - 90px);
 }
 
 .author-name {

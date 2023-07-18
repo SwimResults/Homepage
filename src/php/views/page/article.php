@@ -28,6 +28,14 @@
         echo('</div>');
     } else {
         printArticleFullPage($post);
+        $posts = BlogHelper::getRandomBlogPosts(4, $post["id"]);
+        echo('<br><br><hr><br><br>');
+        echo('<h1>'.T::t("CONTENT.BLOG.MORE_ARTICLES").'</h1>');
+        echo('<div class="post-list">');
+        foreach ($posts as $post) {
+            printArticleForBlogList($post);
+        }
+        echo('</div>');
     }
 
 

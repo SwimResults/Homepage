@@ -53,7 +53,9 @@
         },
         "BLOG": {
             "ARTICLE_NOT_FOUND_TITLE": "Ups!",
-            "ARTICLE_NOT_FOUND_TEXT": "Der gesuchte Beitrag konnte nicht gefunden werden!"
+            "ARTICLE_NOT_FOUND_TEXT": "Der gesuchte Beitrag konnte nicht gefunden werden!",
+            "UPDATED_AT": "aktualisiert",
+            "MORE_ARTICLES": "Weitere Beiträge"
         }
     },
     "COMMON": {
@@ -71,6 +73,28 @@
                 "OCT": "Okt",
                 "NOV": "Nov",
                 "DEC": "Dez"
+            },
+            "AGO": {
+                "BEFORE_TEXT": "vor",
+                "AFTER_TEXT": " ",
+                "UNIT": {
+                    "SINGLE": {
+                        "SECONDS": "einer Sekunde",
+                        "MINUTES": "einer Minute",
+                        "HOURS": "einer Stunde",
+                        "DAYS": "einem Tag",
+                        "MONTHS": "einem Monat",
+                        "YEARS": "einem Jahr"
+                    },
+                    "PLURAL": {
+                        "SECONDS": "Sekunden",
+                        "MINUTES": "Minuten",
+                        "HOURS": "Stunden",
+                        "DAYS": "Tagen",
+                        "MONTHS": "Monaten",
+                        "YEARS": "Jahren"
+                    }
+                }
             }
         }
     }

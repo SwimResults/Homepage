@@ -7,6 +7,14 @@
     }
 
     function getDateString($date): string {
+        return date("d.m.Y", strtotime($date));
+    }
+
+    function getTimeString($date): string {
+        return date("H:i", strtotime($date));
+    }
+
+    function getDateTimeString($date): string {
         return date("d.m.Y H:i", strtotime($date));
     }
 
@@ -16,7 +24,7 @@
             $date = $post["published_at"];
         }
 
-        return getDateString($date);
+        return $date;
     }
 
     function timeAgo($date) {
@@ -24,6 +32,7 @@
 
         $strTimeSg = array("einer Sekunde", "einer Minute", "einer Stunde", "einem Tag", "einem Monat", "einem Jahr");
         $strTimePl = array("Sekunden", "Minuten", "Stunden", "Tagen", "Monaten", "Jahren");
+        $timeKeys = array("SECONDS", "MINUTES", "HOURS", "DAYS", "MONTHS", "YEARS");
         $length = array("60","60","24","30","12","10");
 
         $currentTime = time();
@@ -35,22 +44,35 @@
 
             $diff = round($diff);
 
-            $out = "vor ";
+            $out = T::t("COMMON.DATE.AGO.BEFORE_TEXT")." ";
             if ($diff == 1) {
-                $out .= $strTimeSg[$i];
+                $out .= T::t("COMMON.DATE.AGO.UNIT.SINGLE.".$timeKeys[$i]);
             } else {
                 $out .= $diff;
-                $out .= " ".$strTimePl[$i];
+                $out .= " ".T::t("COMMON.DATE.AGO.UNIT.PLURAL.".$timeKeys[$i]);
             }
+            $out .= " ".T::t("COMMON.DATE.AGO.AFTER_TEXT");
             return $out;
         }
+    }
+
+    function getArticleAlias($s) {
+        $s = trim($s);
+        $s = str_replace(' ', '-', $s);
+        $s = str_replace('<wbr>', '', $s);
+        $s = str_replace('<br>', '', $s);
+        $s = strtolower($s);
+        return $s;
     }
 
     function printArticleForBlogList($post): void {
         echo('<div class="post-list-tile container">');
             echo('<img class="post-image" src="'.getImgSrc($post).'" alt="post '.$post["title"].'">');
-            echo('<h3 class="post-author">'.$post["author"].'</h3>');
-            echo('<h1 class="post-title"><a href="article/'.$post["id"].'">'.$post["title"].'</a></h1>');
+            $author = BlogHelper::getAuthorInfo($post["author"]);
+            if ($author) {
+                echo('<h3 class="post-author">' . $author["name"]["formatted"] . '</h3>');
+            }
+            echo('<h1 class="post-title"><a href="article/'.$post["id"].'-'.getArticleAlias($post["title"]).'">'.$post["title"].'</a></h1>');
         echo('</div>');
     }
 
@@ -67,19 +89,28 @@
                             echo($author["name"]["formatted"]);
                         echo('</span><br>');
                         echo('<span class="post-date">');
-                        echo(getPostPublishDate($post));
-                        if ($post["updated_at"]) {
-                            echo(' · aktualisiert: ');
-                            echo('<span title="'.getDateString($post["updated_at"]).'">');
-                            echo(timeAgo($post["updated_at"]));
+                            echo('<span title="'.getDateTimeString(getPostPublishDate($post)).'">');
+                                echo(getDateString(getPostPublishDate($post)));
+                                echo(" · ");
+                                echo(getTimeString(getPostPublishDate($post)));
                             echo('</span>');
-                        }
+                            if ($post["updated_at"]) {
+                                echo('<br>'.T::t("CONTENT.BLOG.UPDATED_AT").': ');
+                                echo('<span title="'.getDateTimeString($post["updated_at"]).'">');
+                                echo(timeAgo($post["updated_at"]));
+                                echo('</span>');
+                            }
                         echo('</span>');
                     echo('</div>');
                 echo('</div>');
             }
             echo('<div class="post-content">');
-                echo('<div>'.$post["content_html"].'</div>');
+                if (isset($post["content_md"])) {
+                    $pd = new Parsedown();
+                    $pd->printMarkdown($post["content_md"]);
+                } else {
+                    echo('<div>'.$post["content_html"].'</div>');
+                }
             echo('</div>');
         echo('</div>');
     }

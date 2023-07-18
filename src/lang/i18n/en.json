@@ -8,13 +8,6 @@
         "OPEN_APP_BUTTON": "Open SwimResults",
         "IMPRESSUM": "Imprint"
     },
-    "STARTPAGE": {
-        "BANNER": {
-            "MAIN": {
-                "INFO_TEXT": "Results, Start Lists, <br>Livetiming and Analysis"
-            }
-        }
-    },
     "EXAMPLE": "This is an example!",
     "CONTENT": {
         "CONTACT": {
@@ -28,6 +21,7 @@
         },
         "MAIN": {
             "TITLE": "SwimResults",
+            "INTRO_INFO_TEXT": "SwimResults is an online platform for swimming competitions that provides data for participating meetings and displays them in structured manner. SwimResults enables athletes, coaches, friends and family to view start lists, results, live timings and analysis for different athletes, teams and competitions.",
             "VALUES": {
                 "MEETINGS_DESCRIPTION": "Meetings",
                 "ATHLETES_DESCRIPTION": "Athletes",
@@ -44,13 +38,18 @@
                 "BLOG_LINK_TEXT": "Show Blog"
             },
             "UNDER_DEVELOPMENT_INFO_TEXT_1": "SwimResults is currently under development. The planned date of release is set for december of 2023. Under ",
-            "UNDER_DEVELOPMENT_INFO_TEXT_2": " you can keep track on the current development progress.",
-            "INTRO_INFO_TEXT": "SwimResults is an online platform for swimming competitions that provides data for participating meetings and displays them in structured manner. SwimResults enables athletes, coaches, friends and family to view start lists, results, live timings and analysis for different athletes, teams and competitions."
+            "UNDER_DEVELOPMENT_INFO_TEXT_2": " you can keep track on the current development progress."
         },
         "BANNER": {
             "MAIN": {
                 "INFO_TEXT": "Results, Start Lists, <br>Livetiming and Analysis"
             }
+        },
+        "BLOG": {
+            "ARTICLE_NOT_FOUND_TITLE": "Ups!",
+            "ARTICLE_NOT_FOUND_TEXT": "The post you are looking for was not found!",
+            "UPDATED_AT": "updated",
+            "MORE_ARTICLES": "Other Posts"
         }
     },
     "COMMON": {
@@ -68,6 +67,28 @@
                 "OCT": "Oct",
                 "NOV": "Nov",
                 "DEC": "Dec"
+            },
+            "AGO": {
+                "BEFORE_TEXT": " ",
+                "AFTER_TEXT": "ago",
+                "UNIT": {
+                    "SINGLE": {
+                        "SECONDS": "one second",
+                        "MINUTES": "one Minute",
+                        "HOURS": "one Hour",
+                        "DAYS": "one Day",
+                        "MONTHS": "one Month",
+                        "YEARS": "one Year"
+                    },
+                    "PLURAL": {
+                        "SECONDS": "Seconds",
+                        "MINUTES": "Minutes",
+                        "HOURS": "Hours",
+                        "DAYS": "Days",
+                        "MONTHS": "Months",
+                        "YEARS": "Years"
+                    }
+                }
             }
         }
     }
