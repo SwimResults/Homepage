@@ -19,6 +19,33 @@
         return getDateString($date);
     }
 
+    function timeAgo($date) {
+        $timestamp = strtotime($date);
+
+        $strTimeSg = array("einer Sekunde", "einer Minute", "einer Stunde", "einem Tag", "einem Monat", "einem Jahr");
+        $strTimePl = array("Sekunden", "Minuten", "Stunden", "Tagen", "Monaten", "Jahren");
+        $length = array("60","60","24","30","12","10");
+
+        $currentTime = time();
+        if($currentTime >= $timestamp) {
+            $diff     = time()- $timestamp;
+            for($i = 0; $diff >= $length[$i] && $i < count($length)-1; $i++) {
+                $diff = $diff / $length[$i];
+            }
+
+            $diff = round($diff);
+
+            $out = "vor ";
+            if ($diff == 1) {
+                $out .= $strTimeSg[$i];
+            } else {
+                $out .= $diff;
+                $out .= " ".$strTimePl[$i];
+            }
+            return $out;
+        }
+    }
+
     function printArticleForBlogList($post): void {
         echo('<div class="post-list-tile container">');
             echo('<img class="post-image" src="'.getImgSrc($post).'" alt="post '.$post["title"].'">');
@@ -31,11 +58,28 @@
         echo('<div class="post">');
             echo('<img class="post-image" src="'.getImgSrc($post).'" alt="post '.$post["title"].'">');
             echo('<h1 class="post-title title">'.$post["title"].'</h1>');
-            echo('<span class="post-date">'.getPostPublishDate($post).'</span>');
-            echo('<div class="post-list-content">');
-                echo('<div>'.$post["content_html"].'</div><br><br>');
-                echo('<span>von: <b>'.$post["author"].'</b></span><br><br>');
-                echo('<span>veröffentlicht: <b>'.$post["created_at"].'</b></span><br><br>');
+            $author = BlogHelper::getAuthorInfo($post["author"]);
+            if ($author) {
+                echo('<div class="author">');
+                    echo('<img src="'.$author["thumbnailUrl"].'" alt="author image for '.$author["name"]["formatted"].'" class="author-img">');
+                    echo('<div class="post-info">');
+                        echo('<span class="author-name">');
+                            echo($author["name"]["formatted"]);
+                        echo('</span><br>');
+                        echo('<span class="post-date">');
+                        echo(getPostPublishDate($post));
+                        if ($post["updated_at"]) {
+                            echo(' · aktualisiert: ');
+                            echo('<span title="'.getDateString($post["updated_at"]).'">');
+                            echo(timeAgo($post["updated_at"]));
+                            echo('</span>');
+                        }
+                        echo('</span>');
+                    echo('</div>');
+                echo('</div>');
+            }
+            echo('<div class="post-content">');
+                echo('<div>'.$post["content_html"].'</div>');
             echo('</div>');
         echo('</div>');
     }

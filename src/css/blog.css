@@ -30,6 +30,43 @@
 
 .post-date {
     color: #8a8a8a;
-    font-weight: 600;
-    margin-left: 16px;
+}
+.post-content {
+    margin: 22px 0;
+}
+
+.post-content p {
+    margin: 0;
+}
+
+.post-content h1 {
+    margin: 28px 0 14px;
+}
+
+.post-content h2 {
+    margin: 22px 0 8px;
+}
+
+.author {
+    padding: 14px 0 34px;
+    border-bottom: 3px #e6e6e6 solid;
+}
+
+.author-img {
+    width: 50px;
+    border-radius: 50%;
+    margin: 0 14px 0 24px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.post-info {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.author-name {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
 }

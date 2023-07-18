@@ -38,4 +38,13 @@
             }
             return NULL;
         }
+
+        public static function getAuthorInfo($mail) {
+            $hash = md5(strtolower(trim($mail)));
+            $json = file_get_contents("https://de.gravatar.com/$hash.json");
+            $data =  json_decode($json, TRUE);
+            if (!isset($data["entry"])) return NULL;
+            if (count($data["entry"]) <= 0) return NULL;
+            return $data["entry"][0];
+        }
     }

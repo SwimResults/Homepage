@@ -158,6 +158,58 @@ hr {
     border: solid 0.5px #ccc;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+table td, table th {
+    /*border: 1px solid #ddd;*/
+    padding: 8px;
+}
+
+table tr td:first-child {
+    border-left: none;
+}
+
+table tr td {
+    border-left: 1px solid #ddd;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+table tr:first-child td {
+    border-top-left-radius: var(--table-border-radius);
+    border-top-right-radius: var(--table-border-radius);
+}
+
+:root {
+    --table-border-radius: 12px;
+}
+
+table th:first-child {
+    border-top-left-radius: var(--table-border-radius);
+}
+
+table th:last-child {
+    border-top-right-radius: var(--table-border-radius);
+}
+
+table tr:last-child {
+    border-bottom-left-radius: var(--table-border-radius);
+    border-bottom-right-radius: var(--table-border-radius);
+}
+
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--main-first);
+    color: white;
+}
+
 .btn {
     background: linear-gradient(to bottom right, var(--gradient-first) 0%, var(--gradient-second) 100%);
     padding: 6px 10px;
