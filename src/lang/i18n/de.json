@@ -4,7 +4,7 @@
         "IMPRESSUM": "Impressum",
         "CONTACT": "Kontakt",
         "MAIN": "Start",
-        "FEATURES": "Funktionen",
+        "FEATURES": "Features",
         "BLOG": "Blog",
         "OPEN_APP_BUTTON": "SwimResults öffnen"
     },
@@ -26,11 +26,54 @@
                 "MEETINGS_DESCRIPTION": "Veranstaltungen",
                 "ATHLETES_DESCRIPTION": "Sportler",
                 "STARTS_DESCRIPTION": "Starts"
-            }
+            },
+            "INFOS": {
+                "MEETINGS_TITLE": "Nächste Veranstaltung",
+                "MEETINGS_LINK_TEXT": "weitere Wettkämpfe",
+                "FEATURES_TITLE": "Das kann SwimResults!",
+                "FEATURES_INFO_TEXT": "Livetiming, Platzierungen, Bahnbelegungen, Zeitpläne und Wettkampffolgen oder Dateisammlungen: SwimResults bietet zahlreiche Funktionen und Inhalte.",
+                "FEATURES_LINK_TEXT": "Funktionsumfang",
+                "BLOG_TITLE": "Up to Date bleiben",
+                "BLOG_INFO_TEXT": "In regelmäßigen Blog-Posts informieren die Entwickler oder Nutzer von SwimResults über neue Funktionen, Tipps zur Nutzung oder Beantworten häufig gestellte Fragen.",
+                "BLOG_LINK_TEXT": "Zum Blog",
+                "ORGANIZER_TITLE": "SwimResults für deine Veranstaltung",
+                "ORGANIZER_INFO_TEXT": "Du bist Veranstalter eines Schwimmwettkampfes und möchtest SwimResults bei deiner Veranstaltung anbieten?",
+                "ORGANIZER_LINK_TEXT": "Infos für Veranstalter",
+                "SERVICE_TITLE": "Enge Zusammenarbeit mit Auswertern",
+                "SERVICE_INFO_TEXT": "Als Betreiber eines Ergebnisdienstes hast du die Möglichkeit Veranstaltern von Schwimmwettkämpfen SwimResults-Unterstützung anzubieten.",
+                "SERVICE_LINK_TEXT": "Infos für Ergebnisdienste"
+            },
+            "UNDER_DEVELOPMENT_INFO_TEXT_1": "SwimResults befindet sich momentan in der Entwicklung! Der Release ist für Ende 2023 geplant. Der aktuelle Stand der Entwicklung kann unter ",
+            "UNDER_DEVELOPMENT_INFO_TEXT_2": " eingesehen werden."
         },
         "BANNER": {
             "MAIN": {
                 "INFO_TEXT": "Ergebnisse, Meldungen, <br>Livetiming und Auswertungen"
+            }
+        },
+        "BLOG": {
+            "ARTICLE_NOT_FOUND_TITLE": "Ups!",
+            "ARTICLE_NOT_FOUND_TEXT": "Der gesuchte Beitrag konnte nicht gefunden werden!",
+            "UPDATED_AT": "aktualisiert",
+            "MORE_ARTICLES": "Weitere Beiträge",
+            "WRITTEN_BY": "geschrieben von"
+        },
+        "FEATURES": {
+            "FEATURES": {
+                "STARTS_TITLE": "Wann bin ich dran?",
+                "STARTS_INFO_TEXT": "Startlisten, Bahnbelegungen und Startlisten für jeden Sportler mit allen wichtigen Informationen auf einen Blick: quasi ein interaktives Meldeergebnis",
+                "RESULTS_TITLE": "Der lange Gang zum Protokollaushang",
+                "RESULTS_INFO_TEXT": "Sobald du angeschlagen hast, steht deine vorläufige Zeit im System, unmittelbar nachdem das Protokoll freigegeben wurde, sind die Platzierungen und finalen Zeiten einsehbar. Nie wieder Protokolle abfotografieren!",
+                "SEARCH_TITLE": "Wer sucht der findet!",
+                "SEARCH_INFO_TEXT": "Mit der Suchfunktion lassen sich Sportler und Vereine blitzschnell finden und ihre Starts respektive Mitglieder ansehen.",
+                "LIVETIMING_TITLE": "Huch! Lauf verpasst im Livetiming",
+                "LIVETIMING_INFO_TEXT": "Zuhausegebliebene kennen das Problem: Kurz nicht hingeschaut und Livetiming verpasst. Das Livetiming in SwimResults hat Funktionen zum \"Zurückspulen\" und Pausieren.",
+                "FILES_TITLE": "Praktischer Dateien Finder (PDF)",
+                "FILES_INFO_TEXT": "Meldeliste, Protokoll, DSV-Datei oder Bestellformular: Alle Dateien aktuell und sortiert an einem Ort.",
+                "DASHBOARD_TITLE": "Den Überblick behalten",
+                "DASHBOARD_INFO_TEXT": "",
+                "FAVS_TITLE": "It's-A Me, Mario",
+                "FAVS_INFO_TEXT": "Wähle aus, welcher Sportler du bist und wer deine Favoriten sind, um zugeschnittene Übersichten und Benachrichtigungen zu erhalten."
             }
         }
     },
@@ -49,6 +92,28 @@
                 "OCT": "Okt",
                 "NOV": "Nov",
                 "DEC": "Dez"
+            },
+            "AGO": {
+                "BEFORE_TEXT": "vor",
+                "AFTER_TEXT": " ",
+                "UNIT": {
+                    "SINGLE": {
+                        "SECONDS": "einer Sekunde",
+                        "MINUTES": "einer Minute",
+                        "HOURS": "einer Stunde",
+                        "DAYS": "einem Tag",
+                        "MONTHS": "einem Monat",
+                        "YEARS": "einem Jahr"
+                    },
+                    "PLURAL": {
+                        "SECONDS": "Sekunden",
+                        "MINUTES": "Minuten",
+                        "HOURS": "Stunden",
+                        "DAYS": "Tagen",
+                        "MONTHS": "Monaten",
+                        "YEARS": "Jahren"
+                    }
+                }
             }
         }
     }

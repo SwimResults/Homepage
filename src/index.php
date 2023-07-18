@@ -7,6 +7,13 @@
 ?>
 <html lang="de">
     <head>
+        <?php
+            if ($_SERVER["SERVER_NAME"] == "localhost")
+                echo('<base href="/swimresults/src/">');
+            else
+                echo('<base href="/">');
+        ?>
+
     <?php
         ini_set('display_errors', 1);
         ini_set('display_startup_errors', 1);
@@ -26,8 +33,11 @@
 
         $pages = json_decode(file_get_contents("php/config/pages.json"), TRUE);
 
-        if (isset($_GET["path"]))
-            $path = $_GET["path"];
+        if (isset($_GET["path"])) {
+            $full_path = $_GET["path"];
+            $path = $full_path;
+            if (str_contains($full_path, "/")) $path = substr($full_path, 0, strpos($full_path, "/"));
+        }
         else $path = "main";
 
         if ($path[-1] == "/") $path = substr($path, 0, -1);

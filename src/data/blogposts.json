@@ -16,5 +16,23 @@
     "created_at": "10.07.2023 11:09",
     "published_at": "10.07.2023 11:11",
     "updated_at": "10.07.2023 11:09"
+  },
+  {
+    "id": 3,
+    "title": "Informationen für Veranstalter",
+    "author": "konrad2002",
+    "content_html": "Hier werden demnächst Informationen zur Nutzung von SwimResults bei Wettkämpfen veröffentlicht.",
+    "created_at": "15.07.2023 21:32",
+    "published_at": "15.07.2023 21:32",
+    "updated_at": "15.07.2023 21:32"
+  },
+  {
+    "id": 4,
+    "title": "Informationen für Ergebnisdienste",
+    "author": "konrad2002",
+    "content_html": "Hier werden demnächst Informationen zur Nutzung von SwimResults von Ergebnisdiensten veröffentlicht.",
+    "created_at": "15.07.2023 21:33",
+    "published_at": "15.07.2023 21:33",
+    "updated_at": "15.07.2023 21:33"
   }
 ]

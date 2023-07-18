@@ -7,7 +7,7 @@
 <div class="section">
     <h1 class="title"><?php T::e("CONTENT.MAIN.TITLE"); ?></h1>
     <blockquote>
-        <p>SwimResults befindet sich momentan in der Entwicklung! Der Release ist für Ende 2023 geplant. Der aktuelle Stand der Entwicklung kann unter <a href="https://status.swimresults.de/">status.swimresults.de</a> eingesehen werden.</p>
+        <p><?php T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_1"); ?><a href="https://status.swimresults.de/">status.swimresults.de</a><?php T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_2"); ?></p>
     </blockquote>
     <p><?php T::e("CONTENT.MAIN.INTRO_INFO_TEXT"); ?></p>
     <br>
@@ -17,12 +17,12 @@
 <div class="parallax parallax-1"></div>
 
 <div class="section">
-    <h1>Nächste Veranstaltung</h1>
+    <h1><?php T::e("CONTENT.MAIN.INFOS.MEETINGS_TITLE"); ?></h1>
     <?php
         $meeting = MeetingsHelper::getNextMeeting();
         printMeeting($meeting);
     ?>
-    <a class="section-link-big" href="meetings">weitere Wettkämpfe</a>
+    <a class="section-link-big" href="meetings"><?php T::e("CONTENT.MAIN.INFOS.MEETINGS_LINK_TEXT"); ?></a>
 </div>
 <div class="section section-2">
     <div class="section-split">
@@ -30,21 +30,21 @@
             <img src="images/drawings/features.png" alt="SwimResults Features">
         </div>
         <div class="section-right">
-            <h1>Das kann SwimResults!</h1>
-            <p>Livetiming, Platzierungen, Bahnbelegungen, Zeitpläne und Wettkampffolgen oder Dateisammlungen: SwimResults bietet zahlreiche Funktionen und Inhalte.</p>
-            <a class="section-link-big" href="blog/veranstalter">Funktionsumfang</a>
+            <h1><?php T::e("CONTENT.MAIN.INFOS.FEATURES_TITLE"); ?></h1>
+            <p><?php T::e("CONTENT.MAIN.INFOS.FEATURES_INFO_TEXT"); ?></p>
+            <a class="section-link-big" href="features"><?php T::e("CONTENT.MAIN.INFOS.FEATURES_LINK_TEXT"); ?></a>
         </div>
     </div>
 </div>
 <div class="section">
-    <div class="section-split">
+    <div class="section-split section-split-switch">
         <div class="section-left">
-            <h1>Up to date bleiben</h1>
-            <p>In regelmäßigen Blog-Posts informieren die Entwickler oder Nutzer von SwimResults über neue Funktionen, Tipps zur Nutzung oder Beantworten häufig gestellte Fragen.</p>
-            <a class="section-link-big" href="blog/veranstalter">Zum Blog</a>
+            <h1><?php T::e("CONTENT.MAIN.INFOS.BLOG_TITLE"); ?></h1>
+            <p><?php T::e("CONTENT.MAIN.INFOS.BLOG_INFO_TEXT"); ?></p>
+            <a class="section-link-big" href="blog"><?php T::e("CONTENT.MAIN.INFOS.BLOG_LINK_TEXT"); ?></a>
         </div>
         <div class="section-right">
-            <img src="images/drawings/blog.png" alt="SwimResults Features">
+            <img src="images/drawings/blog.png" alt="SwimResults Blog">
         </div>
     </div>
 </div>
@@ -54,12 +54,12 @@
 <div class="section">
     <div class="section-split">
         <div class="section-left">
-
+            <img src="images/drawings/organizer.png" alt="SwimResults Organizer">
         </div>
         <div class="section-right">
-            <h1>SwimResults für deine Veranstaltung</h1>
-            <p>Du bist Veranstalter eines Schwimmwettkampfes und möchtest SwimResults bei deiner Veranstaltung anbieten?</p>
-            <a class="section-link-big" href="blog/veranstalter">Infos für Veranstalter</a>
+            <h1><?php T::e("CONTENT.MAIN.INFOS.ORGANIZER_TITLE"); ?></h1>
+            <p><?php T::e("CONTENT.MAIN.INFOS.ORGANIZER_INFO_TEXT"); ?></p>
+            <a class="section-link-big" href="article/3-informationen-für-veranstalter"><?php T::e("CONTENT.MAIN.INFOS.ORGANIZER_LINK_TEXT"); ?></a>
         </div>
     </div>
 </div>
@@ -71,25 +71,25 @@
             <span class="description"><?php T::e("CONTENT.MAIN.VALUES.MEETINGS_DESCRIPTION"); ?></span>
         </div>
         <div class="section-col value-info">
-            <span class="value">513</span>
+            <span class="value">700</span>
             <span class="description"><?php T::e("CONTENT.MAIN.VALUES.ATHLETES_DESCRIPTION"); ?></span>
         </div>
         <div class="section-col value-info">
-            <span class="value">1560</span>
+            <span class="value">896</span>
             <span class="description"><?php T::e("CONTENT.MAIN.VALUES.STARTS_DESCRIPTION"); ?></span>
         </div>
     </div>
     <br><br>
 </div>
 <div class="section">
-    <div class="section-split">
+    <div class="section-split section-split-switch">
         <div class="section-left">
-            <h1>Enge Zusammenarbeit mit Auswertern</h1>
-            <p>Als Betreiber eines Ergebnisdienstes hast du die Möglichkeit Veranstaltern von Schwimmwettkämpfen Unterstützung von SwimResults anzubieten.</p>
-            <a class="section-link-big" href="blog/veranstalter">Infos für Ergebnisdienste</a>
+            <h1><?php T::e("CONTENT.MAIN.INFOS.SERVICE_TITLE"); ?></h1>
+            <p><?php T::e("CONTENT.MAIN.INFOS.SERVICE_INFO_TEXT"); ?></p>
+            <a class="section-link-big" href="article/4-informationen-für-ergebnisdienste"><?php T::e("CONTENT.MAIN.INFOS.SERVICE_LINK_TEXT"); ?></a>
         </div>
         <div class="section-right">
-
+            <img src="images/drawings/service.png" alt="SwimResults Ergebnisdienst">
         </div>
     </div>
 </div>
