@@ -1,5 +1,6 @@
 <?php
     session_start();
+    date_default_timezone_set("Europe/Berlin");
     if (isset($_REQUEST["lang"])) {
         $_SESSION["lang"] = $_REQUEST["lang"];
     }
