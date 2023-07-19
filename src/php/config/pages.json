@@ -45,5 +45,12 @@
     "permission": 0,
     "nav": false,
     "footer": true
+  },
+  "privacy-policy": {
+    "type": "page",
+    "title": "NAV.PRIVACY",
+    "permission": 0,
+    "nav": false,
+    "footer": true
   }
 }

@@ -11,6 +11,18 @@
 
 <script src="js/scroll.js"></script>
 
+<?php if (getenv("SR_HOMEPAGE_ENV") == "PRODUCTION") : ?>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4RPVEYN2NN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-4RPVEYN2NN');
+    </script>
+<?php endif; ?>
+
 <?php if (file_exists("apple-touch-icon.png")): ?>
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">

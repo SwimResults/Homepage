@@ -6,7 +6,8 @@
         "FEATURES": "Features",
         "BLOG": "Blog",
         "OPEN_APP_BUTTON": "Open SwimResults",
-        "IMPRESSUM": "Imprint"
+        "IMPRESSUM": "Imprint",
+        "PRIVACY": "Privacy Policy"
     },
     "EXAMPLE": "This is an example!",
     "CONTENT": {
@@ -38,7 +39,7 @@
                 "BLOG_LINK_TEXT": "Show Blog",
                 "ORGANIZER_TITLE": "SwimResults for your Meeting",
                 "ORGANIZER_INFO_TEXT": "You are organising a swimming competition and want to provide SwimResults support for your participants?",
-                "ORGANIZER_LINK_TEXT": "Information for Organizers (DE)",
+                "ORGANIZER_LINK_TEXT": "Information for Organisers (DE)",
                 "SERVICE_TITLE": "Cooperation with result services",
                 "SERVICE_INFO_TEXT": "Result services can have a cooperation with SwimResults to offer online services to their customers.",
                 "SERVICE_LINK_TEXT": "Information for Result Services (DE)"
