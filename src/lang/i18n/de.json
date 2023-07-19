@@ -6,7 +6,8 @@
         "MAIN": "Start",
         "FEATURES": "Features",
         "BLOG": "Blog",
-        "OPEN_APP_BUTTON": "SwimResults öffnen"
+        "OPEN_APP_BUTTON": "SwimResults öffnen",
+        "PRIVACY": "Datenschutzerklärung"
     },
     "EXAMPLE": "Das ist ein Beispiel!",
     "CONTENT": {
