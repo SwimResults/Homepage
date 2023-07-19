@@ -1,6 +1,6 @@
 FROM php:8.0-apache as php-apache
 
-#RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
 RUN apt-get update -y
 #RUN apt-get install libyaml-dev -y
 RUN apt-get install gettext -y

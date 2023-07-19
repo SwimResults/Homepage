@@ -104,9 +104,15 @@
     .section .selection-img.img-crop-right {
         object-position: left;
     }
+    .section-split-switch {
+        flex-direction: column-reverse;
+    }
     .section-split .section-left,
     .section-split .section-right {
         width: 100%;
+    }
+    .section-split img {
+        margin: 0 calc(50% - 175px) 40px;
     }
     .value-info {
         text-align: center;

@@ -52,8 +52,29 @@ body {
     margin: 50px 20%;
 }
 
-.page-wide {
+.page-full {
     margin: 0;
+}
+
+.page-wide {
+    margin: 50px;
+}
+
+.page-full .title {
+    text-align: center;
+}
+
+.img-page-center {
+    width: 50%;
+    margin: 50px 25%;
+}
+
+.img-gray {
+    filter: grayscale(1) brightness(1.4);
+}
+
+.center {
+    text-align: center;
 }
 
 .container {
@@ -141,6 +162,64 @@ hr {
     border: solid 0.5px #ccc;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+table td, table th {
+    /*border: 1px solid #ddd;*/
+    padding: 8px;
+}
+
+table tr td:first-child {
+    border-left: none;
+}
+
+table tr td {
+    border-left: 1px solid #ddd;
+    /*border: 1px solid #ddd;*/
+}
+
+table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+table tr:first-child td {
+    border-top-left-radius: var(--table-border-radius);
+    border-top-right-radius: var(--table-border-radius);
+}
+
+:root {
+    --table-border-radius: 12px;
+}
+
+table th:first-child {
+    border-top-left-radius: var(--table-border-radius);
+}
+
+table th:last-child {
+    border-top-right-radius: var(--table-border-radius);
+}
+
+table tr:last-child {
+    border-bottom-left-radius: var(--table-border-radius);
+    border-bottom-right-radius: var(--table-border-radius);
+}
+
+
+table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--main-first);
+    color: white;
+}
+
 .btn {
     background: linear-gradient(to bottom right, var(--gradient-first) 0%, var(--gradient-second) 100%);
     padding: 6px 10px;
@@ -180,6 +259,12 @@ footer .links a {
     margin: 0 20px;
 }
 
+@supports (-webkit-touch-callout: none) {
+    .background {
+        background-attachment: unset;
+    }
+}
+
 @media only screen and (max-width: 1120px) {
     .title {
         font-size: 60px;
@@ -197,15 +282,15 @@ footer .links a {
     .page-content {
         margin: 50px 20px;
     }
-    .page-wide {
+    .page-full {
         margin: 0;
     }
     .background-text {
         font-size: 34px;
     }
-    .background {
-        background-attachment: unset;
-    }
+    /*.background {*/
+    /*    background-attachment: unset;*/
+    /*}*/
 }
 @media only screen and (max-width: 600px) {
     .banner-small {

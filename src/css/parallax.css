@@ -13,7 +13,7 @@
 }
 
 .parallax-1 {
-    background-image: url("../images/tl_belek-04.jpg");
+    background-image: url("../images/parallax/tl_belek_luca.jpg");
 }
 
 .parallax-2 {
@@ -21,18 +21,20 @@
 }
 
 .parallax-3 {
-    background-image: url("../images/24-IESC-2019_096.jpg");
+    background-image: url("../images/parallax/iesc_finale.jpg");
 }
 
 .parallax-4 {
-    background-image: url("../images/bg1.JPG");
+    background-image: url("../images/parallax/leipzig_startbruecke.JPG");
 }
 
-
-@media only screen and (max-width: 800px) {
+@supports (-webkit-touch-callout: none) {
     .parallax {
         background-attachment: unset;
     }
+}
+
+@media only screen and (max-width: 800px) {
     .parallax-1 {
         background-position-x: -56px;
     }

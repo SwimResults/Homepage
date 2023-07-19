@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/meeting.css">
 <link rel="stylesheet" href="css/parallax.css">
+<link rel="stylesheet" href="css/blog.css">
+<link rel="stylesheet" href="css/features.css">
 
 <script src="js/scroll.js"></script>
 
@@ -17,7 +19,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#204988">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-TileImage" content="mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
 <?php else: ?>
     <!-- Favicon -->

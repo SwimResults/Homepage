@@ -5,7 +5,7 @@
     "permission": 0,
     "nav": true,
     "banner": true,
-    "style": "wide"
+    "style": "full"
   },
   "meetings": {
     "type": "page",
@@ -17,15 +17,21 @@
     "type": "page",
     "title": "NAV.FEATURES",
     "permission": 0,
-    "nav": false
+    "nav": true,
+    "style": "full"
   },
   "blog": {
     "type": "page",
     "title": "NAV.BLOG",
     "permission": 0,
-    "nav": true
+    "nav": true,
+    "style": "wide"
   },
-
+  "article": {
+    "type": "page",
+    "permission": 0,
+    "nav": false
+  },
   "contact": {
     "type": "page",
     "title": "NAV.CONTACT",
