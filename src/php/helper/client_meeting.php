@@ -17,6 +17,13 @@
             return 3;
         }
 
+        public static function getMeetings() {
+            if (!self::$API_URL) return array();
+            $data = Api::get(self::$API_URL, "/meeting");
+            if ($data) return $data;
+            return array();
+        }
+
 
 
     }
