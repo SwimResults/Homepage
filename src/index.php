@@ -59,6 +59,9 @@
         <div class="background">
             <span class="background-text">
                 <?php echo(T::t('CONTENT.BANNER.MAIN.INFO_TEXT')); ?>
+                <span class="banner-mobile-app-btn">
+                    <?php echo('<a class="btn" href="'.Env::getAppUrl().'">'.T::t("NAV.OPEN_APP_BUTTON").'</a>'); ?>
+                </span>
             </span>
         </div>
     <?php else: ?>
