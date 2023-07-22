@@ -67,15 +67,15 @@
     <br><br>
     <div class="section-cols">
         <div class="section-col value-info">
-            <span class="value">3</span>
+            <span class="value"><?php echo(MeetingClient::getMeetingCount()); ?></span>
             <span class="description"><?php T::e("CONTENT.MAIN.VALUES.MEETINGS_DESCRIPTION"); ?></span>
         </div>
         <div class="section-col value-info">
-            <span class="value">700</span>
+            <span class="value"><?php echo(AthleteClient::getAthleteCount()); ?></span>
             <span class="description"><?php T::e("CONTENT.MAIN.VALUES.ATHLETES_DESCRIPTION"); ?></span>
         </div>
         <div class="section-col value-info">
-            <span class="value">896</span>
+            <span class="value"><?php echo(StartClient::getStartCount()); ?></span>
             <span class="description"><?php T::e("CONTENT.MAIN.VALUES.STARTS_DESCRIPTION"); ?></span>
         </div>
     </div>
