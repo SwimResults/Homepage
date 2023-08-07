@@ -6,11 +6,6 @@
 }
 
 @font-face {
-    font-family: "SwimResultsBold";
-    src: url("../font/segoe-ui-black.ttf");
-}
-
-@font-face {
     font-family: "SwimResults";
     src: url("../font/SwimResults.ttf");
 }
