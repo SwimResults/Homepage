@@ -23,24 +23,24 @@
 
 
 <div class="section section-2">
-    <div class="section-split section-split-switch">
+    <div class="section-split">
         <div class="section-left">
-            <h1><?php T::e("CONTENT.FEATURES.FEATURES.SEARCH_TITLE"); ?></h1>
-            <p><?php T::e("CONTENT.FEATURES.FEATURES.SEARCH_INFO_TEXT"); ?></p>
+            <h1><?php T::e("CONTENT.FEATURES.FEATURES.LIVETIMING_TITLE"); ?></h1>
+            <p><?php T::e("CONTENT.FEATURES.FEATURES.LIVETIMING_INFO_TEXT"); ?></p>
         </div>
         <div class="section-right">
-            <img src="images/features/search.png" alt="SwimResults Search">
+            <img src="images/features/livetiming_new.png" alt="SwimResults Livetiming">
         </div>
     </div>
 </div>
 <div class="section">
-    <div class="section-split">
+    <div class="section-split section-split-switch">
         <div class="section-left">
-            <img src="images/features/livetiming.png" alt="SwimResults Livetiming">
+            <img src="images/features/athletes.png" alt="SwimResults Search">
         </div>
         <div class="section-right">
-            <h1><?php T::e("CONTENT.FEATURES.FEATURES.LIVETIMING_TITLE"); ?></h1>
-            <p><?php T::e("CONTENT.FEATURES.FEATURES.LIVETIMING_INFO_TEXT"); ?></p>
+            <h1><?php T::e("CONTENT.FEATURES.FEATURES.SEARCH_TITLE"); ?></h1>
+            <p><?php T::e("CONTENT.FEATURES.FEATURES.SEARCH_INFO_TEXT"); ?></p>
         </div>
     </div>
 </div>
