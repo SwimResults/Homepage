@@ -48,10 +48,21 @@
         }
 
         $page = $pages[$path];
+
+        if ($path == "main"):
     ?>
 	<title>SwimResults | Wettkampf-App für Schwimmer, Trainer und co.</title>
 	<!-- <meta name="description" content="SwimResults ist eine Online-Plattform für Schwimmwettkämpfe, welche Daten von teilnehmenden Veranstaltungen aufbereitet und strukturiert zur Verfügung stellt. Mit SwimResults können Sportler, Training, Familie und Freunde Meldungen, Ergebnisse, sowie Livetimings und Auswertungen für verschiedene Sportler, Vereine und Veranstaltungen einsehen."> -->
 	<meta name="description" content="Ergebnisse, Meldungen, Livetiming, Platzierungen und Auswertungen für Schwimmwettkämpfe – Das Tool für Schwimmer, Trainer und Freunde">
+
+    <?php
+        else:
+
+            echo('<title>'.T::t($page["title"]).'</title>');
+
+        endif;
+
+    ?>
 </head>
 <body>
     <?php include("php/layout/header.php"); ?>
