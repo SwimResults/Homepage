@@ -60,7 +60,7 @@
 <div class="section">
     <div class="section-split">
         <div class="section-left">
-            <img src="images/features/files.png" alt="SwimResults Files">
+            <img src="images/features/file_list.png" alt="SwimResults Files">
         </div>
         <div class="section-right">
             <h1><?php T::e("CONTENT.FEATURES.FEATURES.FILES_TITLE"); ?></h1>
