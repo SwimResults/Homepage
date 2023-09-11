@@ -57,8 +57,8 @@
 
     <?php
         else:
-
-            echo('<title>'.T::t($page["title"]).'</title>');
+            if (isset($page["title"]))
+                echo('<title>'.T::t($page["title"]).' | SwimResults</title>');
 
         endif;
 

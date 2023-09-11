@@ -27,6 +27,9 @@
         echo('<p class="center"><i>'.T::t("CONTENT.BLOG.ARTICLE_NOT_FOUND_TEXT").'</i></p>');
         echo('</div>');
     } else {
+        if (isset($post["title"])) {
+            echo('<title>'. strip_tags($post["title"]) .' | SwimResults</title>');
+        }
         printArticleFullPage($post);
         $posts = BlogHelper::getRandomBlogPosts(4, $post["id"]);
         echo('<br><br><hr><br><br>');
