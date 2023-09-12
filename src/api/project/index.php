@@ -97,8 +97,9 @@
         $prog_sum += $p;
     }
 
-    function sortByType($a, $b) {
-        return ($a["progress"] < $b["progress"]);
+    function sortByType($a, $b): bool
+    {
+        return ($a["progress"] > $b["progress"]);
     }
 
     usort($d, "sortByType");
