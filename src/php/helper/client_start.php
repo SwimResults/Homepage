@@ -12,8 +12,8 @@
 
         public static function getStartCount(): int {
             if (!self::$API_URL) return 869;
-            $data = Api::get(self::$API_URL, "/start");
-            if ($data) return count($data);
+            $data = Api::get(self::$API_URL, "/start/amount");
+            if ($data) return $data;
             return 869;
         }
 
