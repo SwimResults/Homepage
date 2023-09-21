@@ -7,7 +7,9 @@
         "BLOG": "Blog",
         "OPEN_APP_BUTTON": "Open SwimResults",
         "IMPRESSUM": "Imprint",
-        "PRIVACY": "Privacy Policy"
+        "PRIVACY": "Privacy Policy",
+        "ARTICLE": "Article",
+        "TERMS_OF_USE": "Terms of Use"
     },
     "EXAMPLE": "This is an example!",
     "CONTENT": {
