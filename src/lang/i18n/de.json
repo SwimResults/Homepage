@@ -1,14 +1,15 @@
 {
     "NAV": {
         "MEETINGS": "Veranstaltungen",
-        "IMPRESSUM": "Impressum",
         "CONTACT": "Kontakt",
         "MAIN": "Start",
         "FEATURES": "Features",
         "BLOG": "Blog",
         "OPEN_APP_BUTTON": "SwimResults öffnen",
+        "IMPRESSUM": "Impressum",
         "PRIVACY": "Datenschutzerklärung",
-        "ARTICLE": "Artikel"
+        "ARTICLE": "Artikel",
+        "TERMS_OF_USE": "Nutzungsbedingungen"
     },
     "EXAMPLE": "Das ist ein Beispiel!",
     "CONTENT": {

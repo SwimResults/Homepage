@@ -52,5 +52,12 @@
     "permission": 0,
     "nav": false,
     "footer": true
+  },
+  "terms-of-use": {
+    "type": "page",
+    "title": "NAV.TERMS_OF_USE",
+    "permission": 0,
+    "nav": false,
+    "footer": true
   }
 }
