@@ -6,9 +6,10 @@
 
 <div class="section">
     <h1 class="title"><?php T::e("CONTENT.MAIN.TITLE"); ?></h1>
-    <blockquote>
-        <p><?php T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_1"); ?><a href="https://status.swimresults.de/">status.swimresults.de</a><?php T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_2"); ?></p>
-    </blockquote>
+    <h1 class="title" style="display: none">Swim Results</h1>
+<!--    <blockquote>-->
+<!--        <p>--><?php //T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_1"); ?><!--<a href="https://status.swimresults.de/">status.swimresults.de</a>--><?php //T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_2"); ?><!--</p>-->
+<!--    </blockquote>-->
     <p><?php T::e("CONTENT.MAIN.INTRO_INFO_TEXT"); ?></p>
     <br>
     <img src="images/sr_laptop_1.png" class="selection-img img-crop img-crop-right" alt="SwimResults Screenshot Laptop">
