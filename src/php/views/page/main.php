@@ -113,6 +113,9 @@
         <a href="https://instagram.com/swimresults" class="link-button">
             <img src="images/instagram.png" alt="Instagram" class="link-button-icon">
         </a>
+        <a href="https://wa.me/4981618063784" class="link-button">
+            <img src="images/whatsapp.svg" alt="WhatsApp" class="link-button-icon">
+        </a>
         <a href="mailto:kontakt@swimresults.de" class="link-button">
             <img src="images/mail.png" alt="Mail" class="link-button-icon">
         </a>
