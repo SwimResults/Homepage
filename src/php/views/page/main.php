@@ -101,26 +101,33 @@
     <img src="images/sr_phone_1.png" class="selection-img" alt="SwimResults Screenshot Phone">
     <h1>Links</h1>
     <div class="link-buttons">
-        <a href="https://github.com/SwimResults" class="link-button">
-            <img src="images/github.png" alt="GitHub" class="link-button-icon">
-        </a>
-        <a href="https://my.erzgebirgsschwimmcup.de/about.php" class="link-button">
-            <img src="images/myiesc.png" alt="myIESC" class="link-button-icon">
-        </a>
         <a href="https://app.swimresults.de/" class="link-button">
             <img src="images/sr.png" alt="SwimResults - App" class="link-button-icon">
         </a>
-        <a href="https://instagram.com/swimresults" class="link-button">
-            <img src="images/instagram.png" alt="Instagram" class="link-button-icon">
-        </a>
-        <a href="https://twitter.com/SwimResultsDE" class="link-button">
-            <img src="images/twitter.jpg" alt="Twitter / X" class="link-button-icon">
+        <a href="https://github.com/SwimResults" class="link-button">
+            <img src="images/github.png" alt="GitHub" class="link-button-icon">
         </a>
         <a href="https://wa.me/4981618063784" class="link-button">
             <img src="images/whatsapp.svg" alt="WhatsApp" class="link-button-icon">
         </a>
         <a href="mailto:kontakt@swimresults.de" class="link-button">
             <img src="images/mail.png" alt="Mail" class="link-button-icon">
+        </a>
+    </div>
+    <br>
+    <h1>Social Media</h1>
+    <div class="link-buttons">
+        <a href="https://instagram.com/swimresults" class="link-button">
+            <img src="images/instagram.png" alt="Instagram" class="link-button-icon">
+        </a>
+        <a href="https://twitter.com/SwimResultsDE" class="link-button">
+            <img src="images/twitter.jpg" alt="Twitter / X" class="link-button-icon">
+        </a>
+        <a href="https://www.youtube.com/channel/UC_QYT7i0fMkxjU5aquqSExQ" class="link-button">
+            <img src="images/youtube.png" alt="YouTube" class="link-button-icon">
+        </a>
+        <a href="https://www.linkedin.com/swimresults" class="link-button">
+            <img src="images/linkedin.png" alt="LinkedIn" class="link-button-icon">
         </a>
     </div>
 </div>
