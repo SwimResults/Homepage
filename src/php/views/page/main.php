@@ -12,12 +12,18 @@
 <!--    </blockquote>-->
     <p><?php T::e("CONTENT.MAIN.INTRO_INFO_TEXT"); ?></p>
     <br>
-    <a class="btn nav-tile" href="https://app.swimresults.de">im Browser öffnen</a>
+    <?php echo('<a class="btn nav-tile" href="'.Env::getAppUrl().'">'.T::t("NAV.OPEN_APP_IN_BROWSER_BUTTON").'</a>'); ?>
     <br>
-    <br>
-    <a href="https://apps.microsoft.com/detail/SwimResults/9P07LPX2XTWC?launch=true&mode=mini">
-        <img width="200" src="https://get.microsoft.com/images/de-de%20dark.svg">
-    </a>
+    <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
+    <ms-store-badge
+            productid="9P07LPX2XTWC"
+            window-mode="pop up"
+            theme="dark"
+            language="<?php echo($lang); ?>"
+            animation="on"
+            style="scale: 0.6;"
+    >
+    </ms-store-badge>
     <br>
     <img src="images/sr_laptop_1.png" class="selection-img img-crop img-crop-right" alt="SwimResults Screenshot Laptop">
 </div>
