@@ -12,6 +12,12 @@
 <!--    </blockquote>-->
     <p><?php T::e("CONTENT.MAIN.INTRO_INFO_TEXT"); ?></p>
     <br>
+    <a href="https://apps.microsoft.com/detail/SwimResults/9P07LPX2XTWC?launch=true&mode=mini">
+        <img width="200" src="https://get.microsoft.com/images/de-de%20dark.svg">
+    </a>
+    <br>
+    <a class="btn nav-tile" href="https://app.swimresults.de">SwimResults öffnen</a>
+    <br>
     <img src="images/sr_laptop_1.png" class="selection-img img-crop img-crop-right" alt="SwimResults Screenshot Laptop">
 </div>
 
