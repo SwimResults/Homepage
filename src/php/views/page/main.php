@@ -16,7 +16,7 @@
         <img width="200" src="https://get.microsoft.com/images/de-de%20dark.svg">
     </a>
     <br>
-    <a class="btn nav-tile" href="https://app.swimresults.de">SwimResults öffnen</a>
+    <a class="btn nav-tile" href="https://app.swimresults.de">im Browser öffnen</a>
     <br>
     <img src="images/sr_laptop_1.png" class="selection-img img-crop img-crop-right" alt="SwimResults Screenshot Laptop">
 </div>
