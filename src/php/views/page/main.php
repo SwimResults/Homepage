@@ -12,6 +12,19 @@
 <!--    </blockquote>-->
     <p><?php T::e("CONTENT.MAIN.INTRO_INFO_TEXT"); ?></p>
     <br>
+    <?php echo('<a class="btn nav-tile" href="'.Env::getAppUrl().'">'.T::t("NAV.OPEN_APP_IN_BROWSER_BUTTON").'</a>'); ?>
+    <br>
+    <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
+    <ms-store-badge
+            productid="9P07LPX2XTWC"
+            window-mode="pop up"
+            theme="dark"
+            language="<?php echo($lang); ?>"
+            animation="on"
+            style="scale: 0.6;"
+    >
+    </ms-store-badge>
+    <br>
     <img src="images/sr_laptop_1.png" class="selection-img img-crop img-crop-right" alt="SwimResults Screenshot Laptop">
 </div>
 
