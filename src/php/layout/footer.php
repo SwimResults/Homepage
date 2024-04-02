@@ -1,6 +1,6 @@
 <footer>
     <span>
-        © 2023 - Konrad Weiß | swimresults.de
+        © 2024 - Konrad Weiß | swimresults.de
     </span>
     <div class="links">
         <?php
