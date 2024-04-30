@@ -6,3 +6,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
 
 Redirect 302 /iesc "https://app.swimresults.de/m/IESC23"
+Redirect 302 /dm-fs-2024 "https://app.swimresults.de/m/DMFS24"
