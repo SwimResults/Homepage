@@ -16,6 +16,18 @@
         // TODO: check start date
         public static function getNextMeeting() {
             $meetings = MeetingClient::getMeetings();
+
+            function sortMeetingsByDate($a, $b) {
+                return strtotime($a["date_end"]) - strtotime($b["date_end"]);
+            }
+
+            usort($meetings, "sortMeetingsByDate");
+
+            $now = time();
+            foreach ($meetings as $meeting) {
+                if (strtotime($meeting["date_end"]) > $now) return $meeting;
+            }
+
             if ($meetings) return $meetings[0];
 
             $data = file_get_contents("data/meetings.json");
