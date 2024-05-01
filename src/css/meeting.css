@@ -64,7 +64,7 @@
 }
 
 .meeting-link {
-    margin: 0 8px;
+    /*margin: 0 8px;*/
 }
 
 @media only screen and (max-width: 800px) {
@@ -73,6 +73,11 @@
         display: block;
         margin-top: -35px;
     }
+
+    .meeting-right {
+        width: calc(100%);
+    }
+
     .meeting-title {
         width: 100%;
         text-align: center;

@@ -31,12 +31,16 @@ function printMeeting($meeting): void
     echo('</div>');
     echo('</div>');
     echo('<div class="meeting-right">');
-    echo('<h2 class="meeting-title">' . $title . '</h2>');
-    if (!isset($meeting["state"]) || $meeting["state"] != "HIDDEN") {
-        echo('<div class="meeting-links">');
-            echo('<a class="meeting-link btn" href="' . Env::getAppUrl() . '/m/' . $meeting["meet_id"] . '">In SwimResults öffnen</a>');
-        echo('</div>');
-    }
+    echo('<h2 class="meeting-title">');
+    echo('<a class="meeting-link" href="' . Env::getAppUrl() . '/m/' . $meeting["meet_id"] . '">');
+    echo($title);
+    echo("</a>");
+    echo('</h2>');
+    //if (!isset($meeting["state"]) || $meeting["state"] != "HIDDEN") {
+    //    echo('<div class="meeting-links">');
+    //        echo('<a class="meeting-link btn" href="' . Env::getAppUrl() . '/m/' . $meeting["meet_id"] . '">In SwimResults öffnen</a>');
+    //    echo('</div>');
+    //}
     echo('</div>');
     echo('</div>');
 }
