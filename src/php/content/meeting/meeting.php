@@ -23,6 +23,8 @@ function printMeeting($meeting): void
     $title .= $meeting["series"]["name_full"];
     $title .= ' ' . $y;
 
+    $showLink = (!isset($meeting["state"]) || $meeting["state"] != "HIDDEN");
+
     echo('<div class="meeting-list-tile container">');
     echo('<div class="meeting-left">');
     echo('<div class="meeting-date">');
@@ -32,9 +34,9 @@ function printMeeting($meeting): void
     echo('</div>');
     echo('<div class="meeting-right">');
     echo('<h2 class="meeting-title">');
-    echo('<a class="meeting-link" href="' . Env::getAppUrl() . '/m/' . $meeting["meet_id"] . '">');
+    if ($showLink) echo('<a class="meeting-link" href="' . Env::getAppUrl() . '/m/' . $meeting["meet_id"] . '">');
     echo($title);
-    echo("</a>");
+    if ($showLink) echo("</a>");
     echo('</h2>');
     //if (!isset($meeting["state"]) || $meeting["state"] != "HIDDEN") {
     //    echo('<div class="meeting-links">');
