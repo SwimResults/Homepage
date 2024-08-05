@@ -70,7 +70,7 @@
             echo('<img class="post-image" src="'.getImgSrc($post).'" alt="post '.$post["title"].'">');
             $author = BlogHelper::getAuthorInfo($post["author"]);
             if ($author) {
-                echo('<h3 class="post-author">' . $author["name"]["formatted"] . '</h3>');
+                echo('<h3 class="post-author">' . $author["displayName"] . '</h3>');
             }
             echo('<h1 class="post-title"><a href="article/'.$post["id"].'-'.getArticleAlias($post["title"]).'">'.$post["title"].'</a></h1>');
         echo('</div>');
@@ -83,10 +83,10 @@
             $author = BlogHelper::getAuthorInfo($post["author"]);
             if ($author) {
                 echo('<div class="author">');
-                    echo('<img src="'.$author["thumbnailUrl"].'" alt="author image for '.$author["name"]["formatted"].'" class="author-img">');
+                    echo('<img src="'.$author["thumbnailUrl"].'" alt="author image for '.$author["displayName"].'" class="author-img">');
                     echo('<div class="post-info">');
                         echo('<span class="author-name">');
-                            echo($author["name"]["formatted"]);
+                            echo($author["displayName"]);
                         echo('</span><br>');
                         echo('<span class="post-date">');
                             echo('<span title="'.getDateTimeString(getPostPublishDate($post)).'">');
