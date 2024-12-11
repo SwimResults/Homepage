@@ -14,16 +14,11 @@
     <br>
     <?php echo('<a class="btn nav-tile" href="'.Env::getAppUrl().'">'.T::t("NAV.OPEN_APP_IN_BROWSER_BUTTON").'</a>'); ?>
     <br>
-    <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
-    <ms-store-badge
-            productid="9P07LPX2XTWC"
-            window-mode="pop up"
-            theme="dark"
-            language="<?php echo($lang); ?>"
-            animation="on"
-            style="scale: 0.6;"
-    >
-    </ms-store-badge>
+
+    <a class="store-badge" href="/ios" target="_blank"><img src="images/Download_on_the_App_Store.svg"></a>
+    <a class="store-badge" href="https://apps.microsoft.com/detail/9p07lpx2xtwc?mode=direct" target="_blank">
+        <img src="https://get.microsoft.com/images/de%20dark.svg" width="200"/>
+    </a>
     <br>
     <img src="images/sr_laptop_1.png" class="selection-img img-crop img-crop-right" alt="SwimResults Screenshot Laptop">
 </div>
