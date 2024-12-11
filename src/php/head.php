@@ -5,7 +5,7 @@
 <link rel="preload" href="font/SwimResults.ttf" as="font" type="font/ttf" crossorigin>
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/main.css?v=1.1">
 <link rel="stylesheet" href="css/header.css">
 <link rel="stylesheet" href="css/meeting.css">
 <link rel="stylesheet" href="css/parallax.css">
