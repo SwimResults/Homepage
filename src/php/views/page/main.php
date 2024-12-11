@@ -15,10 +15,11 @@
     <?php echo('<a class="btn nav-tile" href="'.Env::getAppUrl().'">'.T::t("NAV.OPEN_APP_IN_BROWSER_BUTTON").'</a>'); ?>
     <br>
     <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script>
+    <a href="/ios" target="_blank"><img src="images/Download_on_the_App_Store.svg"></a>
     <ms-store-badge
             productid="9P07LPX2XTWC"
             window-mode="pop up"
-            theme="dark"
+            theme="dark"ak
             language="<?php echo($lang); ?>"
             animation="on"
             style="scale: 0.6;"
