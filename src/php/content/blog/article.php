@@ -112,7 +112,7 @@
                     echo('<div>'.$post["content_html"].'</div>');
                 }
                 if ($author)
-                    echo('<p class="post-author-info">'.T::t("CONTENT.BLOG.WRITTEN_BY").': <b>'.$author["name"]["formatted"].'</b></p>');
+                    echo('<p class="post-author-info">'.T::t("CONTENT.BLOG.WRITTEN_BY").': <b>'.$author["displayName"].'</b></p>');
             echo('</div>');
         echo('</div>');
     }
