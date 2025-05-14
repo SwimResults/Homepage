@@ -77,10 +77,12 @@
     }
 
     function printArticleFullPage($post): void {
+
+        $author = BlogHelper::getAuthorInfo($post["author"]);
+
         echo('<div class="post">');
             echo('<img class="post-image" src="'.getImgSrc($post).'" alt="post '.$post["title"].'">');
             echo('<h1 class="post-title title">'.$post["title"].'</h1>');
-            $author = BlogHelper::getAuthorInfo($post["author"]);
             if ($author) {
                 echo('<div class="author">');
                     echo('<img src="'.$author["thumbnailUrl"].'" alt="author image for '.$author["displayName"].'" class="author-img">');

@@ -29,8 +29,6 @@
         }
 
 
-        require("php/head.php");
-
 
         $pages = json_decode(file_get_contents("php/config/pages.json"), TRUE);
 
@@ -48,6 +46,12 @@
         }
 
         $page = $pages[$path];
+
+        require("php/head.php");
+
+        if ($path == "article") {
+            require("php/article_head.php");
+        }
 
         if ($path == "main"):
     ?>
