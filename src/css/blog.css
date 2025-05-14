@@ -35,6 +35,10 @@
     margin: 22px 0;
 }
 
+.post-content img {
+  width: 100%;
+}
+
 .post-content table {
     margin: 24px 0;
 }
