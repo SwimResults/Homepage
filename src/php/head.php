@@ -26,6 +26,12 @@
     </script>
 <?php endif; ?>
 
+<?php
+
+    // TODO: print meta data, fetch articles if needed
+
+?>
+
 <?php if (file_exists("apple-touch-icon.png")): ?>
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">

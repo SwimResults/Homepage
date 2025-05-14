@@ -77,10 +77,24 @@
     }
 
     function printArticleFullPage($post): void {
+
+        $author = BlogHelper::getAuthorInfo($post["author"]);
+
+        echo('
+            <meta property="og:title" content="'.$post["title"].'" />
+            <meta property="og:type" content="video.movie" />
+            <meta property="og:url" content="https://swimresults.de/article/'.$post["id"].'-'.getArticleAlias($post["title"]).'" />
+            <meta property="og:image" content="'.getImgSrc($post).'" />
+            <meta property="og:site_name" content="SwimResults" />
+            <meta property="og:type" content="article" />
+            <meta property="article:published_time" content="'.getPostPublishDate($post).'" />
+            <meta property="article:modified_time" content="'.$post["updated_at"].'" />
+            <meta property="article:author" content="'.$author["displayName"].'" />
+        ');
+
         echo('<div class="post">');
             echo('<img class="post-image" src="'.getImgSrc($post).'" alt="post '.$post["title"].'">');
             echo('<h1 class="post-title title">'.$post["title"].'</h1>');
-            $author = BlogHelper::getAuthorInfo($post["author"]);
             if ($author) {
                 echo('<div class="author">');
                     echo('<img src="'.$author["thumbnailUrl"].'" alt="author image for '.$author["displayName"].'" class="author-img">');
