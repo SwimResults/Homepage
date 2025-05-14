@@ -28,7 +28,7 @@
                 if (strtotime($meeting["date_end"]) > $now) return $meeting;
             }
 
-            if ($meetings) return $meetings[0];
+            if ($meetings) return $meetings[count($meetings) - 1];
 
             $data = file_get_contents("data/meetings.json");
             $json = json_decode($data, true);
