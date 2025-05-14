@@ -4,22 +4,6 @@
     require_once("php/content/blog/article.php");
 
 
-    $blog_path = $full_path;
-    $article_path = "";
-    if (str_contains($blog_path, "/"))
-        $article_path = substr($blog_path, strpos($blog_path, "/") + 1);
-
-    if (!$article_path) {
-        $post = BlogHelper::getRandomBlogPost();
-    } else {
-        if (str_contains($article_path, "-"))
-            $article_id = substr($article_path, 0, strpos($article_path, "-"));
-        else
-            $article_id = $article_path;
-
-        $post = BlogHelper::getBlogPostById($article_id);
-    }
-
     if (!$post) {
         echo('<div>');
         echo('<h1>'.T::t("CONTENT.BLOG.ARTICLE_NOT_FOUND_TITLE").'</h1>');
