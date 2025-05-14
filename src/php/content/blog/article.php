@@ -73,6 +73,7 @@
                 echo('<h3 class="post-author">' . $author["displayName"] . '</h3>');
             }
             echo('<h1 class="post-title"><a href="article/'.$post["id"].'-'.getArticleAlias($post["title"]).'">'.$post["title"].'</a></h1>');
+            echo('<span class="post-date">'.getDateTimeString(getPostPublishDate($post)).'</span>');
         echo('</div>');
     }
 
