@@ -50,7 +50,7 @@
         require("php/head.php");
 
         if ($path == "article") {
-            require("php/article_header.php");
+            require("php/article_head.php");
         }
 
         if ($path == "main"):

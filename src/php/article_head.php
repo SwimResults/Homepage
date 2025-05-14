@@ -1,4 +1,6 @@
 <?php
+    require_once("php/helper/blog.php");
+    require_once("php/content/blog/article.php");
 
     $blog_path = $full_path;
     $article_path = "";
