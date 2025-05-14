@@ -20,14 +20,36 @@
 
     $author = BlogHelper::getAuthorInfo($post["author"]);
 
+    $article_url = "https://swimresults.de/article/";
+
     echo('
         <meta property="og:title" content="'.$post["title"].'" />
-        <meta property="og:type" content="video.movie" />
-        <meta property="og:url" content="https://swimresults.de/article/'.$post["id"].'-'.getArticleAlias($post["title"]).'" />
-        <meta property="og:image" content="'.getImgSrc($post).'" />
+        <meta property="og:url" content="'$article_url.$post["id"].'-'.getArticleAlias($post["title"]).'" />
+        <meta property="og:image" content="'$article_url.getImgSrc($post).'" />
         <meta property="og:site_name" content="SwimResults" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content="'.getPostPublishDate($post).'" />
         <meta property="article:modified_time" content="'.$post["updated_at"].'" />
         <meta property="article:author" content="'.$author["displayName"].'" />
+    ');
+
+    echo('
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "'$article_url.$post["title"].'",
+      "image": [
+        "'$article_url.getImgSrc($post).'"
+       ],
+      "datePublished": "'.getPostPublishDate($post).'",
+      "dateModified": "'.$post["updated_at"].'",
+      "author": [{
+          "@type": "Person",
+          "name": "'.$author["displayName"].'"
+      }]
+    }
+    </script>
+
     ');
