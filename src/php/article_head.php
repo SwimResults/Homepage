@@ -20,12 +20,13 @@
 
     $author = BlogHelper::getAuthorInfo($post["author"]);
 
-    $article_url = "https://swimresults.de/article/";
+    $base_url = "https://swimresults.de/";
+    $article_url = $base_url."article/";
 
     echo('
         <meta property="og:title" content="'.$post["title"].'" />
         <meta property="og:url" content="'.$article_url.$post["id"].'-'.getArticleAlias($post["title"]).'" />
-        <meta property="og:image" content="'.$article_url.getImgSrc($post).'" />
+        <meta property="og:image" content="'.$base_url.getImgSrc($post).'" />
         <meta property="og:site_name" content="SwimResults" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content="'.getPostPublishDate($post).'" />
