@@ -42,7 +42,7 @@
         if ($path[-1] == "/") $path = substr($path, 0, -1);
 
         if (!array_key_exists($path, $pages)) {
-            $path = "main";
+            header("Location: /");
         }
 
         $page = $pages[$path];
