@@ -5,6 +5,35 @@
         $_SESSION["lang"] = $_REQUEST["lang"];
     }
 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+    $functions = scandir("php/helper");
+
+    foreach ($functions as $func_file) {
+        if (str_contains($func_file, ".php")) {
+            require_once("php/helper/".$func_file);
+        }
+    }
+
+
+    $pages = json_decode(file_get_contents("php/config/pages.json"), TRUE);
+
+    if (isset($_GET["path"])) {
+        $full_path = $_GET["path"];
+        $path = $full_path;
+        if (str_contains($full_path, "/")) $path = substr($full_path, 0, strpos($full_path, "/"));
+    }
+    else $path = "main";
+
+    if ($path[-1] == "/") $path = substr($path, 0, -1);
+
+    if (!array_key_exists($path, $pages)) {
+        header("Location: /");
+    }
+
+    $page = $pages[$path];
 ?>
 <html lang="de">
     <head>
@@ -16,37 +45,6 @@
         ?>
 
     <?php
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-
-        $functions = scandir("php/helper");
-
-        foreach ($functions as $func_file) {
-            if (str_contains($func_file, ".php")) {
-                require_once("php/helper/".$func_file);
-            }
-        }
-
-
-
-        $pages = json_decode(file_get_contents("php/config/pages.json"), TRUE);
-
-        if (isset($_GET["path"])) {
-            $full_path = $_GET["path"];
-            $path = $full_path;
-            if (str_contains($full_path, "/")) $path = substr($full_path, 0, strpos($full_path, "/"));
-        }
-        else $path = "main";
-
-        if ($path[-1] == "/") $path = substr($path, 0, -1);
-
-        if (!array_key_exists($path, $pages)) {
-            $path = "main";
-        }
-
-        $page = $pages[$path];
-
         require("php/head.php");
 
         if ($path == "article") {
