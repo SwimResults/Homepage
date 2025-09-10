@@ -67,7 +67,19 @@
             if (array_key_exists($hash, self::$cache)) {
                 return self::$cache[$hash];
             }
-            $json = file_get_contents("https://de.gravatar.com/$hash.json");
+
+            $ch = curl_init();
+
+            curl_setopt($ch, CURLOPT_URL, "https://de.gravatar.com/$hash.json");
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+
+            $json = curl_exec($ch);
+
+            curl_close($ch);
+
+
             $data =  json_decode($json, TRUE);
             if (!isset($data["entry"])) return NULL;
             if (count($data["entry"]) <= 0) return NULL;
