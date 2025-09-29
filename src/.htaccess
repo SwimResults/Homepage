@@ -8,6 +8,7 @@ RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
 Redirect 302 /iesc "https://app.swimresults.de/m/IESC24"
 Redirect 302 /dm-fs-2024 "https://app.swimresults.de/m/DMFS24"
 Redirect 302 /osfc "https://app.swimresults.de/m/OSFC25"
+Redirect 302 /stolle "https://app.swimresults.de/m/CSSF25"
 
 Redirect 302 /app-test "https://testflight.apple.com/join/Pg4ZdcSS"
 Redirect 302 /ios "https://apps.apple.com/de/app/swimresults/id6503343578"
