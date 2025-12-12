@@ -13,5 +13,6 @@ Redirect 302 /mdm "https://app.swimresults.de/m/MDM25"
 
 Redirect 302 /app-test "https://testflight.apple.com/join/Pg4ZdcSS"
 Redirect 302 /ios "https://apps.apple.com/de/app/swimresults/id6503343578"
+Redirect 302 /ios "https://play.google.com/store/apps/details?id=de.swimresults.swimresults"
 
 Redirect 302 /interfaces "https://swimresults.github.io/Livestreaming/src/stream-ui/"
