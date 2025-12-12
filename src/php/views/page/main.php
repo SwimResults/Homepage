@@ -16,6 +16,7 @@
     <br>
 
     <a class="store-badge" href="/ios" target="_blank"><img src="images/Download_on_the_App_Store.svg"></a>
+    <a class="store-badge" href="/android" target="_blank"><img src="images/Get_It_On_Google_Play.svg"></a>
     <a class="store-badge" href="https://apps.microsoft.com/detail/9p07lpx2xtwc?mode=direct" target="_blank">
         <img src="https://get.microsoft.com/images/de%20dark.svg" width="200"/>
     </a>

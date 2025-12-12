@@ -59,12 +59,5 @@
     "permission": 0,
     "nav": false,
     "footer": true
-  },
-  "android": {
-    "type": "page",
-    "title": "Android App",
-    "permission": 0,
-    "nav": false,
-    "footer": false
   }
 }
