@@ -21,17 +21,36 @@
         <img src="https://get.microsoft.com/images/de%20dark.svg" width="200"/>
     </a>
     <br>
+
+    <?php
+    $current_meeting = MeetingsHelper::getCurrentMeetings();
+
+    if ($current_meeting) {
+        echo('<h1>'.T::t("CONTENT.MAIN.INFOS.CURRENT_MEETINGS_TITLE").'</h1>');
+        foreach ($current_meeting as $meeting) {
+            printMeeting($meeting);
+        }
+    }
+    ?>
+
+    <br>
     <img src="images/sr_laptop_1.png" class="selection-img img-crop img-crop-right" alt="SwimResults Screenshot Laptop">
 </div>
 
 <div class="parallax parallax-1"></div>
 
 <div class="section">
-    <h1><?php T::e("CONTENT.MAIN.INFOS.MEETINGS_TITLE"); ?></h1>
     <?php
-        $meeting = MeetingsHelper::getNextMeeting();
-        printMeeting($meeting);
+    $upcoming_meetings = MeetingsHelper::getUpcomingMeetings();
+
+    if ($upcoming_meetings) {
+        echo('<h1>'.T::t("CONTENT.MAIN.INFOS.UPCOMING_MEETINGS_TITLE").'</h1>');
+        foreach ($upcoming_meetings as $meeting) {
+            printMeeting($meeting);
+        }
+    }
     ?>
+
     <a class="section-link-big" href="meetings"><?php T::e("CONTENT.MAIN.INFOS.MEETINGS_LINK_TEXT"); ?></a>
 </div>
 <div class="section section-2">

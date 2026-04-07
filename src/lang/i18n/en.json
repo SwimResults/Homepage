@@ -33,6 +33,8 @@
             },
             "INFOS": {
                 "MEETINGS_TITLE": "Upcoming Meetings",
+                "CURRENT_MEETINGS_TITLE": "Current Meetings",
+                "UPCOMING_MEETINGS_TITLE": "Upcoming Meetings",
                 "MEETINGS_LINK_TEXT": "Other Competitions",
                 "FEATURES_TITLE": "Numerous Great Features!",
                 "FEATURES_INFO_TEXT": "Live timings, placements, start lists, interactive schedules and file collections: SwimResults provides lots of features and contents.",

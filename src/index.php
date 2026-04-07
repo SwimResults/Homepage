@@ -38,7 +38,7 @@
 <html lang="de">
     <head>
         <?php
-            if ($_SERVER["SERVER_NAME"] == "localhost")
+            if (getenv("SR_HOMEPAGE_ENV") === 'LOCALHOST')
                 echo('<base href="/swimresults/src/">');
             else
                 echo('<base href="/">');
