@@ -6,6 +6,12 @@
 
         public static function init_database()
         {
+            $db_disable = getenv("SR_HOMEPAGE_DB_DISABLE");
+            if ($db_disable && strtolower($db_disable) === "true") {
+                self::$pdo = null;
+                return;
+            }
+
             $db_host = getenv("SR_HOMEPAGE_DB_HOST");
             $db_port = getenv("SR_HOMEPAGE_DB_PORT");
             $db_name = getenv("SR_HOMEPAGE_DB_NAME");

@@ -33,6 +33,8 @@
             },
             "INFOS": {
                 "MEETINGS_TITLE": "Nächste Veranstaltung",
+                "CURRENT_MEETINGS_TITLE": "Aktuelle Veranstaltungen",
+                "UPCOMING_MEETINGS_TITLE": "Nächste Veranstaltungen",
                 "MEETINGS_LINK_TEXT": "weitere Wettkämpfe",
                 "FEATURES_TITLE": "Das kann SwimResults!",
                 "FEATURES_INFO_TEXT": "Livetiming, Platzierungen, Bahnbelegungen, Zeitpläne und Wettkampffolgen oder Dateisammlungen: SwimResults bietet zahlreiche Funktionen und Inhalte.",

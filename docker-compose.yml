@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  main:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "4300:80"
+    environment:
+      TZ: "Europe/Berlin"
+      SR_HOMEPAGE_ENV: "DEVELOPMENT"
+      SR_HOMEPAGE_DB_DISABLE: "true"
+      SR_MEETING_URL: "https://api.swimresults.de/meeting/v1"
+      SR_ATHLETE_URL: "https://api.swimresults.de/athlete/v1"
+      SR_START_URL: "https://api.swimresults.de/start/v1"
