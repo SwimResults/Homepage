@@ -10,7 +10,8 @@
         "IMPRESSUM": "Imprint",
         "PRIVACY": "Privacy Policy",
         "ARTICLE": "Article",
-        "TERMS_OF_USE": "Terms of Use"
+        "TERMS_OF_USE": "Terms of Use",
+        "COMPATIBILITY_QUIZ": "Compatibility Check"
     },
     "EXAMPLE": "This is an example!",
     "CONTENT": {
@@ -63,6 +64,15 @@
             "UPDATED_AT": "updated",
             "MORE_ARTICLES": "Other Posts",
             "WRITTEN_BY": "written by"
+        },
+        "QUIZ": {
+            "INTRO": "Check if your technology stack is compatible with SwimResults. Answer a few questions and get personalized recommendations.",
+            "LOADING": "Loading quiz...",
+            "NO_QUIZZES": "No quizzes available at the moment.",
+            "START_BUTTON": "Start Quiz",
+            "NEXT_BUTTON": "Next",
+            "BACK_BUTTON": "Back",
+            "RESULT_TITLE": "Your Result"
         }
     },
     "COMMON": {

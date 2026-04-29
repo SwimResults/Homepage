@@ -59,5 +59,16 @@
     "permission": 0,
     "nav": false,
     "footer": true
+  },
+  "compatibility-quiz": {
+    "type": "page",
+    "title": "NAV.COMPATIBILITY_QUIZ",
+    "permission": 0,
+    "nav": false
+  },
+  "quiz": {
+    "type": "page",
+    "permission": 0,
+    "nav": false
   }
 }

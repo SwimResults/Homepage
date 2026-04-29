@@ -8,7 +8,20 @@ services:
     environment:
       TZ: "Europe/Berlin"
       SR_HOMEPAGE_ENV: "DEVELOPMENT"
-      SR_HOMEPAGE_DB_DISABLE: "true"
+      SR_HOMEPAGE_DB_HOST: "db_sr"
+      SR_HOMEPAGE_DB_PORT: "3306"
+      SR_HOMEPAGE_DB_NAME: "sr_web"
+      SR_HOMEPAGE_DB_USER: "root"
+      SR_HOMEPAGE_DB_PASSWORD: "password"
+      #SR_HOMEPAGE_DB_DISABLE: "true"
       SR_MEETING_URL: "https://api.swimresults.de/meeting/v1"
       SR_ATHLETE_URL: "https://api.swimresults.de/athlete/v1"
       SR_START_URL: "https://api.swimresults.de/start/v1"
+  db:
+    image: mysql:9.7.0
+    hostname: db_sr
+    ports:
+      - "3308:3306"
+    environment:
+      TZ: "Europe/Berlin"
+      MYSQL_ROOT_PASSWORD: "password"

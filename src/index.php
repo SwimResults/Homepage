@@ -34,6 +34,25 @@
     }
 
     $page = $pages[$path];
+
+    // Handle quiz page with slug validation
+    $quiz_slug = null;
+    if ($path === "quiz") {
+        $quiz_slug = isset($full_path) && str_contains($full_path, "/") 
+            ? substr($full_path, strpos($full_path, "/") + 1) 
+            : null;
+        
+        if (!$quiz_slug) {
+            header("Location: /compatibility-quiz");
+            exit;
+        }
+        
+        // Validate quiz exists
+        if (!QuizHelper::getQuizBySlug($quiz_slug)) {
+            header("Location: /compatibility-quiz");
+            exit;
+        }
+    }
 ?>
 <html lang="de">
     <head>

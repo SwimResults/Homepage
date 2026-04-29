@@ -11,8 +11,10 @@
 <link rel="stylesheet" href="css/parallax.css">
 <link rel="stylesheet" href="css/blog.css">
 <link rel="stylesheet" href="css/features.css">
+<link rel="stylesheet" href="css/quiz.css">
 
 <script src="js/scroll.js"></script>
+<script src="js/quiz-engine.js"></script>
 
 <?php if (getenv("SR_HOMEPAGE_ENV") == "PRODUCTION") : ?>
     <!-- Google tag (gtag.js) -->

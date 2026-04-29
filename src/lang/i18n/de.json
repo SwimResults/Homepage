@@ -10,7 +10,8 @@
         "IMPRESSUM": "Impressum",
         "PRIVACY": "Datenschutzerklärung",
         "ARTICLE": "Artikel",
-        "TERMS_OF_USE": "Nutzungsbedingungen"
+        "TERMS_OF_USE": "Nutzungsbedingungen",
+        "COMPATIBILITY_QUIZ": "Kompatibilitäts-Test"
     },
     "EXAMPLE": "Das ist ein Beispiel!",
     "CONTENT": {
@@ -63,6 +64,15 @@
             "UPDATED_AT": "aktualisiert",
             "MORE_ARTICLES": "Weitere Beiträge",
             "WRITTEN_BY": "geschrieben von"
+        },
+        "QUIZ": {
+            "INTRO": "Um herauszufinden, ob SwimResults mit deiner Veranstaltung kompatibel ist, kannst du hier ein kurzes Quiz machen. Beantworte die Fragen so gut wie möglich, um ein möglichst genaues Ergebnis zu erhalten.",
+            "LOADING": "Quiz wird geladen...",
+            "NO_QUIZZES": "Momentan sind keine Quizze verfügbar.",
+            "START_BUTTON": "Quiz starten",
+            "NEXT_BUTTON": "Weiter",
+            "BACK_BUTTON": "Zurück",
+            "RESULT_TITLE": "Ihr Ergebnis"
         },
         "FEATURES": {
             "FEATURES": {
