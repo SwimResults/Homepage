@@ -221,6 +221,11 @@ table th {
     color: white;
 }
 
+table th a {
+    color: white;
+    text-decoration: underline;
+}
+
 .btn {
     background: linear-gradient(to bottom right, var(--gradient-first) 0%, var(--gradient-second) 100%);
     padding: 6px 10px;
