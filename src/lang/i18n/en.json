@@ -4,6 +4,7 @@
         "CONTACT": "Contact",
         "MAIN": "Start",
         "FEATURES": "Features",
+        "SRM": "SwimResults Manager",
         "BLOG": "Blog",
         "OPEN_APP_BUTTON": "Open SwimResults",
         "OPEN_APP_IN_BROWSER_BUTTON": "Open in Browser",
@@ -73,6 +74,38 @@
             "NEXT_BUTTON": "Next",
             "BACK_BUTTON": "Back",
             "RESULT_TITLE": "Your Result"
+        },
+        "FEATURES": {
+            "FEATURES": {
+                "STARTS_TITLE": "When is it my turn?",
+                "STARTS_INFO_TEXT": "Start lists, lane assignments and starting times for each athlete with all important information at a glance: the entry list to explore",
+                "RESULTS_TITLE": "The long walk to the results board",
+                "RESULTS_INFO_TEXT": "As soon as you finish, your provisional time is in the system, immediately after the results are released, placements and final times are visible. Never photograph results again!",
+                "SEARCH_TITLE": "Seek and you shall find!",
+                "SEARCH_INFO_TEXT": "With the search function, athletes and clubs can be found in a flash and their starts or members can be viewed.",
+                "LIVETIMING_TITLE": "Oops! Missed the race in livetiming",
+                "LIVETIMING_INFO_TEXT": "Those watching from home know the problem: Blink and miss the livetiming. The livetiming in SwimResults has features to 'rewind' and pause.",
+                "FILES_TITLE": "Practical File Finder (PDF)",
+                "FILES_INFO_TEXT": "Entry list, results, DSV file or order form: All files current and sorted in one place.",
+                "DASHBOARD_TITLE": "Keep track of everything",
+                "DASHBOARD_INFO_TEXT": "",
+                "FAVS_TITLE": "It's-A Me, Mario",
+                "FAVS_INFO_TEXT": "Choose which athlete you are and who your favorites are to get customized overviews and notifications."
+            }
+        },
+        "SRM": {
+            "INTRO_TITLE": "SwimResults Manager",
+            "INTRO_INFO_TEXT": "The SwimResults Manager (SRM) allows organizers and result services to independently manage SwimResults data. In particular, livetiming can be implemented via the SRM.",
+            "LIVE_TIMING_OMEGA_TITLE": "Livetiming with OMEGA",
+            "LIVE_TIMING_OMEGA_INFO_TEXT": "Both OMEGA Ares and Quantum can be connected to the SRM via the data handling interface. The program then automatically transmits the live times to the internet.",
+            "LIVE_TIMING_ALGE_TITLE": "Livetiming with ALGE",
+            "LIVE_TIMING_ALGE_INFO_TEXT": "Livetiming with ALGE timing systems can also be implemented with the SRM. For this, the SRM computer must be on the same network to receive the UDP packets from the ALGE system.",
+            "SCHEDULE_TITLE": "Schedule and Events",
+            "SCHEDULE_INFO_TEXT": "The SRM offers the ability to create schedules and events such as \"Warm-up\", \"Team Leader\" and \"Referee Meeting\" to inform participants and spectators about the schedule of the event.",
+            "IMPORT_TITLE": "Data Import",
+            "IMPORT_INFO_TEXT": "Data from entry results and results sheets can be imported into the SwimResults system using the import function. This allows newly set races or corrected times to be made available quickly.",
+            "AUTO_IMPORT_TITLE": "Automatic Data Import",
+            "AUTO_IMPORT_INFO_TEXT": "In particular, regular importing of result sheets can be automated with the auto-import function. As soon as a new result sheet is placed in a specific folder, it is automatically imported into the system and the data is updated."
         }
     },
     "COMMON": {

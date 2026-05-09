@@ -4,6 +4,7 @@
         "CONTACT": "Kontakt",
         "MAIN": "Start",
         "FEATURES": "Features",
+        "SRM": "SwimResults Manager",
         "BLOG": "Blog",
         "OPEN_APP_BUTTON": "SwimResults öffnen",
         "OPEN_APP_IN_BROWSER_BUTTON": "Im Browser öffnen",
@@ -91,6 +92,20 @@
                 "FAVS_TITLE": "It's-A Me, Mario",
                 "FAVS_INFO_TEXT": "Wähle aus, welcher Sportler du bist und wer deine Favoriten sind, um zugeschnittene Übersichten und Benachrichtigungen zu erhalten."
             }
+        },
+        "SRM": {
+            "INTRO_TITLE": "SwimResults Manager",
+            "INTRO_INFO_TEXT": "Der SwimResults Manager (SRM) erlaubt Veranstaltern und Ergebnisdiensten die Daten von SwimResults selbstständig zu verwalten. Insbesondere kann das Livetiming über den SRM umgesetzt werden.",
+            "LIVE_TIMING_OMEGA_TITLE": "Livetiming mit OMEGA",
+            "LIVE_TIMING_OMEGA_INFO_TEXT": "Sowohl OMEGA Ares als auch Quantum können über den Data-Handling-Anschluss mit dem SRM verbunden werden. Das Programm überträgt die Live-Zeiten dann automatisch ins Internet.",
+            "LIVE_TIMING_ALGE_TITLE": "Livetiming mit ALGE",
+            "LIVE_TIMING_ALGE_INFO_TEXT": "Auch für Anlagen von ALGE-Timing kann mit dem SRM ein Livetiming umgesetzt werden. Dafür muss sich der SRM-Rechner im selben Netzwerk befinden, um die UDP-Pakete der ALGE-Anlage empfangen zu können.",
+            "SCHEDULE_TITLE": "Zeitplan und Ereignisse",
+            "SCHEDULE_INFO_TEXT": "Der SRM bietet die Möglichkeit, Zeitpläne und Ereignisse wie \"Einschwimmen\", \"Mannschaftsleiter-\" und \"Kampfrichtersitzung\" anzulegen, um die Teilnehmer und Zuschauer über den Zeitplan der Veranstaltung zu informieren.",
+            "IMPORT_TITLE": "Datenimport",
+            "IMPORT_INFO_TEXT": "Die Daten aus Meldeergebnissen und Protokollen können mit der Import-Funktion ins SwimResults-System importiert werden. So können auch neu gesetzte Läufe oder korrigierte Zeiten schnell bereitgestellt werden.",
+            "AUTO_IMPORT_TITLE": "Automatischer Datenimport",
+            "AUTO_IMPORT_INFO_TEXT": "Besonders der regelmäßige Import von Protokollen kann mit der Auto-Import-Funktion automatisiert werden. Sobald ein neues Protokoll in einem bestimmten Ordner abgelegt wird, wird es automatisch ins System importiert und die Daten aktualisiert."
         }
     },
     "COMMON": {
