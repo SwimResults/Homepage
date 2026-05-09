@@ -20,6 +20,13 @@
     "nav": true,
     "style": "full"
   },
+  "srm": {
+    "type": "page",
+    "title": "NAV.SRM",
+    "permission": 0,
+    "nav": false,
+    "style": "full"
+  },
   "blog": {
     "type": "page",
     "title": "NAV.BLOG",
