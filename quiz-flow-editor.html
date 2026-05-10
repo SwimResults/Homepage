@@ -1,0 +1,1452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Flow Visual Editor</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f1e8;
+      --bg-2: #ece4d8;
+      --panel: rgba(255, 255, 255, 0.86);
+      --panel-strong: #ffffff;
+      --panel-soft: rgba(255, 255, 255, 0.64);
+      --text: #1f2430;
+      --muted: #667085;
+      --border: rgba(31, 36, 48, 0.12);
+      --shadow: 0 18px 50px rgba(31, 36, 48, 0.12);
+      --accent: #2f6fed;
+      --accent-2: #0e9f6e;
+      --danger: #c23a3a;
+      --warning: #b7791f;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(47, 111, 237, 0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(14, 159, 110, 0.12), transparent 28%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+    }
+
+    body { padding: 22px; }
+
+    .app {
+      max-width: 1480px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .card,
+    .panel {
+      background: var(--panel);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main {
+      padding: 24px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.1rem, 4.3vw, 3.7rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 74ch;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.68);
+      white-space: nowrap;
+      font-size: 0.92rem;
+    }
+
+    .hero-side {
+      padding: 18px;
+    }
+
+    .hero-side h2 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .hero-side p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.95rem;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0;
+    }
+
+    button {
+      appearance: none;
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:hover { transform: translateY(-1px); }
+    button:active { transform: translateY(0); }
+    button:disabled { cursor: not-allowed; opacity: 0.55; transform: none; }
+
+    .primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(47, 111, 237, 0.24);
+    }
+
+    .secondary {
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .ghost {
+      background: transparent;
+      border: 1px dashed var(--border);
+      color: var(--text);
+    }
+
+    .status {
+      min-height: 24px;
+      margin: 4px 0 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .status.ok { color: var(--accent-2); }
+    .status.warn { color: var(--warning); }
+    .status.error { color: var(--danger); }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 300px minmax(0, 1fr) 400px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      overflow: hidden;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.44);
+    }
+
+    .panel-head h2 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .panel-head span {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .panel-body {
+      padding: 18px;
+    }
+
+    .flow-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .flow-item {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.75);
+      cursor: pointer;
+      transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .flow-item:hover {
+      transform: translateY(-1px);
+      border-color: rgba(47, 111, 237, 0.25);
+      box-shadow: 0 12px 30px rgba(31, 36, 48, 0.08);
+    }
+
+    .flow-item.selected {
+      border-color: rgba(47, 111, 237, 0.5);
+      box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.1);
+    }
+
+    .flow-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: start;
+      margin-bottom: 8px;
+    }
+
+    .flow-title {
+      font-weight: 700;
+      line-height: 1.25;
+      margin: 0;
+      word-break: break-word;
+    }
+
+    .flow-type {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(47, 111, 237, 0.1);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .flow-summary {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .flow-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .mini-pill {
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border);
+    }
+
+    .editor-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field-grid {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--text);
+      font: inherit;
+      padding: 11px 12px;
+      outline: none;
+    }
+
+    .field textarea {
+      min-height: 92px;
+      resize: vertical;
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: rgba(47, 111, 237, 0.5);
+      box-shadow: 0 0 0 4px rgba(47, 111, 237, 0.12);
+    }
+
+    .section-card {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .section-card h3 {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+    }
+
+    .inline-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .chip-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .chip-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .chip-row button {
+      padding: 10px 12px;
+    }
+
+    .condition-grid {
+      display: grid;
+      gap: 8px;
+    }
+
+    .condition-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .json-box {
+      display: grid;
+      gap: 10px;
+    }
+
+    .json-box textarea {
+      min-height: 240px;
+      font-family: var(--mono);
+      font-size: 0.88rem;
+    }
+
+    .small-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 2px 0;
+    }
+
+    .empty-state {
+      padding: 18px;
+      border: 1px dashed var(--border);
+      border-radius: 16px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.55);
+      line-height: 1.5;
+    }
+
+    .export-preview {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.72);
+      padding: 14px;
+      max-height: 430px;
+      overflow: auto;
+      font-family: var(--mono);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 12px;
+      padding: 9px 10px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .meta-item.ok { color: var(--accent-2); }
+    .meta-item.warn { color: var(--warning); }
+    .meta-item.bad { color: var(--danger); }
+
+    .footer-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1240px) {
+      .workspace {
+        grid-template-columns: 280px minmax(0, 1fr);
+      }
+
+      .export-panel {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 880px) {
+      .hero,
+      .workspace,
+      .field-grid,
+      .chip-row,
+      .condition-row {
+        grid-template-columns: 1fr;
+      }
+
+      .field-grid,
+      .chip-row,
+      .condition-row {
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+
+      .hero-main,
+      .hero-side,
+      .panel-body,
+      .panel-head {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      button { width: 100%; }
+
+      .flow-item { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <section class="hero">
+      <div class="card hero-main">
+        <h1>Quiz Flow Visual Editor</h1>
+        <p class="lead">Build a quiz flow visually instead of editing raw JSON. Import an existing flow, click a node to edit its fields, add questions or results, then export the finished JSON back out.</p>
+        <div class="pills">
+          <span class="pill">Visual node list</span>
+          <span class="pill">Inline inspector</span>
+          <span class="pill">JSON import/export</span>
+          <span class="pill">Single file</span>
+        </div>
+      </div>
+      <aside class="card hero-side">
+        <h2>What it edits</h2>
+        <p>Each node keeps the same structure your quiz system already uses: questions, results, options, conditions, compatibility status, icons, and recommendations.</p>
+      </aside>
+    </section>
+
+    <div class="toolbar">
+      <button class="primary" id="addQuestionBtn" type="button">Add Question</button>
+      <button class="secondary" id="addResultBtn" type="button">Add Result</button>
+      <button class="secondary" id="loadSampleBtn" type="button">Load Sample</button>
+      <button class="secondary" id="importBtn" type="button">Import JSON</button>
+      <button class="secondary" id="exportBtn" type="button">Export JSON</button>
+      <button class="ghost" id="copyBtn" type="button">Copy Export</button>
+    </div>
+
+    <div id="status" class="status">Load a flow to start editing.</div>
+
+    <section class="workspace">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Flow Nodes</h2>
+          <span id="nodeCount">0 nodes</span>
+        </div>
+        <div class="panel-body">
+          <div class="flow-list" id="flowList"></div>
+          <div class="footer-note">Click a node to edit it. You can also add new nodes and then export the updated flow as formatted JSON.</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Inspector</h2>
+          <span id="selectedLabel">Nothing selected</span>
+        </div>
+        <div class="panel-body">
+          <div id="inspectorEmpty" class="empty-state">Select a flow node on the left. The inspector lets you edit the node visually instead of touching JSON directly.</div>
+          <form id="inspectorForm" class="editor-form" hidden>
+            <div class="field-grid">
+              <div class="field">
+                <label for="nodeType">Node type</label>
+                <select id="nodeType"></select>
+              </div>
+              <div class="field">
+                <label for="nodeId">ID</label>
+                <input id="nodeId" type="text" />
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="nodeLabel">Label</label>
+                <input id="nodeLabel" type="text" />
+              </div>
+              <div class="field">
+                <label for="nodeDescription">Description</label>
+                <input id="nodeDescription" type="text" />
+              </div>
+            </div>
+
+            <div class="section-card question-only">
+              <h3>Question Settings</h3>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="questionType">Question input type</label>
+                  <select id="questionType">
+                    <option value="radio">radio</option>
+                    <option value="checkbox">checkbox</option>
+                    <option value="dropdown">dropdown</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="questionConditionsMode">Conditions mode</label>
+                  <input id="questionConditionsMode" type="text" placeholder="Use the conditions array below" disabled />
+                </div>
+              </div>
+
+              <div class="chip-list" id="optionsList"></div>
+              <div class="inline-actions">
+                <button class="secondary" id="addOptionBtn" type="button">Add Option</button>
+              </div>
+            </div>
+
+            <div class="section-card result-only">
+              <h3>Result Settings</h3>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="compatibilityStatus">Compatibility status</label>
+                  <select id="compatibilityStatus">
+                    <option value="compatible">compatible</option>
+                    <option value="likely-compatible">likely-compatible</option>
+                    <option value="partial-compatible">partial-compatible</option>
+                    <option value="incompatible">incompatible</option>
+                    <option value="unknown">unknown</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="resultIcon">Icon</label>
+                  <select id="resultIcon">
+                    <option value="check-circle">check-circle</option>
+                    <option value="alert-circle">alert-circle</option>
+                    <option value="x-circle">x-circle</option>
+                    <option value="help-circle">help-circle</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="recommendations">Recommendations HTML</label>
+                <textarea id="recommendations" placeholder="<ul><li>Recommendation 1</li></ul>"></textarea>
+              </div>
+            </div>
+
+            <div class="section-card">
+              <h3>Conditions</h3>
+              <div class="condition-grid" id="conditionsList"></div>
+              <div class="inline-actions">
+                <button class="secondary" id="addConditionBtn" type="button">Add Condition</button>
+              </div>
+            </div>
+
+            <div class="section-card">
+              <h3>Raw node JSON</h3>
+              <div class="json-box">
+                <textarea id="nodeJson" spellcheck="false"></textarea>
+                <div class="small-actions">
+                  <button class="secondary" id="applyNodeJsonBtn" type="button">Apply JSON</button>
+                  <button class="ghost" id="deleteNodeBtn" type="button">Delete Node</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panel export-panel">
+        <div class="panel-head">
+          <h2>Import / Export</h2>
+          <span id="exportMeta">Ready</span>
+        </div>
+        <div class="panel-body">
+          <div class="json-box">
+            <div class="field">
+              <label for="importJson">Import JSON</label>
+              <textarea id="importJson" spellcheck="false" placeholder="Paste a JSON object with flow or a raw flow array"></textarea>
+            </div>
+            <div class="small-actions">
+              <button class="secondary" id="parseImportBtn" type="button">Parse Import</button>
+              <button class="ghost" id="clearImportBtn" type="button">Clear Import</button>
+            </div>
+            <div class="field">
+              <label for="exportJson">Export JSON</label>
+              <textarea id="exportJson" spellcheck="false" readonly></textarea>
+            </div>
+            <div class="small-actions">
+              <button class="secondary" id="refreshExportBtn" type="button">Refresh Export</button>
+              <button class="ghost" id="copyExportBtn" type="button">Copy Export</button>
+            </div>
+          </div>
+
+          <div class="meta-row" id="metaRow"></div>
+          <pre class="export-preview" id="exportPreview"></pre>
+          <div class="footer-note">The export includes the full quiz config wrapper so you can paste it back into your database seed or config file.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const sampleConfig = {
+      title: 'Tech Stack Compatibility Check',
+      description: 'Determine if your technology stack is compatible with SwimResults.',
+      flow: [
+        {
+          id: 'q1_platform',
+          type: 'question',
+          label: 'What is your primary backend platform?',
+          description: 'This helps us understand your infrastructure',
+          type_of_question: 'radio',
+          options: [
+            { value: 'java', label: 'Java' },
+            { value: 'php', label: 'PHP' },
+            { value: 'nodejs', label: 'Node.js' }
+          ],
+          conditions: []
+        },
+        {
+          id: 'q2_php_version',
+          type: 'question',
+          label: 'Which PHP version are you using?',
+          description: 'SwimResults requires PHP 7.4 or higher',
+          type_of_question: 'radio',
+          options: [
+            { value: 'php8plus', label: 'PHP 8.0 or higher' },
+            { value: 'php7.4', label: 'PHP 7.4' },
+            { value: 'php7', label: 'PHP 7.0-7.3' }
+          ],
+          conditions: [
+            { questionId: 'q1_platform', value: 'php', operator: '===' }
+          ]
+        },
+        {
+          id: 'php-fully-compatible',
+          type: 'result',
+          label: 'Fully Compatible',
+          description: 'Your PHP setup is fully compatible with SwimResults!',
+          conditions: [
+            { questionId: 'q1_platform', value: 'php', operator: '===' },
+            { questionId: 'q2_php_version', value: ['php8plus', 'php7.4'], operator: 'in' }
+          ],
+          compatibility_status: 'compatible',
+          icon: 'check-circle',
+          recommendations: '<ul><li>Your PHP version is fully supported</li><li>Install required extensions</li></ul>'
+        }
+      ]
+    };
+
+    const state = {
+      quiz: structuredClone(sampleConfig),
+      selectedIndex: 0,
+      importMode: 'object'
+    };
+
+    const el = {
+      status: document.getElementById('status'),
+      nodeCount: document.getElementById('nodeCount'),
+      flowList: document.getElementById('flowList'),
+      inspectorEmpty: document.getElementById('inspectorEmpty'),
+      inspectorForm: document.getElementById('inspectorForm'),
+      selectedLabel: document.getElementById('selectedLabel'),
+      exportMeta: document.getElementById('exportMeta'),
+      metaRow: document.getElementById('metaRow'),
+      exportPreview: document.getElementById('exportPreview'),
+      importJson: document.getElementById('importJson'),
+      exportJson: document.getElementById('exportJson'),
+      nodeType: document.getElementById('nodeType'),
+      nodeId: document.getElementById('nodeId'),
+      nodeLabel: document.getElementById('nodeLabel'),
+      nodeDescription: document.getElementById('nodeDescription'),
+      questionType: document.getElementById('questionType'),
+      compatibilityStatus: document.getElementById('compatibilityStatus'),
+      resultIcon: document.getElementById('resultIcon'),
+      recommendations: document.getElementById('recommendations'),
+      optionsList: document.getElementById('optionsList'),
+      conditionsList: document.getElementById('conditionsList'),
+      nodeJson: document.getElementById('nodeJson'),
+      addQuestionBtn: document.getElementById('addQuestionBtn'),
+      addResultBtn: document.getElementById('addResultBtn'),
+      loadSampleBtn: document.getElementById('loadSampleBtn'),
+      importBtn: document.getElementById('importBtn'),
+      exportBtn: document.getElementById('exportBtn'),
+      copyBtn: document.getElementById('copyBtn'),
+      parseImportBtn: document.getElementById('parseImportBtn'),
+      clearImportBtn: document.getElementById('clearImportBtn'),
+      refreshExportBtn: document.getElementById('refreshExportBtn'),
+      copyExportBtn: document.getElementById('copyExportBtn'),
+      addOptionBtn: document.getElementById('addOptionBtn'),
+      addConditionBtn: document.getElementById('addConditionBtn'),
+      applyNodeJsonBtn: document.getElementById('applyNodeJsonBtn'),
+      deleteNodeBtn: document.getElementById('deleteNodeBtn')
+    };
+
+    function setStatus(message, kind = '') {
+      el.status.textContent = message;
+      el.status.className = kind ? `status ${kind}` : 'status';
+    }
+
+    function clone(value) {
+      return structuredClone(value);
+    }
+
+    function createQuestionNode() {
+      const index = state.quiz.flow.length + 1;
+      return {
+        id: `q${index}_new`,
+        type: 'question',
+        label: 'New question',
+        description: '',
+        type_of_question: 'radio',
+        options: [
+          { value: 'option_1', label: 'Option 1' },
+          { value: 'option_2', label: 'Option 2' }
+        ],
+        conditions: []
+      };
+    }
+
+    function createResultNode() {
+      const index = state.quiz.flow.length + 1;
+      return {
+        id: `result_${index}`,
+        type: 'result',
+        label: 'New result',
+        description: '',
+        conditions: [],
+        compatibility_status: 'unknown',
+        icon: 'help-circle',
+        recommendations: '<ul><li>Add recommendations here</li></ul>'
+      };
+    }
+
+    function currentNode() {
+      return state.quiz.flow[state.selectedIndex] || null;
+    }
+
+    function ensureSelected() {
+      if (!state.quiz.flow.length) {
+        state.selectedIndex = -1;
+        return null;
+      }
+
+      if (state.selectedIndex < 0) {
+        state.selectedIndex = 0;
+      }
+
+      if (state.selectedIndex >= state.quiz.flow.length) {
+        state.selectedIndex = state.quiz.flow.length - 1;
+      }
+
+      return currentNode();
+    }
+
+    function normalizeNodeType(node) {
+      return node && node.type === 'result' ? 'result' : 'question';
+    }
+
+    function renderFlowList() {
+      el.flowList.innerHTML = '';
+      el.nodeCount.textContent = `${state.quiz.flow.length} node${state.quiz.flow.length === 1 ? '' : 's'}`;
+
+      if (!state.quiz.flow.length) {
+        el.flowList.innerHTML = '<div class="empty-state">No nodes yet. Add a question or result to begin building the flow.</div>';
+        return;
+      }
+
+      state.quiz.flow.forEach((node, index) => {
+        const item = document.createElement('div');
+        item.className = `flow-item${index === state.selectedIndex ? ' selected' : ''}`;
+        item.dataset.index = String(index);
+
+        const typeLabel = node.type === 'result' ? `result · ${node.compatibility_status || 'unknown'}` : `question · ${node.type_of_question || 'radio'}`;
+        const conditionCount = Array.isArray(node.conditions) ? node.conditions.length : 0;
+        const optionCount = Array.isArray(node.options) ? node.options.length : 0;
+
+        item.innerHTML = `
+          <div class="flow-top">
+            <p class="flow-title">${escapeHtml(node.label || node.id || `Node ${index + 1}`)}</p>
+            <span class="flow-type">${escapeHtml(typeLabel)}</span>
+          </div>
+          <p class="flow-summary">${escapeHtml(node.description || 'No description set yet.')}</p>
+          <div class="flow-meta">
+            <span class="mini-pill">ID: ${escapeHtml(node.id || 'unset')}</span>
+            <span class="mini-pill">Conditions: ${conditionCount}</span>
+            ${node.type === 'question' ? `<span class="mini-pill">Options: ${optionCount}</span>` : `<span class="mini-pill">Icon: ${escapeHtml(node.icon || 'help-circle')}</span>`}
+          </div>
+        `;
+
+        item.addEventListener('click', () => {
+          state.selectedIndex = index;
+          renderAll();
+        });
+
+        el.flowList.appendChild(item);
+      });
+    }
+
+    function renderMeta() {
+      const flow = state.quiz.flow;
+      const questions = flow.filter((node) => node.type === 'question').length;
+      const results = flow.filter((node) => node.type === 'result').length;
+      const duplicateIds = findDuplicateIds(flow);
+      const invalidIds = flow.filter((node) => !node.id || !String(node.id).trim()).length;
+
+      el.metaRow.innerHTML = '';
+      addMeta(`Items ${flow.length}`, 'ok');
+      addMeta(`Questions ${questions}`, 'ok');
+      addMeta(`Results ${results}`, 'ok');
+
+      if (duplicateIds.length) {
+        addMeta(`Duplicate IDs ${duplicateIds.length}`, 'warn');
+      }
+
+      if (invalidIds) {
+        addMeta(`Missing IDs ${invalidIds}`, 'bad');
+      }
+    }
+
+    function addMeta(text, kind) {
+      const pill = document.createElement('span');
+      pill.className = `meta-item ${kind}`;
+      pill.textContent = text;
+      el.metaRow.appendChild(pill);
+    }
+
+    function findDuplicateIds(flow) {
+      const seen = new Set();
+      const duplicates = new Set();
+
+      flow.forEach((node) => {
+        const id = String(node.id || '').trim();
+        if (!id) {
+          return;
+        }
+        if (seen.has(id)) {
+          duplicates.add(id);
+          return;
+        }
+        seen.add(id);
+      });
+
+      return Array.from(duplicates);
+    }
+
+    function validateFlow(flow) {
+      const problems = [];
+
+      if (!Array.isArray(flow)) {
+        return ['Flow must be an array.'];
+      }
+
+      flow.forEach((node, index) => {
+        if (!node || typeof node !== 'object') {
+          problems.push(`Node ${index + 1} must be an object.`);
+          return;
+        }
+
+        if (!node.id || typeof node.id !== 'string') {
+          problems.push(`Node ${index + 1} needs a string id.`);
+        }
+
+        if (!node.type || !['question', 'result'].includes(node.type)) {
+          problems.push(`Node ${node.id || index + 1} needs type question or result.`);
+        }
+
+        if (node.type === 'question') {
+          if (!node.type_of_question || !['radio', 'checkbox', 'dropdown'].includes(node.type_of_question)) {
+            problems.push(`Question ${node.id || index + 1} needs a valid type_of_question.`);
+          }
+
+          if (!Array.isArray(node.options) || node.options.length === 0) {
+            problems.push(`Question ${node.id || index + 1} needs at least one option.`);
+          }
+        }
+
+        if (node.type === 'result') {
+          if (!node.compatibility_status) {
+            problems.push(`Result ${node.id || index + 1} needs a compatibility_status.`);
+          }
+          if (!node.icon) {
+            problems.push(`Result ${node.id || index + 1} needs an icon.`);
+          }
+        }
+
+        if (node.conditions && !Array.isArray(node.conditions)) {
+          problems.push(`Node ${node.id || index + 1} conditions must be an array.`);
+        }
+      });
+
+      return problems;
+    }
+
+    function toQuizObject() {
+      return {
+        title: state.quiz.title || 'Untitled quiz',
+        description: state.quiz.description || '',
+        flow: clone(state.quiz.flow)
+      };
+    }
+
+    function renderExport() {
+      const quizObject = toQuizObject();
+      const issues = validateFlow(quizObject.flow);
+      const formatted = JSON.stringify(quizObject, null, 2);
+
+      el.exportJson.value = formatted;
+      el.exportPreview.textContent = formatted;
+      el.exportMeta.textContent = issues.length ? `${issues.length} issue${issues.length === 1 ? '' : 's'}` : 'Valid';
+
+      if (issues.length) {
+        setStatus(`Flow exported with ${issues.length} validation issue(s).`, 'warn');
+      } else {
+        setStatus('Flow looks valid and is ready to export.', 'ok');
+      }
+
+      renderMeta();
+    }
+
+    function populateNodeTypeOptions() {
+      el.nodeType.innerHTML = '';
+      ['question', 'result'].forEach((type) => {
+        const option = document.createElement('option');
+        option.value = type;
+        option.textContent = type;
+        el.nodeType.appendChild(option);
+      });
+    }
+
+    function syncInspectorFields() {
+      const node = ensureSelected();
+
+      if (!node) {
+        el.inspectorEmpty.hidden = false;
+        el.inspectorForm.hidden = true;
+        el.selectedLabel.textContent = 'Nothing selected';
+        return;
+      }
+
+      el.inspectorEmpty.hidden = true;
+      el.inspectorForm.hidden = false;
+      el.selectedLabel.textContent = node.label || node.id || 'Selected node';
+
+      el.nodeType.value = normalizeNodeType(node);
+      el.nodeId.value = node.id || '';
+      el.nodeLabel.value = node.label || '';
+      el.nodeDescription.value = node.description || '';
+      el.questionType.value = node.type_of_question || 'radio';
+      el.compatibilityStatus.value = node.compatibility_status || 'unknown';
+      el.resultIcon.value = node.icon || 'help-circle';
+      el.recommendations.value = node.recommendations || '';
+      el.nodeJson.value = JSON.stringify(node, null, 2);
+
+      renderOptionEditor(node);
+      renderConditionEditor(node);
+      toggleNodeSections(node);
+    }
+
+    function toggleNodeSections(node) {
+      document.querySelectorAll('.question-only').forEach((section) => {
+        section.hidden = node.type !== 'question';
+      });
+
+      document.querySelectorAll('.result-only').forEach((section) => {
+        section.hidden = node.type !== 'result';
+      });
+    }
+
+    function renderOptionEditor(node) {
+      el.optionsList.innerHTML = '';
+
+      if (node.type !== 'question') {
+        return;
+      }
+
+      const options = Array.isArray(node.options) ? node.options : [];
+
+      if (!options.length) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        empty.textContent = 'No options yet. Add at least one option for this question.';
+        el.optionsList.appendChild(empty);
+        return;
+      }
+
+      options.forEach((option, index) => {
+        const row = document.createElement('div');
+        row.className = 'chip-row';
+        row.innerHTML = `
+          <input type="text" data-option-field="value" data-option-index="${index}" value="${escapeAttr(option.value || '')}" placeholder="value">
+          <input type="text" data-option-field="label" data-option-index="${index}" value="${escapeAttr(option.label || '')}" placeholder="label">
+          <button class="ghost" type="button" data-option-remove="${index}">Remove</button>
+        `;
+
+        el.optionsList.appendChild(row);
+      });
+    }
+
+    function renderConditionEditor(node) {
+      el.conditionsList.innerHTML = '';
+      const conditions = Array.isArray(node.conditions) ? node.conditions : [];
+
+      if (!conditions.length) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-state';
+        empty.textContent = 'No conditions. This node will be shown according to the flow evaluator rules you define elsewhere.';
+        el.conditionsList.appendChild(empty);
+        return;
+      }
+
+      conditions.forEach((condition, index) => {
+        const row = document.createElement('div');
+        row.className = 'condition-row';
+        row.innerHTML = `
+          <input type="text" data-condition-field="questionId" data-condition-index="${index}" value="${escapeAttr(condition.questionId || '')}" placeholder="questionId">
+          <input type="text" data-condition-field="operator" data-condition-index="${index}" value="${escapeAttr(condition.operator || '===')}" placeholder="operator">
+          <input type="text" data-condition-field="value" data-condition-index="${index}" value="${escapeAttr(formatConditionValue(condition.value))}" placeholder="value">
+          <button class="ghost" type="button" data-condition-remove="${index}">Remove</button>
+        `;
+
+        el.conditionsList.appendChild(row);
+      });
+    }
+
+    function formatConditionValue(value) {
+      if (Array.isArray(value)) {
+        return JSON.stringify(value);
+      }
+
+      if (value === undefined || value === null) {
+        return '';
+      }
+
+      return String(value);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function escapeAttr(value) {
+      return escapeHtml(value).replaceAll('`', '&#96;');
+    }
+
+    function updateNodeFromFields() {
+      const node = currentNode();
+      if (!node) {
+        return;
+      }
+
+      node.type = el.nodeType.value;
+      node.id = el.nodeId.value.trim();
+      node.label = el.nodeLabel.value.trim();
+      node.description = el.nodeDescription.value.trim();
+
+      if (node.type === 'question') {
+        node.type_of_question = el.questionType.value;
+        node.options = Array.isArray(node.options) ? node.options : [];
+      } else {
+        node.compatibility_status = el.compatibilityStatus.value;
+        node.icon = el.resultIcon.value;
+        node.recommendations = el.recommendations.value;
+        delete node.type_of_question;
+        delete node.options;
+      }
+
+      node.conditions = Array.isArray(node.conditions) ? node.conditions : [];
+      state.quiz.flow[state.selectedIndex] = node;
+      el.nodeJson.value = JSON.stringify(node, null, 2);
+      renderAll();
+    }
+
+    function updateNodeJsonFromForm() {
+      const node = currentNode();
+      if (!node) {
+        return;
+      }
+
+      const field = el.nodeJson.value.trim();
+      if (!field) {
+        setStatus('Node JSON cannot be empty.', 'error');
+        return;
+      }
+
+      try {
+        const parsed = JSON.parse(field);
+        if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+          throw new Error('Node JSON must be an object.');
+        }
+
+        state.quiz.flow[state.selectedIndex] = parsed;
+        syncInspectorFields();
+        renderAll();
+      } catch (error) {
+        setStatus(error.message, 'error');
+      }
+    }
+
+    function parseMaybeJson(value) {
+      if (!value.trim()) {
+        throw new Error('No JSON provided.');
+      }
+
+      const parsed = JSON.parse(value);
+      if (Array.isArray(parsed)) {
+        return { flow: parsed };
+      }
+
+      if (parsed && typeof parsed === 'object') {
+        if (Array.isArray(parsed.flow)) {
+          return parsed;
+        }
+
+        if (Array.isArray(parsed.items)) {
+          return { ...parsed, flow: parsed.items };
+        }
+      }
+
+      throw new Error('Expected a flow array or an object with a flow array.');
+    }
+
+    function applyImport() {
+      try {
+        state.quiz = parseMaybeJson(el.importJson.value);
+        if (!state.quiz.title) {
+          state.quiz.title = 'Imported quiz';
+        }
+        if (!state.quiz.description) {
+          state.quiz.description = '';
+        }
+        if (!Array.isArray(state.quiz.flow)) {
+          state.quiz.flow = [];
+        }
+
+        state.selectedIndex = state.quiz.flow.length ? 0 : -1;
+        renderAll();
+        setStatus(`Imported ${state.quiz.flow.length} node${state.quiz.flow.length === 1 ? '' : 's'}.`, 'ok');
+      } catch (error) {
+        setStatus(error.message, 'error');
+      }
+    }
+
+    async function copyExport() {
+      const text = el.exportJson.value.trim();
+      if (!text) {
+        setStatus('Nothing to copy yet.', 'warn');
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(text);
+        setStatus('Export JSON copied to clipboard.', 'ok');
+      } catch {
+        setStatus('Clipboard copy failed. Use the export box directly.', 'warn');
+      }
+    }
+
+    function loadSample() {
+      state.quiz = clone(sampleConfig);
+      state.selectedIndex = 0;
+      el.importJson.value = JSON.stringify(state.quiz, null, 2);
+      renderAll();
+      setStatus('Loaded sample quiz flow.', 'ok');
+    }
+
+    function addNode(type) {
+      const node = type === 'result' ? createResultNode() : createQuestionNode();
+      state.quiz.flow.push(node);
+      state.selectedIndex = state.quiz.flow.length - 1;
+      renderAll();
+      setStatus(`Added a new ${type}.`, 'ok');
+    }
+
+    function removeSelectedNode() {
+      if (!currentNode()) {
+        return;
+      }
+
+      state.quiz.flow.splice(state.selectedIndex, 1);
+      state.selectedIndex = Math.min(state.selectedIndex, state.quiz.flow.length - 1);
+      renderAll();
+      setStatus('Node deleted.', 'warn');
+    }
+
+    function renderAll() {
+      populateNodeTypeOptions();
+      renderFlowList();
+      syncInspectorFields();
+      renderExport();
+    }
+
+    function updateOptionAt(index, field, value) {
+      const node = currentNode();
+      if (!node || node.type !== 'question') {
+        return;
+      }
+
+      node.options = Array.isArray(node.options) ? node.options : [];
+      if (!node.options[index]) {
+        return;
+      }
+
+      node.options[index][field] = value;
+      renderAll();
+    }
+
+    function addOption() {
+      const node = currentNode();
+      if (!node || node.type !== 'question') {
+        return;
+      }
+
+      node.options = Array.isArray(node.options) ? node.options : [];
+      node.options.push({ value: `option_${node.options.length + 1}`, label: `Option ${node.options.length + 1}` });
+      renderAll();
+    }
+
+    function removeOption(index) {
+      const node = currentNode();
+      if (!node || node.type !== 'question') {
+        return;
+      }
+
+      node.options = Array.isArray(node.options) ? node.options : [];
+      node.options.splice(index, 1);
+      renderAll();
+    }
+
+    function addCondition() {
+      const node = currentNode();
+      if (!node) {
+        return;
+      }
+
+      node.conditions = Array.isArray(node.conditions) ? node.conditions : [];
+      node.conditions.push({ questionId: '', operator: '===', value: '' });
+      renderAll();
+    }
+
+    function updateConditionAt(index, field, value) {
+      const node = currentNode();
+      if (!node) {
+        return;
+      }
+
+      node.conditions = Array.isArray(node.conditions) ? node.conditions : [];
+      if (!node.conditions[index]) {
+        return;
+      }
+
+      if (field === 'value') {
+        const trimmed = value.trim();
+        if (trimmed.startsWith('[') || trimmed.startsWith('{')) {
+          try {
+            node.conditions[index][field] = JSON.parse(trimmed);
+          } catch {
+            node.conditions[index][field] = value;
+          }
+        } else {
+          node.conditions[index][field] = value;
+        }
+      } else {
+        node.conditions[index][field] = value;
+      }
+
+      renderAll();
+    }
+
+    function removeCondition(index) {
+      const node = currentNode();
+      if (!node) {
+        return;
+      }
+
+      node.conditions = Array.isArray(node.conditions) ? node.conditions : [];
+      node.conditions.splice(index, 1);
+      renderAll();
+    }
+
+    function exportCurrent() {
+      renderExport();
+      setStatus('Export refreshed.', 'ok');
+    }
+
+    function bindDynamicEditorEvents() {
+      el.flowList.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+        }
+      });
+
+      document.addEventListener('input', (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) {
+          return;
+        }
+
+        if (target.id === 'nodeType' || target.id === 'nodeId' || target.id === 'nodeLabel' || target.id === 'nodeDescription' || target.id === 'questionType' || target.id === 'compatibilityStatus' || target.id === 'resultIcon' || target.id === 'recommendations') {
+          updateNodeFromFields();
+          return;
+        }
+
+        if (target.matches('[data-option-field]')) {
+          const index = Number(target.dataset.optionIndex);
+          updateOptionAt(index, target.dataset.optionField, target.value);
+          return;
+        }
+
+        if (target.matches('[data-condition-field]')) {
+          const index = Number(target.dataset.conditionIndex);
+          updateConditionAt(index, target.dataset.conditionField, target.value);
+          return;
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) {
+          return;
+        }
+
+        if (target.dataset.optionRemove !== undefined) {
+          removeOption(Number(target.dataset.optionRemove));
+          return;
+        }
+
+        if (target.dataset.conditionRemove !== undefined) {
+          removeCondition(Number(target.dataset.conditionRemove));
+        }
+      });
+    }
+
+    populateNodeTypeOptions();
+    bindDynamicEditorEvents();
+
+    el.addQuestionBtn.addEventListener('click', () => addNode('question'));
+    el.addResultBtn.addEventListener('click', () => addNode('result'));
+    el.loadSampleBtn.addEventListener('click', loadSample);
+    el.importBtn.addEventListener('click', () => {
+      el.importJson.focus();
+      setStatus('Paste JSON in the import box, then use Parse Import.', 'warn');
+    });
+    el.exportBtn.addEventListener('click', exportCurrent);
+    el.copyBtn.addEventListener('click', copyExport);
+    el.parseImportBtn.addEventListener('click', applyImport);
+    el.clearImportBtn.addEventListener('click', () => {
+      el.importJson.value = '';
+      setStatus('Import box cleared.', 'ok');
+    });
+    el.refreshExportBtn.addEventListener('click', exportCurrent);
+    el.copyExportBtn.addEventListener('click', copyExport);
+    el.addOptionBtn.addEventListener('click', addOption);
+    el.addConditionBtn.addEventListener('click', addCondition);
+    el.applyNodeJsonBtn.addEventListener('click', updateNodeJsonFromForm);
+    el.deleteNodeBtn.addEventListener('click', removeSelectedNode);
+
+    loadSample();
+  </script>
+</body>
+</html>
