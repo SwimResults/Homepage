@@ -5,6 +5,7 @@ RUN apt-get update -y
 #RUN apt-get install libyaml-dev -y
 RUN apt-get install gettext -y
 RUN apt-get install -y locales locales-all
+RUN apt-get install -y netcat-openbsd
 # ENV LC_ALL en_US.UTF-8
 # ENV LANG en_US.UTF-8
 # ENV LANGUAGE en_US.UTF-8
@@ -15,4 +16,15 @@ COPY src/ /var/www/html/
 COPY src/images/favicon /var/www/html/
 COPY apache2.conf /etc/apache2/apache2.conf
 
+# Copy sitemap generator and entrypoint
+COPY generate-sitemap.php /
+COPY docker-entrypoint.sh /
+
+RUN chmod +x /docker-entrypoint.sh
+
+# Generate initial sitemap with static pages only during build
+RUN php /generate-sitemap.php --static-only
+
 RUN a2enmod rewrite
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
