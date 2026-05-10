@@ -21,10 +21,21 @@ date_default_timezone_set("Europe/Berlin");
 $static_only = in_array('--static-only', $argv);
 
 // Get base URL
-$base_url = "https://swimresults.de";
 $env = getenv("SR_HOMEPAGE_ENV");
-if ($env === "DEVELOPMENT" || $env === "LOCALHOST") {
-    $base_url = "http://localhost:4300";
+
+switch ($env) {
+    case "PRODUCTION":
+        $base_url = "https://swimresults.de";
+        break;
+    case "DEVELOPMENT":
+        $base_url = "https://dev.swimresults.de";
+        break;
+    case "LOCALHOST":
+        $base_url = "http://localhost:4300";
+        break;
+    default:
+        echo "[WARNING] Unknown environment: $env. Defaulting base URL to https://swimresults.de\n";
+        $base_url = "https://swimresults.de";
 }
 
 echo "[Sitemap] Generating sitemap...\n";
