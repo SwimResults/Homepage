@@ -42,8 +42,11 @@ echo "[Sitemap] Generating sitemap...\n";
 echo "[Sitemap] Base URL: $base_url\n";
 echo "[Sitemap] Static only: " . ($static_only ? "yes" : "no") . "\n";
 
-// Initialize sitemap
-$sitemap = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
+// Initialize sitemap with namespace for hreflang
+$sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"></urlset>';
+$sitemap = new SimpleXMLElement($sitemap_xml);
 
 // Determine correct path based on context
 // In Docker: /var/www/html/php/config/pages.json
@@ -68,28 +71,91 @@ if (!is_array($pages_config)) {
 
 echo "[Sitemap] Found " . count($pages_config) . " pages in config\n";
 
-// Add static pages from pages.json
+// Add static pages from pages.json (both languages)
 $added_pages = [];
 foreach ($pages_config as $slug => $page) {
     // Add pages that should be in nav or footer
     if ((isset($page["nav"]) && $page["nav"]) || (isset($page["footer"]) && $page["footer"])) {
-        $url = $sitemap->addChild('url');
-        $url->addChild('loc', $base_url . '/' . $slug);
-        $url->addChild('priority', isset($page["nav"]) && $page["nav"] ? '1.0' : '0.8');
-        $url->addChild('lastmod', date('Y-m-d'));
+        $priority = (isset($page["nav"]) && $page["nav"]) ? '1.0' : '0.8';
+        $last_mod = date('Y-m-d');
+        
+        // German version (no /de/ prefix)
+        $url_de = $sitemap->addChild('url');
+        $url_de->addChild('loc', $base_url . '/' . $slug);
+        $url_de->addChild('lastmod', $last_mod);
+        $url_de->addChild('priority', $priority);
+        
+        // Add hreflang links
+        $xhtml_ns = 'http://www.w3.org/1999/xhtml';
+        $link_de = $url_de->addChild('xhtml:link', null, $xhtml_ns);
+        $link_de->addAttribute('rel', 'alternate');
+        $link_de->addAttribute('hreflang', 'de');
+        $link_de->addAttribute('href', $base_url . '/' . $slug);
+        
+        $link_en = $url_de->addChild('xhtml:link', null, $xhtml_ns);
+        $link_en->addAttribute('rel', 'alternate');
+        $link_en->addAttribute('hreflang', 'en');
+        $link_en->addAttribute('href', $base_url . '/en/' . $slug);
+        
+        // English version (with /en/ prefix)
+        $url_en = $sitemap->addChild('url');
+        $url_en->addChild('loc', $base_url . '/en/' . $slug);
+        $url_en->addChild('lastmod', $last_mod);
+        $url_en->addChild('priority', $priority);
+        
+        // Add hreflang links
+        $link_de_en = $url_en->addChild('xhtml:link', null, $xhtml_ns);
+        $link_de_en->addAttribute('rel', 'alternate');
+        $link_de_en->addAttribute('hreflang', 'de');
+        $link_de_en->addAttribute('href', $base_url . '/' . $slug);
+        
+        $link_en_en = $url_en->addChild('xhtml:link', null, $xhtml_ns);
+        $link_en_en->addAttribute('rel', 'alternate');
+        $link_en_en->addAttribute('hreflang', 'en');
+        $link_en_en->addAttribute('href', $base_url . '/en/' . $slug);
+        
         $added_pages[] = $slug;
     }
 }
 
-// Add main page if not already added
+// Add main page (homepage) if not already added
 if (!in_array('main', $added_pages)) {
-    $url = $sitemap->addChild('url');
-    $url->addChild('loc', $base_url);
-    $url->addChild('priority', '1.0');
-    $url->addChild('lastmod', date('Y-m-d'));
+    $xhtml_ns = 'http://www.w3.org/1999/xhtml';
+    
+    // German homepage
+    $url_de = $sitemap->addChild('url');
+    $url_de->addChild('loc', $base_url . '/');
+    $url_de->addChild('priority', '1.0');
+    $url_de->addChild('lastmod', date('Y-m-d'));
+    
+    $link_de = $url_de->addChild('xhtml:link', null, $xhtml_ns);
+    $link_de->addAttribute('rel', 'alternate');
+    $link_de->addAttribute('hreflang', 'de');
+    $link_de->addAttribute('href', $base_url . '/');
+    
+    $link_en = $url_de->addChild('xhtml:link', null, $xhtml_ns);
+    $link_en->addAttribute('rel', 'alternate');
+    $link_en->addAttribute('hreflang', 'en');
+    $link_en->addAttribute('href', $base_url . '/en/');
+    
+    // English homepage
+    $url_en = $sitemap->addChild('url');
+    $url_en->addChild('loc', $base_url . '/en/');
+    $url_en->addChild('priority', '1.0');
+    $url_en->addChild('lastmod', date('Y-m-d'));
+    
+    $link_de_en = $url_en->addChild('xhtml:link', null, $xhtml_ns);
+    $link_de_en->addAttribute('rel', 'alternate');
+    $link_de_en->addAttribute('hreflang', 'de');
+    $link_de_en->addAttribute('href', $base_url . '/');
+    
+    $link_en_en = $url_en->addChild('xhtml:link', null, $xhtml_ns);
+    $link_en_en->addAttribute('rel', 'alternate');
+    $link_en_en->addAttribute('hreflang', 'en');
+    $link_en_en->addAttribute('href', $base_url . '/en/');
 }
 
-echo "[Sitemap] Added " . count($added_pages) . " static pages\n";
+echo "[Sitemap] Added " . (count($added_pages) * 2 + 2) . " static page entries (both languages)\n";
 
 // Add blog articles from database if not static-only mode
 $article_count = 0;
@@ -126,19 +192,51 @@ if (!$static_only) {
                     $slug = str_replace('<br>', '', $slug);
                     $slug = strtolower($slug);
                     
-                    $url = $sitemap->addChild('url');
-                    $url->addChild('loc', $base_url . '/article/' . $post["id"] . '-' . $slug);
-                    
                     // Use updated_at if available, otherwise published_at, otherwise created_at
                     $last_mod = $post["updated_at"] ?: ($post["published_at"] ?: $post["created_at"]);
-                    $url->addChild('lastmod', date('Y-m-d', strtotime($last_mod)));
+                    $last_mod_formatted = date('Y-m-d', strtotime($last_mod));
                     
-                    $url->addChild('priority', '0.8');
+                    $xhtml_ns = 'http://www.w3.org/1999/xhtml';
+                    $article_url = '/article/' . $post["id"] . '-' . $slug;
+                    
+                    // German version (no /de/ prefix)
+                    $url_de = $sitemap->addChild('url');
+                    $url_de->addChild('loc', $base_url . $article_url);
+                    $url_de->addChild('lastmod', $last_mod_formatted);
+                    $url_de->addChild('priority', '0.8');
+                    
+                    // Add hreflang links
+                    $link_de = $url_de->addChild('xhtml:link', null, $xhtml_ns);
+                    $link_de->addAttribute('rel', 'alternate');
+                    $link_de->addAttribute('hreflang', 'de');
+                    $link_de->addAttribute('href', $base_url . $article_url);
+                    
+                    $link_en = $url_de->addChild('xhtml:link', null, $xhtml_ns);
+                    $link_en->addAttribute('rel', 'alternate');
+                    $link_en->addAttribute('hreflang', 'en');
+                    $link_en->addAttribute('href', $base_url . '/en' . $article_url);
+                    
+                    // English version (with /en/ prefix)
+                    $url_en = $sitemap->addChild('url');
+                    $url_en->addChild('loc', $base_url . '/en' . $article_url);
+                    $url_en->addChild('lastmod', $last_mod_formatted);
+                    $url_en->addChild('priority', '0.8');
+                    
+                    // Add hreflang links
+                    $link_de_en = $url_en->addChild('xhtml:link', null, $xhtml_ns);
+                    $link_de_en->addAttribute('rel', 'alternate');
+                    $link_de_en->addAttribute('hreflang', 'de');
+                    $link_de_en->addAttribute('href', $base_url . $article_url);
+                    
+                    $link_en_en = $url_en->addChild('xhtml:link', null, $xhtml_ns);
+                    $link_en_en->addAttribute('rel', 'alternate');
+                    $link_en_en->addAttribute('hreflang', 'en');
+                    $link_en_en->addAttribute('href', $base_url . '/en' . $article_url);
                     
                     $article_count++;
                 }
                 
-                echo "[Sitemap] Added $article_count blog articles from database\n";
+                echo "[Sitemap] Added " . ($article_count * 2) . " blog article entries from database (both languages)\n";
             } else {
                 echo "[Sitemap] Database not available (PDO is null)\n";
             }
@@ -172,7 +270,10 @@ try {
     
     if (file_put_contents($sitemap_path, $dom->saveXML())) {
         echo "[Sitemap] ✓ Sitemap saved successfully to: $sitemap_path\n";
-        echo "[Sitemap] Total URLs: " . (count($added_pages) + $article_count + 1) . "\n";
+        // Total URLs = (pages * 2) + (articles * 2)
+        // added_pages * 2 = each page in both languages
+        // article_count = already counted as articles * 2 in the echo above
+        echo "[Sitemap] Total URLs: " . ((count($added_pages) + 1) * 2 + $article_count * 2) . "\n";
         exit(0);
     } else {
         echo "[ERROR] Failed to write sitemap to: $sitemap_path\n";
