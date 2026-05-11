@@ -23,6 +23,21 @@
         }
     }
 
+    // Redirect to language-prefixed URL if language preference requires it
+    // e.g., if user has English preference but accessed /feature, redirect to /en/feature
+    $request_uri = strtok($_SERVER['REQUEST_URI'], '?');
+    if ($lang === 'en' && (strpos($request_uri, '/en/') !== 0 && $request_uri !== '/en')) {
+        // Get the current path without leading slash
+        $current_path = ltrim($request_uri, '/');
+        
+        // Redirect to /en/ version
+        if ($current_path) {
+            header("Location: /en/" . $current_path, true, 302);
+        } else {
+            header("Location: /en/", true, 302);
+        }
+        exit;
+    }
 
     $pages = json_decode(file_get_contents("php/config/pages.json"), TRUE);
 
@@ -60,7 +75,7 @@
         }
     }
 ?>
-<html lang="de">
+<html lang="<?php echo($lang); ?>">
     <head>
         <?php
             if (getenv("SR_HOMEPAGE_ENV") === 'LOCALHOST')

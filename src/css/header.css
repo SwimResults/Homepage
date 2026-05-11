@@ -1,5 +1,5 @@
 header {
-    padding: 18px 32px;
+    padding: 24px 32px;
     position: fixed;
     left: 0;
     top: 0;
@@ -84,7 +84,12 @@ header.menu-shown nav a.btn {
     color: white;
 }
 
-
+.menu-btn-container {
+    vertical-align: middle;
+    width: calc(100% - 300px);
+    text-align: right;
+    display: none;
+}
 
 .menu-btn {
     background-color: transparent;
@@ -92,10 +97,6 @@ header.menu-shown nav a.btn {
     padding: 0;
     margin: 0;
     cursor: pointer;
-    position: fixed;
-    right: 24px;
-    top: 12px;
-    display: none;
 }
 
 .menu-btn img {
@@ -111,8 +112,22 @@ body.scrolled .menu-btn img,
     height: 100vh;
 }
 
-@media only screen and (max-width: 600px) {
-    .menu-btn {
+.lang-switcher {
+    display: inline-block;
+}
+
+.lang-switcher .lang-separator {
+    display: inline-block;
+    margin: 0 4px;
+    color: var(--main-first);
+}
+
+body.scrolled header .lang-switcher .lang-separator {
+    color: black;
+}
+
+@media only screen and (max-width: 1030px) {
+    .menu-btn-container {
         display: inline-block;
     }
     .menu-shown nav {
