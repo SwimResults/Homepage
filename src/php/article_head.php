@@ -22,7 +22,29 @@
 
     $base_url = "https://swimresults.de/";
     $article_url = $base_url."article/";
+    
+    // Generate meta description with swim results context
+    $description_source = $post["excerpt"]
+        ?? $post["description"]
+        ?? $post["content_html"]
+        ?? $post["content_md"]
+        ?? $post["title"]
+        ?? "SwimResults Blog";
 
+    if (isset($post["content_html"])) {
+        $description_source = strip_tags($post["content_html"]);
+    } elseif (isset($post["content_md"])) {
+        $description_source = strip_tags((new Parsedown())->text($post["content_md"]));
+    }
+
+    $excerpt = trim(preg_replace('/\s+/', ' ', (string) $description_source));
+    if ($excerpt === '') {
+        $excerpt = $post["title"] ?? "SwimResults Blog";
+    }
+
+    $meta_description = mb_substr($excerpt, 0, 155);
+
+    echo('<meta name="description" content="'.$meta_description.'" />');
     echo('
         <meta property="og:title" content="'.$post["title"].'" />
         <meta property="og:url" content="'.$article_url.$post["id"].'-'.getArticleAlias($post["title"]).'" />

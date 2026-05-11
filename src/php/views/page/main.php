@@ -6,7 +6,7 @@
 
 <div class="section">
     <h1 class="title"><?php T::e("CONTENT.MAIN.TITLE"); ?></h1>
-    <h1 class="title" style="display: none">Swim Results</h1>
+    <h2 class="subtitle" style="font-size: 1.3em; color: #666; margin: -0.5em 0 1em 0; font-weight: 500;"><?php T::e("CONTENT.MAIN.SUBTITLE"); ?></h2>
 <!--    <blockquote>-->
 <!--        <p>--><?php //T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_1"); ?><!--<a href="https://status.swimresults.de/">status.swimresults.de</a>--><?php //T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_2"); ?><!--</p>-->
 <!--    </blockquote>-->
@@ -51,7 +51,7 @@
     }
     ?>
 
-    <a class="section-link-big" href="meetings"><?php T::e("CONTENT.MAIN.INFOS.MEETINGS_LINK_TEXT"); ?></a>
+    <a class="section-link-big" href="<?php echo buildLink('meetings'); ?>"><?php T::e("CONTENT.MAIN.INFOS.MEETINGS_LINK_TEXT"); ?></a>
 </div>
 <div class="section section-2">
     <div class="section-split">
@@ -61,7 +61,7 @@
         <div class="section-right">
             <h1><?php T::e("CONTENT.MAIN.INFOS.FEATURES_TITLE"); ?></h1>
             <p><?php T::e("CONTENT.MAIN.INFOS.FEATURES_INFO_TEXT"); ?></p>
-            <a class="section-link-big" href="features"><?php T::e("CONTENT.MAIN.INFOS.FEATURES_LINK_TEXT"); ?></a>
+            <a class="section-link-big" href="<?php echo buildLink('features'); ?>"><?php T::e("CONTENT.MAIN.INFOS.FEATURES_LINK_TEXT"); ?></a>
         </div>
     </div>
 </div>
@@ -70,7 +70,7 @@
         <div class="section-left">
             <h1><?php T::e("CONTENT.MAIN.INFOS.BLOG_TITLE"); ?></h1>
             <p><?php T::e("CONTENT.MAIN.INFOS.BLOG_INFO_TEXT"); ?></p>
-            <a class="section-link-big" href="blog"><?php T::e("CONTENT.MAIN.INFOS.BLOG_LINK_TEXT"); ?></a>
+            <a class="section-link-big" href="<?php echo buildLink('blog'); ?>"><?php T::e("CONTENT.MAIN.INFOS.BLOG_LINK_TEXT"); ?></a>
         </div>
         <div class="section-right">
             <img src="images/drawings/blog.png" alt="SwimResults Blog">
@@ -88,7 +88,7 @@
         <div class="section-right">
             <h1><?php T::e("CONTENT.MAIN.INFOS.ORGANIZER_TITLE"); ?></h1>
             <p><?php T::e("CONTENT.MAIN.INFOS.ORGANIZER_INFO_TEXT"); ?></p>
-            <a class="section-link-big" href="article/3-informationen-für-veranstalter"><?php T::e("CONTENT.MAIN.INFOS.ORGANIZER_LINK_TEXT"); ?></a>
+            <a class="section-link-big" href="<?php echo buildLink('article/3-informationen-für-veranstalter'); ?>"><?php T::e("CONTENT.MAIN.INFOS.ORGANIZER_LINK_TEXT"); ?></a>
         </div>
     </div>
 </div>
@@ -115,7 +115,7 @@
         <div class="section-left">
             <h1><?php T::e("CONTENT.MAIN.INFOS.SERVICE_TITLE"); ?></h1>
             <p><?php T::e("CONTENT.MAIN.INFOS.SERVICE_INFO_TEXT"); ?></p>
-            <a class="section-link-big" href="article/4-informationen-für-ergebnisdienste"><?php T::e("CONTENT.MAIN.INFOS.SERVICE_LINK_TEXT"); ?></a>
+            <a class="section-link-big" href="<?php echo buildLink('article/4-informationen-für-ergebnisdienste'); ?>"><?php T::e("CONTENT.MAIN.INFOS.SERVICE_LINK_TEXT"); ?></a>
         </div>
         <div class="section-right">
             <img src="images/drawings/service.png" alt="SwimResults Ergebnisdienst">

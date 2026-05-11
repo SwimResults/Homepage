@@ -281,7 +281,7 @@ footer .links a {
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 950px) {
     .title {
         font-size: 60px;
     }
@@ -299,19 +299,6 @@ footer .links a {
     /*}*/
 }
 @media only screen and (max-width: 600px) {
-    .banner-small {
-        height: 75px;
-    }
-    .banner-mobile-app-btn {
-        display: block;
-    }
-    .background-text {
-        bottom: unset;
-        top: 150px;
-        text-align: center;
-    }
-}
-@media only screen and (max-width: 460px) {
     .title {
         font-size: 30px;
     }

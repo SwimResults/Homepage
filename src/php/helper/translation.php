@@ -51,7 +51,75 @@
 
     }
 
-    $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-    if (isset($_SESSION["lang"]))
+    /**
+     * Generate a URL with proper language prefix
+     * /something for German (default, implicit)
+     * /de/something for German (explicit language switch)
+     * /en/something for English
+     */
+    function buildLink($path, $lang = null) {
+        // Remove any leading slashes
+        $path = ltrim($path, '/');
+        
+        if ($lang === null) {
+            // No explicit language - use session and apply appropriate prefix
+            $lang = $_SESSION["lang"] ?? $GLOBALS['lang'] ?? 'de';
+            
+            if ($lang === 'en') {
+                return '/en/' . $path;
+            } else {
+                return '/' . $path;  // German uses no prefix implicitly
+            }
+        } else {
+            // Explicit language passed (from language switcher) - always use prefix
+            if ($lang === 'en') {
+                return '/en/' . $path;
+            } else {
+                return '/de/' . $path;  // German always uses /de/ when explicitly chosen
+            }
+        }
+    }
+
+    /**
+     * Get the current base URL depending on language
+     * Returns '' for German, '/en' for English
+     */
+    function getLangPrefix($lang = null) {
+        if ($lang === null) {
+            // Priority: session language (most reliable) > global lang > default to de
+            $lang = $_SESSION["lang"] ?? $GLOBALS['lang'] ?? 'de';
+        }
+        
+        if ($lang === 'en') {
+            return '/en';
+        } else {
+            return '';
+        }
+    }
+
+    // Language detection from URL parameters and session
+    // Priority: $_GET["lang"] (from URL rewrite) > $_SESSION["lang"] > browser language > 'de'
+    $lang = 'de';
+    
+    // Check URL parameter first (set by .htaccess rewrite)
+    if (isset($_GET["lang"]) && in_array($_GET["lang"], ['en', 'de'])) {
+        $lang = $_GET["lang"];
+        $_SESSION["lang"] = $lang;  // Store in session for persistence
+    }
+    // Check session
+    else if (isset($_SESSION["lang"]) && in_array($_SESSION["lang"], ['en', 'de'])) {
         $lang = $_SESSION["lang"];
+    }
+    // Fall back to browser Accept-Language
+    else if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+        if (!in_array($lang, ['en', 'de'])) {
+            $lang = 'de';
+        }
+    }
+    
+    // Ensure session is always set for persistence
+    $_SESSION["lang"] = $lang;
+    
     T::init($lang);
+

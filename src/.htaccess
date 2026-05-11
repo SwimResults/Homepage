@@ -1,8 +1,27 @@
+<IfModule mod_mime.c>
+    AddType application/xml .xml
+</IfModule>
+
 RewriteEngine on
 
 RewriteRule ^(api)($|/) - [L]
+
+# Extract language from URL and pass it as query parameter
+# /en/path -> index.php?path=path&lang=en
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^en/(.*)$ /index.php?path=$1&lang=en [NC,L,QSA]
+
+# /de/path -> index.php?path=path&lang=de
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^de/(.*)$ /index.php?path=$1&lang=de [NC,L,QSA]
+
+# Default path (no language prefix) -> don't force lang, let session decide
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/en/
+RewriteCond %{REQUEST_URI} !^/de/
 RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
 
 Redirect 302 /iesc "https://app.swimresults.de/m/IESC25"

@@ -13,7 +13,7 @@
                 <div class="quiz-card">
                     <h2><?php echo htmlspecialchars($quiz['title']); ?></h2>
                     <p><?php echo htmlspecialchars($quiz['description']); ?></p>
-                    <a href="/quiz/<?php echo htmlspecialchars($quiz['slug']); ?>" class="btn">
+                    <a href="<?php echo buildLink('quiz/' . htmlspecialchars($quiz['slug'])); ?>" class="btn">
                         <?php T::e("CONTENT.QUIZ.START_BUTTON"); ?>
                     </a>
                 </div>
