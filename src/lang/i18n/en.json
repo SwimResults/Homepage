@@ -27,7 +27,8 @@
         },
         "MAIN": {
             "TITLE": "SwimResults",
-            "INTRO_INFO_TEXT": "SwimResults is an online platform for swimming competitions that provides data for participating meetings and displays them in structured manner. SwimResults enables athletes, coaches, friends and family to view start lists, results, live timings and analysis for different athletes, teams and competitions.",
+            "SUBTITLE": "Your Platform for Swim Results & Swimming Competition Data",
+            "INTRO_INFO_TEXT": "SwimResults is your platform for swim results and swimming competition data. We provide comprehensive swim results and meet information for participating events displayed in a structured manner. SwimResults enables swimmers, coaches, friends and family to view swim results, start lists, live timings and detailed analysis for different athletes, teams and competitions.",
             "VALUES": {
                 "MEETINGS_DESCRIPTION": "Meetings",
                 "ATHLETES_DESCRIPTION": "Athletes",

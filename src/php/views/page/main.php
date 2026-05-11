@@ -6,7 +6,7 @@
 
 <div class="section">
     <h1 class="title"><?php T::e("CONTENT.MAIN.TITLE"); ?></h1>
-    <h1 class="title" style="display: none">Swim Results</h1>
+    <h2 class="subtitle" style="font-size: 1.3em; color: #666; margin: -0.5em 0 1em 0; font-weight: 500;"><?php T::e("CONTENT.MAIN.SUBTITLE"); ?></h2>
 <!--    <blockquote>-->
 <!--        <p>--><?php //T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_1"); ?><!--<a href="https://status.swimresults.de/">status.swimresults.de</a>--><?php //T::e("CONTENT.MAIN.UNDER_DEVELOPMENT_INFO_TEXT_2"); ?><!--</p>-->
 <!--    </blockquote>-->

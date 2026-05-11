@@ -27,7 +27,8 @@
         },
         "MAIN": {
             "TITLE": "SwimResults",
-            "INTRO_INFO_TEXT": "SwimResults ist eine Online-Plattform für Schwimmwettkämpfe, welche Daten von teilnehmenden Veranstaltungen aufbereitet und strukturiert zur Verfügung stellt. Mit SwimResults können Sportler, Trainer, Familie und Freunde Meldungen, Ergebnisse, sowie Livetimings und Auswertungen für verschiedene Sportler, Vereine und Veranstaltungen einsehen.",
+            "SUBTITLE": "Deine Plattform für Swim Results und Wettkampfdaten",
+            "INTRO_INFO_TEXT": "SwimResults ist eine Online-Plattform für Schwimmwettkämpfe und Swim Results, welche Daten von teilnehmenden Veranstaltungen aufbereitet und strukturiert zur Verfügung stellt. Mit SwimResults können Sportler, Trainer, Familie und Freunde Meldungen, Swim Results, Livetimings und Auswertungen für verschiedene Sportler, Vereine und Veranstaltungen einsehen.",
             "VALUES": {
                 "MEETINGS_DESCRIPTION": "Veranstaltungen",
                 "ATHLETES_DESCRIPTION": "Sportler",

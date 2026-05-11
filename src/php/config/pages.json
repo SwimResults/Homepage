@@ -5,34 +5,54 @@
     "permission": 0,
     "nav": true,
     "banner": true,
-    "style": "full"
+    "style": "full",
+    "seo": {
+      "meta_de": "SwimResults: Deine Plattform für Swim Results, Wettkampfdaten, Livetiming und Auswertungen. Aktuelle Informationen für Sportler, Trainer und Freunde.",
+      "meta_en": "SwimResults: Your platform for swim results, swim competition data, live timing, and race results. Real-time updates for swimmers, coaches, and swim teams."
+    }
   },
   "meetings": {
     "type": "page",
     "title": "NAV.MEETINGS",
     "permission": 0,
-    "nav": true
+    "nav": true,
+    "seo": {
+      "meta_de": "Kommende und vergangene Schwimmwettkämpfe mit Swim Results, Livetiming und Wettkampfpläne auf SwimResults.",
+      "meta_en": "View upcoming and past swim competitions. Real-time swim results, live timing, and competition schedules on SwimResults."
+    }
   },
   "features": {
     "type": "page",
     "title": "NAV.FEATURES",
     "permission": 0,
     "nav": true,
-    "style": "full"
+    "style": "full",
+    "seo": {
+      "meta_de": "SwimResults Features: Livetiming, Swim Results, Wettkampfergebnisse, Platzierungen und mehr für Schwimmwettkämpfe.",
+      "meta_en": "Discover SwimResults features: live timing, swim results, competition results, rankings, and more for swimming events and swimmers."
+    }
   },
   "srm": {
     "type": "page",
     "title": "NAV.SRM",
     "permission": 0,
     "nav": false,
-    "style": "full"
+    "style": "full",
+    "seo": {
+      "meta_de": "SwimResults Manager (SRM): Software für Swim Results Management, Livetiming und Wettkampfdaten-Verwaltung.",
+      "meta_en": "SwimResults Manager (SRM): Software for managing swim competition results, live timing, and event data for swimming competitions."
+    }
   },
   "blog": {
     "type": "page",
     "title": "NAV.BLOG",
     "permission": 0,
     "nav": true,
-    "style": "wide"
+    "style": "wide",
+    "seo": {
+      "meta_de": "SwimResults Blog: Tipps und News zu Swim Results, Wettkampfsoftware und Wettkampf-Management.",
+      "meta_en": "SwimResults blog: Tips, updates, and news about swim competition results and swimming management software."
+    }
   },
   "article": {
     "type": "page",
@@ -44,7 +64,11 @@
     "title": "NAV.CONTACT",
     "permission": 0,
     "nav": false,
-    "footer": true
+    "footer": true,
+    "seo": {
+      "meta_de": "Kontakt zu SwimResults - Deine Plattform für Swim Results und Livetiming. Support und Anfragen.",
+      "meta_en": "Contact SwimResults - Your platform for swim competition results and live timing. Get support or inquiries about swim results."
+    }
   },
   "impressum": {
     "type": "page",

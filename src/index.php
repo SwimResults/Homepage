@@ -76,30 +76,51 @@
             require("php/article_head.php");
         }
 
-        if ($path == "main"):
-    ?>
-	<title>SwimResults | Wettkampf-App für Schwimmer, Trainer und co.</title>
-	<!-- <meta name="description" content="SwimResults ist eine Online-Plattform für Schwimmwettkämpfe, welche Daten von teilnehmenden Veranstaltungen aufbereitet und strukturiert zur Verfügung stellt. Mit SwimResults können Sportler, Training, Familie und Freunde Meldungen, Ergebnisse, sowie Livetimings und Auswertungen für verschiedene Sportler, Vereine und Veranstaltungen einsehen."> -->
-	<meta name="description" content="Ergebnisse, Meldungen, Livetiming, Platzierungen und Auswertungen für Schwimmwettkämpfe – Das Tool für Schwimmer, Trainer und Freunde">
+        $page_seo = $page["seo"] ?? [];
 
-    <?php
-        else:
-            if (isset($page["title"]))
-                echo('<title>'.T::t($page["title"]).' | SwimResults</title>');
+        if ($path == "main") {
+            if ($lang === 'en') {
+                echo('<title>SwimResults | Swim Results for Swimming Competitions</title>');
+                if (isset($page_seo["meta_en"])) {
+                    echo('<meta name="description" content="'.$page_seo["meta_en"].'">');
+                }
+                echo('<meta property="og:title" content="SwimResults - Swim Results & Swimming Competition Platform">');
+                echo('<meta property="og:description" content="Access live swim results, competition data, timings, and rankings. SwimResults brings swim competition results to your fingertips.">');
+            } else {
+                echo('<title>SwimResults | Schwimmwettkampf-App für Trainer, Schwimmer und Veranstalter</title>');
+                if (isset($page_seo["meta_de"])) {
+                    echo('<meta name="description" content="'.$page_seo["meta_de"].'">');
+                }
+                echo('<meta property="og:title" content="SwimResults - Swim Results & Wettkampf-Plattform">');
+                echo('<meta property="og:description" content="Zugriff auf Swim Results, Livetiming, Wettkampfdaten und Auswertungen. SwimResults bringt Swim Results in deine Hand.">');
+            }
+        } else {
+            if (isset($page["title"])) {
+                $pageTitle = T::t($page["title"]);
+                if ($lang === 'en') {
+                    $seoTitle = $pageTitle . ' | SwimResults - Swim Results & Swimming';
+                } else {
+                    $seoTitle = $pageTitle . ' | SwimResults - Swim Results';
+                }
+                echo('<title>'.$seoTitle.'</title>');
+            }
 
-        endif;
-
+            if ($lang === 'en' && isset($page_seo["meta_en"])) {
+                echo('<meta name="description" content="'.$page_seo["meta_en"].'">');
+            } elseif ($lang === 'de' && isset($page_seo["meta_de"])) {
+                echo('<meta name="description" content="'.$page_seo["meta_de"].'">');
+            }
+        }
     ?>
 </head>
 <body>
     <?php include("php/layout/header.php"); ?>
+
     <?php if (array_key_exists("banner", $page) && $page["banner"]): ?>
         <div class="background">
             <span class="background-text">
                 <?php echo(T::t('CONTENT.BANNER.MAIN.INFO_TEXT')); ?>
-                <span class="banner-mobile-app-btn">
-                    <?php echo('<a class="btn" href="'.Env::getAppUrl().'">'.T::t("NAV.OPEN_APP_BUTTON").'</a>'); ?>
-                </span>
+                <span class="banner-mobile-app-btn"></span>
             </span>
         </div>
     <?php else: ?>
