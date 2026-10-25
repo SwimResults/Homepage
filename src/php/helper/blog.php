@@ -25,8 +25,9 @@
 
             $pdo = DatabaseHelper::getPDO();
             $result = array();
-            $sql = "SELECT * FROM blog WHERE id <> ".$e." ORDER BY RAND()";
-            foreach ($pdo->query($sql) as $row) {
+            $stmt = $pdo->prepare("SELECT * FROM blog WHERE id <> ? ORDER BY RAND()");
+            $stmt->execute([(int) $e]);
+            foreach ($stmt as $row) {
                 if ($n <= 0) break;
                 if ($row["published_at"]) {
                     $pub = strtotime($row["published_at"]);
@@ -45,8 +46,9 @@
         public static function getBlogPostById($id) {
             $pdo = DatabaseHelper::getPDO();
 
-            $sql = "SELECT * FROM blog WHERE id = ".$id;
-            foreach ($pdo->query($sql) as $row) {
+            $stmt = $pdo->prepare("SELECT * FROM blog WHERE id = ?");
+            $stmt->execute([(int) $id]);
+            foreach ($stmt as $row) {
                 return $row;
             }
             return NULL;
