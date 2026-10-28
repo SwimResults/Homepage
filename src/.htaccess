@@ -24,7 +24,7 @@ RewriteCond %{REQUEST_URI} !^/en/
 RewriteCond %{REQUEST_URI} !^/de/
 RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
 
-Redirect 302 /iesc "https://app.swimresults.de/m/IESC25"
+Redirect 302 /iesc "https://app.swimresults.de/m/IESC26"
 Redirect 302 /dm-fs-2024 "https://app.swimresults.de/m/DMFS24"
 Redirect 302 /osfc "https://app.swimresults.de/m/OSFC25"
 Redirect 302 /giraffe "https://app.swimresults.de/m/GPKL26"
