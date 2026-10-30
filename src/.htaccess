@@ -33,6 +33,7 @@ Redirect 302 /mdm "https://app.swimresults.de/m/MDM25"
 Redirect 302 /goldenes-ei "https://app.swimresults.de/m/OMKGE26"
 Redirect 302 /gothaer "https://app.swimresults.de/m/BGF26"
 Redirect 302 /lms-sa "https://app.swimresults.de/m/LMSSA26"
+Redirect 302 /plhm "https://app.swimresults.de/m/PLHM26"
 Redirect 302 /silbererz "https://app.swimresults.de/m/SESM26"
 Redirect 302 /kleeblatt "https://app.swimresults.de/m/KLEE26"
 
