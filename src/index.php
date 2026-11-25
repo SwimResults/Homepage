@@ -48,10 +48,15 @@
     }
     else $path = "main";
 
-    if ($path[-1] == "/") $path = substr($path, 0, -1);
+    $path = rtrim($path, "/");
+    // Empty path (e.g. /en/ or /de/ rewritten to ?path=) is the main page
+    if ($path === "") $path = "main";
 
     if (!array_key_exists($path, $pages)) {
-        header("Location: /");
+        // Redirect to the language-specific home page to avoid bouncing
+        // between / and /en/ (which caused ERR_TOO_MANY_REDIRECTS)
+        header("Location: " . buildLink(''), true, 302);
+        exit;
     }
 
     $page = $pages[$path];
