@@ -77,7 +77,6 @@
 
             $json = curl_exec($ch);
 
-            curl_close($ch);
 
 
             $data =  json_decode($json, TRUE);
